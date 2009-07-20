@@ -1,0 +1,5 @@
+All Scala values are objects; there is no formal "primitive" type as there is in Java.  However, there is a distinction in the main object tree.
+
+gliffy. 1768557
+
+Every object is a subtype of @Any@, however in practice, most objects will be a subtype of @AnyRef@.  @AnyVal@ is a superclass for the types that, in Java, are considered "primitive" (that being things like @int@, @byte@, and @float@).  Further, all classes implicitly extend @scala.ScalaObject@ (which is a Mixins(trait)).
