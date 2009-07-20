@@ -1,1 +1,5 @@
-This is the main page.
+I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but very difficult to follow.  The topics are not well described, nor well justified, and the code they contain is also very difficult to understand without better knowledge of Scala.
+
+This is my attempt to go through each item on the tour and really try to understand it; then document my findings in, what I hope will be, a more clear way.
+
+* UnifiedTypes
