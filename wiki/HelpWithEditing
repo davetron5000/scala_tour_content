@@ -1,0 +1,38 @@
+Summarized from ["the Red Cloth site":http://redcloth.org/textile/writing-paragraph-text/]
+
+h1. Paragraphs
+
+* Separate paragraphs with a blank line, or precede with a @p. @
+* Two dashes make emdashes
+* Three periods becomes an ellipsis
+* (r) is created via @(r)@
+* (c) is created via @(c)@
+
+h1. Modifiers
+
+* Camel text creates wiki links automatically
+* Wiki links can be renamed via parens following the camel text
+* Surround a phrase with @*@ for bold/strong
+* Surround a phrase with @_@ for italic/stress
+* Surround a phrase with @??@ for citation
+* Surround a phrase with @-@ for strikethrough
+* Surround a phrase with @+@ for addition
+* Use @~@ for subscript
+* Use @^@ for superscript
+* Links are made via @"link text":http://url.to.link.com/blah@
+* Surround the entire thing with square brackets if it's not clear where the link starts or ends
+* link to images via @!http://www.images.com/blah.jpg@
+* link gliffy diagrams via @!gliffy diagram_id | align | size@ where "align" is either "left", "right", or "center" and "size" is "T", "S", "M", or "L"
+
+h1. Layout
+
+* Headings are created via @h1.@, @h2.@, @h3.@ etc.  Note that the dots must be followed by spaces.
+* Block quotes can be created via 
+** @bq.@
+** @bq.:http://the.reference.url@
+** @bq..@ - this method will continue the block quote until you use another Textile style.
+* Bullet lists are made via @*@; nested lists via multiple, e.g. @**@
+* Numbered lists are smilar, using @#@ and @##@ (e.g.) for nested. 
+* Definition lists can be made via @- term := definition@
+* Footnotes can be made via @[1]@ where you make reference and @fn1. explanation@ later on to provide the reference
+* Tables can be made via pipe characters, using @_.@ in a cell to indicate it's a heading
