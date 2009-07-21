@@ -1,5 +1,7 @@
 Scala is more than just an object-oriented language with a compact syntax; it has extensive support for functional programming.  As such, methods can be passed around much as with C.
 
+**Re-do this based on mailing list discussion**
+
 Any method you define can be passed as a parameter to another method.  Suppose we defined a @Person@ class, but don't want to commit to a name format.  We could make a @name@ method that takes, as an argument, a function that will turn a person's first and last names into a string:
 
 <script src="http://gist.github.com/151041.js"></script>
