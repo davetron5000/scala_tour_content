@@ -1,3 +1,8 @@
+
 Supposed you are writing a GUI application and wish to provide a means of notifying the user of system-wide messages.  How you do this depends on some sort of context; suppose that sometimes you wish to use a modal dialog and sometimes you wish to update the status bar.  You want the system components to generate the messages for you, regardless of the means of notification.
 
 In Java, you might create a class hierarchy like so:
+
+gliffy. 1768649 | center | L
+
+This requires three new classes to do something relatively simple.  Granted, in Scala you could create these three classes in one file and their definitions would be fairly compact.
