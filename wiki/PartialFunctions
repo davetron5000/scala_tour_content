@@ -1,0 +1,3 @@
+Supposed you are writing a GUI application and wish to provide a means of notifying the user of system-wide messages.  How you do this depends on some sort of context; suppose that sometimes you wish to use a modal dialog and sometimes you wish to update the status bar.  You want the system components to generate the messages for you, regardless of the means of notification.
+
+In Java, you might create a class hierarchy like so:
