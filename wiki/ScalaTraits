@@ -1,3 +1,4 @@
+
 Scala doesn't have interfaces in the way that Java does; rather it uses Mixins (like Ruby), referred to as *Traits*.
 
 A Trait is somewhat more similar to an abstract class in Java, except that in Scala, you can extend any number of traits that you wish.
@@ -13,3 +14,5 @@ The problem is that the three new methods would have the exact same implementati
 <script src="http://gist.github.com/151017.js"></script>
 
 There is a lot more that can be done with traits (and several no-doubt better implementations of the "super comparable" concept), but this should demonstrate what Traits can do and why they are useful.
+
+gliffy. 1768603 | center | L
