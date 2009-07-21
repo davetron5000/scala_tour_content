@@ -1,0 +1,15 @@
+Scala doesn't have interfaces in the way that Java does; rather it uses Mixins (like Ruby), referred to as *Traits*.
+
+A Trait is somewhat more similar to an abstract class in Java, except that in Scala, you can extend any number of traits that you wish.
+
+Suppose our Circle class is getting refactored and enhanced.  We wish to make the @area@ method part of an interface that other shape classes might use.  Further, we wish to be able to compare circles based on their size.  In Java, we would implement the @Comparable@ interface and a new interface called @HasArea@.  
+
+Now, further suppose that we want our comparison interface to be a bit richer than a simple @compareTo@ method that returns an int; we want to clearly test for "less than".  In Java, we would need to extend the @Comparable@ interface as so:
+
+<script src="http://gist.github.com/151023.js"></script>
+
+The problem is that the three new methods would have the exact same implementation in every case -- they'd use the @compareTo@ method.  If our class already extends another class, we're SOL.  Traits let us combine the concepts:
+
+<script src="http://gist.github.com/151017.js"></script>
+
+There is a lot more that can be done with traits (and several no-doubt better implementations of the "super comparable" concept), but this should demonstrate what Traits can do and why they are useful.
