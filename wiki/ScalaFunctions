@@ -8,12 +8,10 @@ This makes implementing the "template pattern":http://en.wikipedia.org/wiki/Temp
 
 You can also create a function that takes no arguments:
 
-pre.
-() => "don't need no stinking arguments"
+pre. () => "don't need no stinking arguments"
 
 A function like this has the following type:
 
-pre.
-Unit => String
+pre. Unit => String
 
 (In Scala @Unit@ means the same thing as @void@ in Java)
