@@ -2,14 +2,7 @@ Classes are defined much as they are in Java.  Here is a simple class that model
 
 <script src="http://gist.github.com/151005.js"></script>
 
-* The expression after the class name, @(r:Int)@, is the constructor; it creates a private field named @r@
-* the type is declared after a colon following an identifier
-* @val radius = r@ defines a property called "radius" that is initialized to the value of @r@
-* We define two methods, one called "diameter" and one called "area"
-* We override the superclass' @toString@ method (omitting the @override@ is a compile error
-* We create objects as in java, via the @new@ keyword.
-* Methods are defined *after* and equals sign; braces are optional if its a one-liner
-* No real need for semicolons
+This is quite different from Java; it's much more compact, but it also gives you a tiny flavor of the functional side of Scala.  Notice how all the method definitions use the equals sign?  You are creating a sort-of expression for each one, but it's evaluated when you call the method.
 
 This isn't a comprehensive overview of **everything** you can do, but gives you some of the flavor.
 
