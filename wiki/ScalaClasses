@@ -1,3 +1,10 @@
-Classes are defined much as they are in Java.
+Classes are defined much as they are in Java.  Here is a simple class that models a circle.
 
 <script src="http://gist.github.com/151005.js"></script>
+
+* The expression after the class name, @(r:Int)@, is the constructor; it creates a private field named @r@
+* the type is declared after a colon following an identifier
+* @val radius = r@ defines a property called "radius" that is initialized to the value of @r@
+* We define two methods, one called "diameter" and one called "area"
+* We override the superclass' @toString@ method (omitting the @override@ is a compile error
+* We create objects as in java, via the @new@ keyword.
