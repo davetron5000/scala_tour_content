@@ -2,4 +2,4 @@ All Scala values are objects; there is no formal "primitive" type as there is in
 
 gliffy. 1768557 | center | L
 
-Every object is a subtype of @Any@, however in practice, most objects will be a subtype of AnyRef.  AnyVal is a superclass for the types that, in Java, are considered "primitive" (that being things like @int@, @byte@, and @float@).  Further, all classes implicitly extend @scala.ScalaObject@ (which is a Mixins(trait)) and AnyRef (yes, there is Mixins(multiple inheritance)).  Finally, classes you can access from the Java runtime do **not** extend ScalaObject, but just extend AnyRef.
+Every object is a subtype of @Any@, however in practice, most objects will be a subtype of AnyRef.  AnyVal is a superclass for the types that, in Java, are considered "primitive" (that being things like @int@, @byte@, and @float@).  Further, all classes implicitly extend scala.ScalaObject (which is a Mixins(trait)) and AnyRef (yes, there is Mixins(multiple inheritance)).  Finally, classes you can access from the Java runtime do **not** extend ScalaObject, but just extend AnyRef.
