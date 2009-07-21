@@ -3,3 +3,4 @@ I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but v
 This is my attempt to go through each item on the tour and really try to understand it; then document my findings in, what I hope will be, a more clear way.
 
 * UnifiedTypes
+* Classes(Classes)
