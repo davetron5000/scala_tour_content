@@ -8,3 +8,9 @@ Classes are defined much as they are in Java.  Here is a simple class that model
 * We define two methods, one called "diameter" and one called "area"
 * We override the superclass' @toString@ method (omitting the @override@ is a compile error
 * We create objects as in java, via the @new@ keyword.
+* Methods are defined *after* and equals sign; braces are optional if its a one-liner
+* No real need for semicolons
+
+This isn't a comprehensive overview of **everything** you can do, but gives you some of the flavor.
+
+The @main@ method is tucked inside a ScalaObject, which is a sort of static singleton class.
