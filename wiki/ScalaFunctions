@@ -1,4 +1,33 @@
-Scala is more than just an object-oriented language with a compact syntax; it has extensive support for functional programming.  As such, methods can be passed around much as with C.
+Scala is more than just an object-oriented language with a compact syntax; it has extensive support for functional programming.  As such, functions are first-class objects.
+
+In Java, one frequently needs to perform transformations on list.  Suppose you have a list of U.S. states, each having a description and a postal code abbreviation (e.g. "CA" for "California").  Suppose you are receiving user input in the form of this code and need to quickly look up the corresponding state.  You would most likely transform your list of states to a map, and use that map for lookups, like so:
+
+<script src="http://gist.github.com/152429.js"></script>
+
+While this is reasonably clear, in Java you tend to write a lot of code like this, where you iterate over a list and "do something".  In Scala, you can invert this by asking the list to run your code over each element of the list.
+
+<script src="http://gist.github.com/152432.js"></script>
+
+The expression given to both method called on the list is an *anonymous function*.  Both functions, in this case, take one argument, which we decided to call "state" and are defined by (@=>@) the expression that follows.
+
+In the first case the @map@ method of @List@ takes a function that transforms each element of the list into another type of element.  In our case, we transform it into a @String@.  Scala knows the types involved, and so the value @stateCodes@ is a @List@ of type @String@.  
+
+The second method, @find@, passes each element of the list to the function, returning the first element that caused the function to return true (it actually returns an "option" which is a way to avoid returning null if the function never evaluated to true; more on that later).
+
+The only way to approximate this in Java would be something like
+
+pre. public T find(Finder<T> f)
+public interface Finder<T> {
+    boolean isFound(T object)
+}
+
+Using something like this would result in some verbose anonymous inner classes and not be terribly clearer than the Java code above.  The Scala version, however, is compact.
+
+This is because we can define bits of code, called *functions* and pass them around.  This takes the concept of dependency injection to a whole new level.
+
+Scala also supports some syntax sugar that allows functions to be defined as concisely as above (even more concise, actually).  What is really happening is the following:
+
+<script src="http://gist.github.com/152430.js"></script>
 
 **Re-do this based on mailing list discussion**
 
