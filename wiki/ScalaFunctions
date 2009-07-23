@@ -29,9 +29,13 @@ Scala also supports some syntax sugar that allows functions to be defined as con
 
 <script src="http://gist.github.com/152430.js"></script>
 
-**Re-do this based on mailing list discussion**
+Those functions are actual objects.  The function passed to @map@ has a type of @(State) => String@, which is to say "a function taking one argument, that is a State, and returning a String".  That entire expression is a type, just as @int@ or @List<String>@ would be.
 
-Any method you define can be passed as a parameter to another method.  Suppose we defined a @Person@ class, but don't want to commit to a name format.  We could make a @name@ method that takes, as an argument, a function that will turn a person's first and last names into a string:
+Note further, that functions are not the same as methods.  Although methods can be passed *as functions*, they are not the same thing.
+
+h3. Another Example
+
+Suppose we defined a @Person@ class, but don't want to commit to a name format.  We could make a @name@ method that takes, as an argument, a function that will turn a person's first and last names into a string:
 
 <script src="http://gist.github.com/151041.js"></script>
 
