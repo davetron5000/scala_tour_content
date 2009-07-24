@@ -24,7 +24,7 @@ The first case statement executes if @l@ is of type StringMessage, and, if so, "
 
 We can also match a case statement with conditions beyond just the type of @l@.  The second @case@ statement is executed if @l@ is an ExceptionMessage *and* if the extracted argument from @l@ is of type @Error@.  If @l@ *is* an ExceptionMessage, but was *not* created with an exception that is a subclass of @Error@, we *don't* match and proceed to the next @case@ to check for a match.
 
-The next statement will match if @l@ is of type ExceptionMessage and if @l@ 's exception argument was any type of @Throwable@,however there is a guard condition; if the log level passed ot @log@ is less than 5, we match and execute this code.  If not, we proceed looking for another match.
+The next statement will match if @l@ is of type ExceptionMessage and if @l@ 's exception argument was any type of @Throwable@,however there is a guard condition; if the log level passed to @log@ is less than 5, we match and execute this code.  If not, we proceed looking for another match.
 
 The subsequent statement will match any other ExceptionMessage that wasn't matched by the first two (because we have no type on the argument, and no guard conditions).
 
@@ -32,6 +32,6 @@ This may sound complicated in explanation, but look back at the code.  It's actu
 
 We've simplified some complex logic by reducing line count and repetition, and we've also avoided having to have *nine* different methods to cover all of our cases.
 
-Now look back at the Java code.  We certainly *could* have implemented our Java logger using a similar log message hierarchy to reduce those nine methods to three, but the required classes would require several lines of code each (compared to Scala's *one*) and would not have the ability to extract their arguments so concisely.
+Now look back at the Java code.  We certainly *could* have implemented our Java logger using a similar log message class hierarchy to reduce those nine methods to three, but the required classes would require several lines of code each (compared to Scala's *one*) and would not have the ability to extract their arguments so concisely.
 
 Like ScalaFunctions, case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
