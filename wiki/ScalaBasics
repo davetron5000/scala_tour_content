@@ -1,3 +1,5 @@
+h1. Syntax
+
 Some basics about Scala syntax that aren't obvious (especially if you are coming from Java)
 
 * The type of an object or value comes *after* the value, using a colon:  @name:String@ means "name has the type String"
@@ -10,3 +12,42 @@ Some basics about Scala syntax that aren't obvious (especially if you are coming
 * Operators can be overloaded (more precisely, the characters you are allowed in a method or function name are much more varied than in Java)
 * The dot between an object and a method call is optional.  @person.toString()@ is identical to @person toString()@
 * Parens are optional for zero argument calls.  @person toString@ is identical to the two expressions above
+
+h1. Compiling/Running
+
+@scalac@ and @scala@ work just like their java counterparts.
+
+pre. scalac SomeClass.scala SomeOtherClass.scala
+scala -cp . SomeClass
+
+What happens when you run a class isn't quite the same as Java, however.
+
+pre. object MainClassObject {
+  def main(args: Array[String]) {
+    println("Hello world!")
+  }
+}
+
+pre. scala -cp . MainClassObject
+
+(There are other ways to do this, but this is *a* way)
+
+h1. Read/Eval/Print
+
+Like most scripting languages, and unlike most compiled languages, Scala has a REPL (Read/Eval/Print Loop) where you can play around
+
+pre. scala
+Welcome to Scala version 2.7.4.final (Java HotSpot(TM) Client VM, Java 1.5.0_16).
+Type in expressions to have them evaluated.
+Type :help for more information.
+scala> val a = List(1,4,6,87,5,3,9)
+a: List[Int] = List(1, 4, 6, 87, 5, 3, 9)
+scala> val b = 12 :: 34 :: a
+b: List[Int] = List(12, 34, 1, 4, 6, 87, 5, 3, 9)
+scala> b
+res0: List[Int] = List(12, 34, 1, 4, 6, 87, 5, 3, 9)
+scala> a.map((item) => item * item) 
+res2: List[Int] = List(1, 16, 36, 7569, 25, 9, 81)
+scala>^D
+
+ 
