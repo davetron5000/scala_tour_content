@@ -1,0 +1,35 @@
+Suppose you are creating a logging system like log4j that can log a @String@, and @Exception@, or both.   Suppose further that you wish to keep stack traces to a minimum and only output them for @Error@s that are logged, or for any exception logged at the @error@ level.
+
+There are several possible means of implementing this in Java.  Here is one such implementation:
+
+<script src="http://gist.github.com/153795.js"></script>
+
+There's a lot of repetition here, and the conciseness of the @log@ method can make it a bit hard to grok at first.
+
+Scala's *case classes* provide a lot of features to help.  Here's a possible implementation in Scala:
+
+<script src="http://gist.github.com/153798.js"></script>
+
+The simple addition of the @case@ keyword before the three extenders of the log message class does a whole lot:
+
+* properties to access the constructor arguments are created automatically
+* an @equals@ method based on the constructor arguments is created
+* a @toString@ implementation is provided that uses the constructor arguments
+* instances can be created without the @new@ operator, just the classname is needed
+* the constructor arguments can be extracted in one statement, as we do in the @match@ block
+
+The @match@ block itself also packs quite a bit of functionality.  Think of it as a @switch@ statement on steroids.  In this case, we are "switching" on the, among other things, the type of @l@, the log message.  Each @case@ expression allows us to implement a function that uses the extracted constructor arguments.
+
+Further, we can do this conditionally.  The second @case@ statement is executed if the extracted argument is of the specified type.  In this case, if the exception passed to the exception message was an @Error@, we extract and execute.  If not, we proceed.
+
+The next statement will match any type of @Throwable@, but has a guard condition; if the log level is less than 5, we execute this code, but if not, we proceed looking for another match.
+
+The subsequent statement will match any other exception message that wasn't matched by the first two (because we have no type or guard conditions on it).
+
+This may sound complicated in explanation, but look back at the code.  It's actually pretty clear what's going.  Now look back at the Java code.  
+
+So, we've simplified some complex logic by reducing line count and repetition, and we've also avoided having to have *nine* different methods to cover all of our cases.
+
+We certainly *could* have implemented our Java logger using a similar log message hierarchy, but these classes would require several lines of code (compared to Scala's *one*) and would not have the ability to extract so concisely.
+
+Like ScalaFunctions, case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
