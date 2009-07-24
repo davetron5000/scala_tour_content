@@ -8,3 +8,4 @@ This is my attempt to go through each item on the tour and really try to underst
 * ScalaTraits
 * ScalaFunctions
 * FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
+* CaseClasses - taking switch statements to a useful level.
