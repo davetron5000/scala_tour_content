@@ -20,16 +20,18 @@ The simple addition of the @case@ keyword before the three extenders of the log 
 
 The @match@ block itself also packs quite a bit of functionality.  Think of it as a @switch@ statement on steroids.  In this case, we are "switching" on the, among other things, the type of @l@, the log message.  Each @case@ expression allows us to implement a function that uses the extracted constructor arguments.
 
-Further, we can do this conditionally.  The second @case@ statement is executed if the extracted argument is of the specified type.  In this case, if the exception passed to the exception message was an @Error@, we extract and execute.  If not, we proceed.
+The first case statement executes if @l@ is of type StringMessage, and, if so, "pulls out" the message that was passed to its constructor.
 
-The next statement will match any type of @Throwable@, but has a guard condition; if the log level is less than 5, we execute this code, but if not, we proceed looking for another match.
+We can also match a case statement with conditions beyond just the type of @l@.  The second @case@ statement is executed if @l@ is an ExceptionMessage *and* if the extracted argument from @l* is of type @Error@.  If @l@ *is* an ExceptionMessage, but was *not* created with an exception that is a subclass of @Error@, we *don't* match and proceed to the next @case@ to check for a match.
 
-The subsequent statement will match any other exception message that wasn't matched by the first two (because we have no type or guard conditions on it).
+The next statement will match if @l@ is of type ExceptionMessage and if @l@'s exception argument was any type of @Throwable@,however there is a guard condition; if the log level passed ot @log@ is less than 5, we match and execute this code.  If not, we proceed looking for another match.
 
-This may sound complicated in explanation, but look back at the code.  It's actually pretty clear what's going.  Now look back at the Java code.  
+The subsequent statement will match any other ExceptionMessage that wasn't matched by the first two (because we have no type on the argument, and no guard conditions).
 
-So, we've simplified some complex logic by reducing line count and repetition, and we've also avoided having to have *nine* different methods to cover all of our cases.
+This may sound complicated in explanation, but look back at the code.  It's actually pretty clear what's going on now that you've got some hints as to the meaning of the syntax.  
 
-We certainly *could* have implemented our Java logger using a similar log message hierarchy, but these classes would require several lines of code (compared to Scala's *one*) and would not have the ability to extract so concisely.
+We've simplified some complex logic by reducing line count and repetition, and we've also avoided having to have *nine* different methods to cover all of our cases.
+
+Now look back at the Java code.  We certainly *could* have implemented our Java logger using a similar log message hierarchy to reduce those nine methods to three, but the required classes would require several lines of code each (compared to Scala's *one*) and would not have the ability to extract their arguments so concisely.
 
 Like ScalaFunctions, case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
