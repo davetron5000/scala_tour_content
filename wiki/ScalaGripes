@@ -1,4 +1,4 @@
-* -What is the Scala equivalent of @array.sort {|a,b| a<=> b}@?  Why is there no sort on @Array@?- @List.sort@ does this exactly.  The problem is that the method names in the scaladoc aren't sorted (irony?!)  see third bullet.
+* -What is the Scala equivalent of @array.sort {|a,b| a<=> b}@?  Why is there no sort on @Array@?- @List.sort@ does this exactly. 
 * In general, the collections operations seem odd in their omissions; why does @indexOf@ not take a function?
 * The scaladoc *really* sucks; very hard to navigate and the explanations are terse, to say the least.
 * method names are throwback's to C-style, e.g. @mkString@.  Lame
