@@ -2,3 +2,4 @@
 * In general, the collections operations seem odd in their omissions; why does @indexOf@ not take a function?
 * The scaladoc *really* sucks; very hard to navigate and the explanations are terse, to say the least.
 * method names are throwback's to C-style, e.g. @mkString@.  Lame
+* With all the symbol-soup...no ternary operator?!?!
