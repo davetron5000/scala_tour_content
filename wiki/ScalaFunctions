@@ -10,8 +10,6 @@ Scala inverts this by allow you to pass in just the comparison function:
 
 <script src="http://gist.github.com/152432.js"></script>
 
-(The @getOrElse null@ is explained later; it simply lets you distinguish between finding or not finding the code)
-
 The expression given to the @find@ method is a function literal, or *anonymous function*.  The argument to the @find@ method is declared to have the type @(A) => Boolean@, which is to say "A function that takes one argument, which has the type the same as the type of the list's elements, and returns a boolean."
 
 In our case, since the list is a list of @State@ objects, the type of the function is @(State) => Boolean@.  Not that this entire expression is the type, the same as @int@ or @List<String>@ would be in Java.
