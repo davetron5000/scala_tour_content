@@ -10,9 +10,9 @@ Scala inverts this by allow you to pass in just the comparison function:
 
 <script src="http://gist.github.com/152432.js"></script>
 
-The expression given to the @find@ method is a function literal, or *anonymous function*.  The argument to the @find@ method is declared to have the type @(A) => Boolean@, which is to say "A function that takes one argument, which has the type the same as the type of the list's elements, and returns a boolean."
+The expression given to the @find@ method is a function literal, or *anonymous function*.  The argument to the @find@ method is declared to have the type @(T) => Boolean@, which is to say "A function that takes one argument of type 'T', where 'T' is the type of elements in the list, and returns a boolean."
 
-In our case, since the list is a list of @State@ objects, the type of the function is @(State) => Boolean@.  Not that this entire expression is the type, the same as @int@ or @List<String>@ would be in Java.
+In our case, since the list is a list of @State@ objects, the type of the function is @(State) => Boolean@, or "A function that takes one argument of type @State@ and returns a @Boolean@."  Note that this entire expression is the type, the same as @int@ or @List<String>@ would be in Java.  Also note that the expression @(state)@ is a way in which we name the argument that would be passed to the function (Scala understands the type of this argument based on the context in which it is called).
 
 That type is actually shorthand for @Function2[State,Boolean]@, where the method @apply@ is called when the function is called.  The Scala compiler translates the shorthand for you.
 
