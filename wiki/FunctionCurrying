@@ -1,0 +1,23 @@
+Suppose you wish to provide a callback for notification messages.  You want to abstract the output and formatting of messages from the classes that generate them.  
+
+In Java, you might create a class hierarchy like so:
+
+gliffy. 1768649 | center | L
+
+Here we have a generic notification interface, with two implementations.  One takes a prefix that you configure on object creation and the other upper cases the messages it gets.  Your application might configure, at runtime, which of these two to use (and which prefix to use for the prefix notifier).  Your code might look like this:
+
+<script src="http://gist.github.com/153760.js"></script>
+
+This isn't bad, but we already know that some ScalaFunctions can reduce the line count a lot:
+
+<script src="http://gist.github.com/153765.js"></script>
+
+Howerver, we still have some repetition with the two prefix notifiers (repetition we *don't* have with the Java implementation, even though the overall implementation is longer)
+
+It turns we can further parameterize functions via *function currying*.  We can create a function that has received some of its parameters already and send it off to someone expecting a function that takes the requisite number of parameters:
+
+<script src="http://gist.github.com/153762.js"></script>
+
+The trick is the @(prefix:String)(message:String)@ syntax.  This says that we can give the function @prefixNotifier@ only one argument and, in doing so, we will receive a function back that is expecting one more argument and has access to the first argument we provided.
+
+This may seem a bit convoluted, however the ability to parametrize functions this way allows for simple re-use and a significant reduction in code and design.
