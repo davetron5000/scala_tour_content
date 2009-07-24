@@ -13,6 +13,10 @@ Some basics about Scala syntax that aren't obvious (especially if you are coming
 * The dot between an object and a method call is optional.  @person.toString()@ is identical to @person toString()@
 * Parens are optional for zero argument calls.  @person toString@ is identical to the two expressions above
 
+h1. Structure
+
+You do need a one-to-one mapping of file to class, as you would in Java.  Your @.scala@ files don't even need to be named like the class they define, or mimic the package structure.
+
 h1. Compiling/Running
 
 @scalac@ and @scala@ work just like their java counterparts.
