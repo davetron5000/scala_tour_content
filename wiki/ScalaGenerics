@@ -21,3 +21,6 @@ Methods can also be genericized, as they can be in Java:
 pre. def doit[T](thing: T):String = thing.toString
 
 
+h2. Compound Types
+
+Since Scala allows for multiple inheritance, the question arises: how do you specify that a type conform to multiple classes?  If you wish to accept all @Entity@ classes that implement @Serializable@, you can say @[Entity with Serializable]@.
