@@ -4,14 +4,10 @@ Scala supports XML *literals*.  Meaning that this program:
 
 outputs this:
 
-.pre <html>
-  <head>
-    <title>Hello Literals!</title>
-  </head>
-  <body>
-    <h1>Literals are handy</h1>
-    <p>
-      They keep you from having to using <a href="http://www.unnecessaryquotes.com/">unnecessary quotes</a>.
-    </p>
-  </body>
-</html>
+<script src="http://gist.github.com/154848.js"></script>
+
+This syntax can do more than just save you a few quotes and backslashes, however.  You can use curly braces to dynamically insert expressions, as such:
+
+<script src="http://gist.github.com/154850.js"></script>
+
+Note how we don't quote the @title@ or @href@ attributes; Scala knows that we are assigning XML attributes to dynamic variables (i.e. this isn't just blind templating; it's XML-aware).  Also note how the quoted string we pass to the function gets escaped inside the attribute value.
