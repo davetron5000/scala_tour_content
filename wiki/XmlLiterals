@@ -17,3 +17,5 @@ Inside those curly braces, we can embed any Scala expression we want, so if we w
 <script src="http://gist.github.com/154851.js"></script>
 
 Notice that inside our expression, we @map@ our list of strings to a list of XML literals, themselves containing a dynamic expression.
+
+Also note that we can put literal curly braces in by either doubling them outside of an attribute, or quoting them as an attribute's value.
