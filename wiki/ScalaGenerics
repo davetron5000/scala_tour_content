@@ -11,3 +11,5 @@ This is pretty much what you'd get from Java, however it's important to note tha
 pre.   new Connector(desc.value,attempts.value,url.value,failOnError.value)
 
 you would get a compile error.
+
+Also note that, like in Java, if a class @Child@ extends a class @Parent@, @Configuration[Child]@ *is not* a subclass of @Configuration[Parent]@.
