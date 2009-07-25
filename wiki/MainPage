@@ -2,13 +2,17 @@ I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but v
 
 This is my attempt to go through each item on the tour and really try to understand it; then document my findings in, what I hope will be, a more clear way.
 
-* UnifiedTypes
-* ScalaBasics
-* ScalaClasses
-* ScalaTraits
-* ScalaFunctions
-* PatternMatching
-* FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
-* CaseClasses - taking switch statements to a useful level.
-* XmlLiterals
-* ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
+* Basics
+** UnifiedTypes
+** ScalaBasics
+** ScalaClasses
+** ScalaTraits
+** ScalaGenerics
+* Intermediate
+** ScalaFunctions
+** PatternMatching
+** FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
+** CaseClasses - taking switch statements to a useful level.
+** XmlLiterals
+** ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
+* Advanced
