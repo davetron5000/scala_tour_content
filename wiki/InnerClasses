@@ -6,9 +6,13 @@ For reasons of encapulsation, you don't need to expose the representation of you
 
 <script src="http://gist.github.com/154950.js"></script>
 
-So far, this looks like Java.  However, what if you decide to use multiple studies about programming, and you want another study that studies if programmers like Haskell.  You might think to re-use the non-Haskell control groups in your new study, but you can't:
+So far, this looks like Java.  What if you decide to use multiple studies about programming, and you want another study that studies if programmers like Haskell?  You might think to re-use the non-Haskell control groups in your new study, but you can't:
 
 <script src="http://gist.github.com/154959.js"></script>
 
 The compiler error shows you the difference between Scala and Java as far as inner classes go.  The *type* of instances of the ControlGroup within @likesScala@ are *different* than those used by @likesHaskell@.
+
+You *can* make Scala behave like Java in this way, by qualifying the class with a @#@:
+
+<script src="http://gist.github.com/154980.js"></script>
 
