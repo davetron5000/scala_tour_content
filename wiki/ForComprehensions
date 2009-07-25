@@ -25,6 +25,6 @@ Here, we loop through each pair of states, yield a tuple of states that don't ha
 
 h2. What about @map@, @filter@, etc.?
 
-In reality, the @for@ comprehensions are translated by the compiler into calls to @map@, @filter@, and @flatMap@.  Section 10.3 of "Scala By Example":http://www.scala-lang.org/sites/default/files/linuxsoft_archives/docu/files/ScalaByExample.pdf details this.
+In reality, the @for@ comprehensions are translated by the compiler into calls to @map@, @filter@, and @flatMap@.  Section 10.3 of Scala By Example details this.
 
 It is up to you if the @for@ syntax is more readable and more useful than simply using @map@ and @filter@.
