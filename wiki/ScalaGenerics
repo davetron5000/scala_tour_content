@@ -13,3 +13,11 @@ pre.   new Connector(desc.value,attempts.value,url.value,failOnError.value)
 you would get a compile error.
 
 Also note that, like in Java, if a class @Child@ extends a class @Parent@, @Configuration[Child]@ *is not* a subclass of @Configuration[Parent]@.
+
+h2. Generic Methods
+
+Methods can also be genericized, as they can be in Java:
+
+pre. def doit[T](thing: T):String = thing.toString
+
+
