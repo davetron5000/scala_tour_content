@@ -1,0 +1,13 @@
+Scala, like Java, has support for generics, or parameterized types.  In the simplest case, it works more or less like Java, with a slightly different syntax (and a more concise means of use, thanks to Scala's type inference).
+
+Suppose you wish to create a configuration system that maps keys to values, but that you want the values to be typed.
+
+<script src="http://gist.github.com/154873.js"></script>
+
+(@Symbols@ in Scala are fixed values created via a single quote.  This is essentially the same concept as a @:symbol@ in Ruby)
+
+This is pretty much what you'd get from Java, however it's important to note that each of the four values we created are all typed, and each call to @.value@ returns a typed object that can be checked at runtime.  If you were to try:
+
+pre.   new Connector(desc.value,attempts.value,url.value,failOnError.value)
+
+you would get a compile error.
