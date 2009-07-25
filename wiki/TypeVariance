@@ -1,0 +1,6 @@
+As mentioned in ScalaGenerics, if we have a generic type @Stack[T]@, and two classes, @Child@ which extends @Parent@, the class @Stack[Child]@ *is not* a subclass of @Stack[Parent]@.  Scala provides a way to make this happen, however:
+
+<script src="http://gist.github.com/154891.js"></script>
+
+In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant@ type.  This means that, in our example, @Configuration[AdvancedStringValue]@ *is a proper subclass* of @Configuration[StringValue]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
+
