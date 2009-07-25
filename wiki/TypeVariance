@@ -2,5 +2,7 @@ As mentioned in ScalaGenerics, if we have a generic type @Stack[T]@, and two cla
 
 <script src="http://gist.github.com/154891.js"></script>
 
-In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant@ type.  This means that, in our example, @Configuration[AdvancedStringValue]@ *is a proper subclass* of @Configuration[StringValue]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
+In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant@ type.  This means that, in our example, @Configuration[Advanced String Value]@ *is a proper subclass* of @Configuration[String Value]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
+
+*contravariance* is also possible, via @-T@, however I find the concept hard to understand and hard to justify.  If that changes, I'll update this page.
 
