@@ -6,7 +6,7 @@ Suppose we have a list of U.S. States that have been tagged with their general l
 
 <script src="http://gist.github.com/154856.js"></script>
 
-Here, the value @state@ gets assigned, in succession, to each of the values of @states@.  Each time this happens, the "guard condition" that starts with @if@ is evaluated.  If it evaluates to true, the body of the for-comprehension is evaluated (this is the part that comes after the final paren).  In this case, we use the @yield@ keyword, which essentially means "yield this value back to the list we are creating".  The end result of this is a list of states that matched our guard condition.
+The expression @state &lt- states@ is a *generator*, which assigns a value from @states@ to the value @state@ in succession.  Each time this happens, the "guard condition" that starts with @if@ is evaluated.  If it evaluates to true (or if there is no guard condition), the body of the for-comprehension is evaluated (this is the part that comes after the final paren).  In this case, we use the @yield@ keyword, which essentially means "yield this value back to the list we are creating".  Yes, we are creating a list, here.  The end result of this is a list of states that matched our guard condition.
 
 If we didn't want to actually yield a list, we can omit the @yield@ keyword alltogether:
 
@@ -23,3 +23,8 @@ if state1.location != state2.location)
 
 Here, we loop through each pair of states, yield a tuple of states that don't have the same @location@ (a tuple is pretty much what it sounds like, and is created in Scala via parens and commas, as we have done here in the @yield@ clause).
 
+h2. What about @map@, @filter@, etc.?
+
+In reality, the @for@ comprehensions are translated by the compiler into calls to @map@, @filter@, and @flatMap@.  Section 10.3 of "Scala By Example":http://www.scala-lang.org/sites/default/files/linuxsoft_archives/docu/files/ScalaByExample.pdf details this.
+
+It is up to you if the @for@ syntax is more readable and more useful than simply using @map@ and @filter@.
