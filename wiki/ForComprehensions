@@ -16,7 +16,10 @@ h2. Nested Loops
 
 Instead of nesting @for@ loops, we can simply add expressions to the comprehension.  Suppose we wish to find pairs of states that could be "sister" states; states that aren't in the same geographic area.
 
-pre. val possibleSisters = for( state1 <- states; state2 <- states if state1.location != state2.location) yield (state1,state2)
+pre. val possibleSisters = for( state1 <- states; 
+state2 <- states 
+if state1.location != state2.location) 
+  yield (state1,state2)
 
 Here, we loop through each pair of states, yield a tuple of states that don't have the same @location@ (a tuple is pretty much what it sounds like, and is created in Scala via parens and commas, as we have done here in the @yield@ clause).
 
