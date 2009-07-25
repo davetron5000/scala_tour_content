@@ -1,0 +1,21 @@
+Scala allows inner classes to be defined, which is to say, classes that are declared inside another class.  Unlike Java, these classes are not scoped to the containing class, but to the containing *object*.
+
+Suppose you are modeling a focus group type study.  You will have a "study" which describes the thing under observation (e.g. "Do Programmers Like Scala?") and you will divide your participants into control groups (e.g. Java programmers, Ruby programmers, etc.).
+
+For reasons of encapulsation, you don't need to expose the representation of your control group class, so you make it inner.
+
+<script src="http://gist.github.com/154950.js"></script>
+
+So far, this looks like Java.  However, what if you decide to use multiple studies about programming, and you want another study that studies if programmers like Haskell.  You might think to do this:
+
+<script src="http://gist.github.com/154959.js"></script>
+
+This would be a compile error.  The message shows you the difference between Scala and Java as far as inner classes go:
+
+pre. InnerDemo.scala:26: error: type mismatch;
+found   : InnerDemo.likesScala.ControlGroup
+required: String
+  for (group <- likesScala.groups if group.name != "Haskell Programmers") likesHaskell.addGroup(group)
+
+The *type* of instances of the ControlGroup within @likesScala@ are *different* than those used by @likesHaskell@.
+
