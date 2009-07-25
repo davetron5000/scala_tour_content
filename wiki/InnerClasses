@@ -6,16 +6,9 @@ For reasons of encapulsation, you don't need to expose the representation of you
 
 <script src="http://gist.github.com/154950.js"></script>
 
-So far, this looks like Java.  However, what if you decide to use multiple studies about programming, and you want another study that studies if programmers like Haskell.  You might think to do this:
+So far, this looks like Java.  However, what if you decide to use multiple studies about programming, and you want another study that studies if programmers like Haskell.  You might think to re-use the non-Haskell control groups in your new study, but you can't:
 
 <script src="http://gist.github.com/154959.js"></script>
 
-This would be a compile error.  The message shows you the difference between Scala and Java as far as inner classes go:
-
-pre. InnerDemo.scala:26: error: type mismatch;
-found   : InnerDemo.likesScala.ControlGroup
-required: String
-  for (group <- likesScala.groups if group.name != "Haskell Programmers") likesHaskell.addGroup(group)
-
-The *type* of instances of the ControlGroup within @likesScala@ are *different* than those used by @likesHaskell@.
+The compiler error shows you the difference between Scala and Java as far as inner classes go.  The *type* of instances of the ControlGroup within @likesScala@ are *different* than those used by @likesHaskell@.
 
