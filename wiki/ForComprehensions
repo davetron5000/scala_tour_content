@@ -1,0 +1,15 @@
+You can read the "wikipedia entry on list comprehensions":http://en.wikipedia.org/wiki/List_comprehension if you like, but what we're talking about here is the many ways in which Scala allows you to traverse and process a list.
+
+We've seen some of this in ScalaFunctions and XmlLiterals, but these deal with more specific means of traversing a list (e.g. to @find@ a specific element or @map@ elements to other elements).  These are all specialized versions of the so-called "for-comprehension", which is a fancy name for a @for@ loop.
+
+Suppose we have a list of U.S. States that have been tagged with their general location in the U.S. (e.g. "east" vs. "midwest" vs. "south").  Now suppose we wish to get a list of all the states that aren't on the east, exception for Washington, DC, which, for some reason, we don't consider "east coast":
+
+<script src="http://gist.github.com/154856.js"></script>
+
+Here, the value @state@ gets assigned, in succession, to each of the values of @states@.  Each time this happens, the "guard condition" that starts with @if@ is evaluated.  If it evaluates to true, the body of the for-comprehension is evaluated (this is the part that comes after the final paren).  In this case, we use the @yield@ keyword, which essentially means "yield this value back to the list we are creating".  The end result of this is a list of states that matched our guard condition.
+
+If we didn't want to actually yield a list, we can omit the @yield@ keyword alltogether:
+
+.pre   for( state <- states if state.location != 'east || state.code == "DC") println(state)
+
+
