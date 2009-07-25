@@ -16,5 +16,6 @@ This is my attempt to go through each item on the tour and really try to underst
 ** XmlLiterals
 ** ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
 ** TypeBounds
+** InnerClasses - you only thought they were basic.
 * Advanced
 ** TypeVariance
