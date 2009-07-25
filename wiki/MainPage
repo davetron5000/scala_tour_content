@@ -15,5 +15,6 @@ This is my attempt to go through each item on the tour and really try to underst
 ** CaseClasses - taking switch statements to a useful level.
 ** XmlLiterals
 ** ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
-** TypeVariance
+** TypeBounds
 * Advanced
+** TypeVariance
