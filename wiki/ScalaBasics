@@ -1,4 +1,10 @@
-h1. Syntax
+h1. The Gist
+
+There is no tour element to cover some of this stuff, but I think it's pretty handy to go over before looking at too much code.
+
+h1. My Interpretation
+
+h2. Syntax
 
 Some basics about Scala syntax that aren't obvious (especially if you are coming from Java)
 
@@ -13,11 +19,11 @@ Some basics about Scala syntax that aren't obvious (especially if you are coming
 * The dot between an object and a method call is optional.  @person.toString()@ is identical to @person toString()@
 * Parens are optional for zero argument calls.  @person toString@ is identical to the two expressions above
 
-h1. Structure
+h2. Structure
 
 You do need a one-to-one mapping of file to class, as you would in Java.  Your @.scala@ files don't even need to be named like the class they define, or mimic the package structure.
 
-h1. Compiling/Running
+h2. Compiling/Running
 
 @scalac@ and @scala@ work just like their java counterparts.
 
@@ -36,7 +42,7 @@ pre. scala -cp . MainClassObject
 
 (There are other ways to do this, but this is *a* way)
 
-h1. Read/Eval/Print
+h2. Read/Eval/Print
 
 Like most scripting languages, and unlike most compiled languages, Scala has a REPL (Read/Eval/Print Loop) where you can play around
 
@@ -55,3 +61,6 @@ res2: List[Int] = List(1, 16, 36, 7569, 25, 9, 81)
 scala>^D
 
  
+h1. My Thoughts on this Feature
+
+The REPL is really, really nice, especially when experimenting to see what bits of code will do.  I have to say I'm disappointed that we still have packages and the ability to import classes by package instead of a more advanced import system.  That said, the type inference (at least at the superficial level described here) is pretty awesome.  I'm *so* tired of typing @List<String> list = new Array List<String>()@
