@@ -1,7 +1,32 @@
 h1. The Gist
 
-"Type-dependent Closures":http://www.scala-lang.org/node/138
+"Type-dependent Closures":http://www.scala-lang.org/node/138 is a bit unclear as to what it's communicating.  Certainly it describes closures, but mostly talks about how the syntax shown results in evaluation at a time different than what you might think. 
 
 h1. My Interpretation
+
+Suppose you wish to create a logging framework that encourages detailed log messages.  In Java, you would wrap messages like this in an @if@ statement that checks to see if the runtime logging level is sufficient to generate the message before you actually construct it.
+
+In Scala, we can use closures to achieve this without any complicated conditionals around our logging statements.
+
+<script src="http://gist.github.com/155931.js"></script>
+
+Note that the log level is not sufficient to generate debug messages.  When this program runs, we see, via our @breadcrumb@ method that the "RED ALERT" message was created, but also that the message created in the @javaDebug@ method is created, but *not* the messages in the other two @debug@ methods.
+
+This is because we pass in a closure, or anonymous function, to the log message.  This function doesn't get called (and thus, our complicated string concatenations don't execute).
+
+The syntax @=> String@ is different than @() => String@; the first form indicates a closure that evaluates to a @String@ is expected, while the second indicates a function taking no arguments and returning a @String@ is expected.
+
+Also note that the closures have access to the scope in which they were created.  If we were to set the log level to 10, the output would be:
+
+pre. BREADCRUMB
+This is a simple debug message...
+BREADCRUMB
+This is a complicated debug test debug message...
+BREADCRUMB
+This is a mucho complicated debug test debug message...
+BREADCRUMB
+RED ALERT...
+
+Notice how the value of "complex" changes between the calls, and the closures use the updated value.  In Java, this would not be possible; the variables would have to be declared @final@.
 
 h1. My Thoughts on this Feature
