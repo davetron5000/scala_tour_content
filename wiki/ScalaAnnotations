@@ -1,0 +1,17 @@
+h1. The Gist
+
+"Annotations":http://www.scala-lang.org/node/106 gives a pretty decent overview of how annotations are used in Scala.
+
+h1. My Interpretations
+
+Annotations in Scala are conceptually the same as they are in Java.  Many of the Java keyword modifiers are annotations in Scala (as opposed to language constructs).  For example, @native@ in Java is the annotation @scala.native@.
+
+For the purposes of interacting with Java, Scala classes may annotate methods with the @throws@ annotations.  This is the equivalent of the the @throw@ keyword in Java.  This lets the Java compiler know what exceptions must be caught.
+
+Java Annotations, when used in Scala, are specified using one of two types of syntax:
+
+<script src="http://gist.github.com/155925.js"></script>
+
+h1. My Thoughts on this Feature
+
+I've never felt like annotations were a particularly good addition to Java; they always seemed like a hack to support poorly designed frameworks like J2EE and JAX-RS.  I don't know how endemic they are to Scala at this time, so lets hope they don't get used much.  Scala is a much more expressive language than Java and I think it can get by without annotations being used all over the place.
