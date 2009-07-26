@@ -1,7 +1,21 @@
 h1. The Gist
 
-"Sealed Classes":http://www.scala-lang.org/node/123
+"Sealed Classes":http://www.scala-lang.org/node/123 gives a really, really short overview, with no real code explaining sealed classes.
 
 h1. My Interpretation
 
+Suppose we implemented our CaseClasses based logger as such:
+
+<script src="http://gist.github.com/155942.js"></script>
+
+Notice that in our @log@ method, we forgot the case for BothMessage.  Scala will happily compile this code, but we'll get a MatchError at runtime.  If we add the keyword @sealed@ to our abstract base class:
+
+<script src="http://gist.github.com/155943.js"></script>
+
+we will get a compile error that the match is not exhaustive.  By @seal@ing the class, Scala will not let any other subclasses of LogMessage be created *outside this source file*.  Consequently, Scala can then check that our match statements are exhaustive.
+
+Note that we could freely subclass any of LogMessage's subclasses, since this doesn't add new cases we need to handle.
+
 h1. My Thoughts on this Feature
+
+Why Java doesn't do this with enumerations is beyond me.  Very useful for catching dumb coding mistakes and also a nice keyword to describe our set of types.  This is where static typing really helps us out.
