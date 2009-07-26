@@ -1,6 +1,6 @@
 h1. The Gist
 
-"Traits":http://www.scala-lang.org/node/126 covers the way in which Scala models interfaces and abstract classes, allowing for multiple inheritance.
+"Traits":http://www.scala-lang.org/node/126 and "Mixin Class Composition":http://www.scala-lang.org/node/117 cover the ways in which Scala models interfaces and abstract classes, allowing for multiple inheritance.
 
 h1. My Interpretation
 
