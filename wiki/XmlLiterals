@@ -1,3 +1,9 @@
+h1. The Gist
+
+"XML Processing":http://www.scala-lang.org/node/131 describes Scala's native support for XML.
+
+h1. My Interpretation
+
 Scala supports XML *literals*.  Meaning that this program:
 
 <script src="http://gist.github.com/154847.js"></script>
@@ -19,3 +25,7 @@ Inside those curly braces, we can embed any Scala expression we want, so if we w
 Notice that inside our expression, we @map@ our list of strings to a list of XML literals, themselves containing a dynamic expression.
 
 Also note that we can put literal curly braces in by either doubling them outside of an attribute, or quoting them as an attribute's value.
+
+h1. My Thoughts on this Feature
+
+I think XML is one of the most abused and over-used pieces of software technology ever invented.  So, on the one hand, any feature that makes using XML easier is immediately questionable.  On the other hand, however, XML is a fact of life, and the way Scala supports XML literals is pretty nice, and very intuitive.  I *do* find it curious why regular expression literals are not supported, as they are far more useful than XML.
