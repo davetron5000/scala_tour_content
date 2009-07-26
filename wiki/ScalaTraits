@@ -1,3 +1,8 @@
+h1. The Gist
+
+"Traits":http://www.scala-lang.org/node/126 covers the way in which Scala models interfaces and abstract classes, allowing for multiple inheritance.
+
+h1. My Interpretation
 
 Scala doesn't have interfaces in the way that Java does; rather it uses Mixins (like Ruby), referred to as *Traits*.
 
@@ -16,3 +21,7 @@ The problem is that the three new methods would have the exact same implementati
 There is a lot more that can be done with traits (and several no-doubt better implementations of the "super comparable" concept), but this should demonstrate what Traits can do and why they are useful.
 
 gliffy. 1768603 | center | L
+
+h1. My Thoughts on this Feature
+
+I *love* mixins in Ruby and I love this feature.  It *does*, however, make the scaladoc *very* hard to follow at times, and I just can't for the life of me understand why you always @extends@ the first trait.  It would be so much nicer to only @extend@ proper classes and instead @with@ Traits; this would make reading code a lot easier.
