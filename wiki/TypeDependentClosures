@@ -29,4 +29,18 @@ RED ALERT...
 
 Notice how the value of "complex" changes between the calls, and the closures use the updated value.  In Java, this would not be possible; the variables would have to be declared @final@.
 
+h2. Another Level
+
+We can take this to the next level by applying FunctionCurrying.  Suppose we wanted to bring back the ternary operator that Scala doesn't seem to include.
+
+<script src="http://gist.github.com/155936.js"></script>
+
+So, we define a method named @?@ that takes three expressions.  The first must evaluate to a boolean, and the second two must evaluate to the same type (that we don't know).  When the method is called, we evaluate the first expression.  If it returns true, we evaluate the second expression, otherwise we evaluate the third.
+
+With Scala's type inference, the first call returns a @String@ and the second an @Int@.  These types are known at compile-time and are statically checked.
+
+Further, only one of the second two expressions ever gets evaluated.
+
 h1. My Thoughts on this Feature
+
+Closures are solid gold.  Money.  I love them and all they do, and this is one of the top reasons to use Scala.  While the second example of adding in generics and currying certainly stretches some bounds, it demonstrates how Scala's (often weird) syntax can be used to extend the language and make it appear to have new control structures and keywords.
