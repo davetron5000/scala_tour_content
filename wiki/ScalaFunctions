@@ -1,3 +1,7 @@
+h1. The Gist
+
+"Anonymouse Functions":http://www.scala-lang.org/node/133
+
 Scala is more than just an object-oriented language with a compact syntax; it has extensive support for functional programming.  As such, functions are first-class objects.
 
 Suppose you have a list of U.S. States and wish to search by postal abbreviation.  In Java, you'd do something like this:
