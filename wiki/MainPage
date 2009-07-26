@@ -1,6 +1,21 @@
-I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but very difficult to follow.  The topics are touched on very lightly, and have some esoteric examples that make them a bit hard to follow.  I find some of them very difficult to understand as someone new to Scala, inexperienced with functional languages, but experienced in other languages.
+h1. Why
 
-This is my attempt to go through each item on the tour and really try to understand it; then document my findings in, what I hope will be, a more clear way.
+I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but very difficult to follow for a few reasons:
+
+* The level skips from extremely basic to beyond advanced without a good guide
+* Many of the features are demonstrated via mathematical conecpts or completely arbitrary calculations (how often do I need to take a list and arbitrarily modulo its contents into a new list?)
+* Some features are demonstrated by setting up a convoluted problem that the feature magically solves, leaving me wondering why the feature even exists, when a simpler design would obviate the need for it.
+* The more advanced topics are described in very terse format and difficult to understand without what I assume is a deep understanding of Scala already or some other functional programming language.
+
+So, I'm going through each thing and trying to:
+
+* Order them sensibly, so previous topics support future ones
+* Create more real-world situations where a feature might be useful (I make you this promise: The word "monoid" will never be used again in these pages)
+* Comment on my own thoughts as to the utility of the feature.
+
+I'm also a Java programmer by trade, so a lot of the "justification" aspects that come to me are in comparison to Java.  
+
+h1. The Tour
 
 * Basics
 ** UnifiedTypes
