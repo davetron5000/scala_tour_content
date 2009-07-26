@@ -15,3 +15,5 @@ Java Annotations, when used in Scala, are specified using one of two types of sy
 h1. My Thoughts on this Feature
 
 I've never felt like annotations were a particularly good addition to Java; they always seemed like a hack to support poorly designed frameworks like J2EE and JAX-RS.  I don't know how endemic they are to Scala at this time, so lets hope they don't get used much.  Scala is a much more expressive language than Java and I think it can get by without annotations being used all over the place.
+
+Also, the use of parens vs. braces seems needlessly inconsistent.
