@@ -1,6 +1,8 @@
 h1. The Gist
 
-"Anonymouse Functions":http://www.scala-lang.org/node/133
+"Anonymous Functions":http://www.scala-lang.org/node/133 gives an overview of Scala's support for functions as actual parts of the programming language.
+
+h1. My Interpretation
 
 Scala is more than just an object-oriented language with a compact syntax; it has extensive support for functional programming.  As such, functions are first-class objects.
 
@@ -30,3 +32,7 @@ A few more interesting things about functions in Scala:
 * Methods and functions **are not** the same thing
 
 Functions, their definitions, and their behavior are a very deep subject, but this should give you a flavor of what they can do.  If you've done a lot of list manipulation (or Swing programming), you should be able to see that functions can save you from writing a ton of code...and result in much clearer code.
+
+h1. My Thoughts on this Feature
+
+I dig this quite a bit.  I could use this at work *right now* if it were available in Java.  While many (many) examples of Scala use functions in a way that *really* confuses things, I still think this feature has the power to simplify and clarify a lot of code.  It is the logic continuation of the "inversion of control", whereby a class can ask for code and not structure, if it makes more sense to do it that way.
