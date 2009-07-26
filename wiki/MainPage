@@ -32,6 +32,7 @@ h2. Intermediate
 * PatternMatching
 * FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
 * CaseClasses - taking switch statements to a useful level.
+* SealedClasses - tightening up CaseClasses.
 * XmlLiterals
 * ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
 * TypeBounds
@@ -49,7 +50,6 @@ h1. TODO
 
 I haven't looked at this and they are not all covered by the above (though some may be)
 
-* SealedClasses
 * ScalaPackages
 * ScalaOperators
 * PredefinedFunctionClassOf
