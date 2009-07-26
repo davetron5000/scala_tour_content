@@ -1,1 +1,13 @@
+h1. 
+
+"Abstract Types":http://www.scala-lang.org/node/105 attempts to explain the feature of the same name.  This is not about abstract classes.  That much, I know.
+
+h1. My Interpretation
+
 I'm at a complete loss as to explain why you would ever want to do this.  I'm also unable to get anything working sensible using this feature that isn't some esoteric data structure implementation.
+
+h1. My Thoughts on this Feature
+
+From the tour: "Please note that it is often possible to turn abstract type members into type parameters of classes and vice versa."
+
+I cannot figure out how this feature makes *anything* more clear or even a way to describe it.  This isn't helped by the fact that the tour example defines a @Buffer@ as a wrapper for an object reference.   I *don't* think that's what a buffer is.  Any help?
