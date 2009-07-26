@@ -37,3 +37,19 @@ h1. The Tour
 ** TypeVariance
 ** AbstractTypes - *not* abstract classes
 ** ExplcitlyTypedSelfReferences
+
+h2. TODO
+
+I haven't looked at this and they are not all covered by the above (though some may be)
+
+* "Annotations":http://www.scala-lang.org/node/106
+* "Predefined Function classOf":http://www.scala-lang.org/node/109
+* "Extractor Objects":http://www.scala-lang.org/node/112
+* "Implicit Parameters":http://www.scala-lang.org/node/114
+* "Type-dependent Closures":http://www.scala-lang.org/node/138
+* "Operators":http://www.scala-lang.org/node/118
+* "Higher Order Functions":http://www.scala-lang.org/node/134
+* "Packages":http://www.scala-lang.org/node/119
+* "Sealed Classes":http://www.scala-lang.org/node/123
+* "Local type inference":http://www.scala-lang.org/node/127
+* "Views":http://www.scala-lang.org/node/130
