@@ -28,7 +28,7 @@ h2. Basics
 
 h2. Intermediate
 
-* ScalaFunctions
+* Some ScalaFunctions and stuff
 * PatternMatching
 * FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
 * CaseClasses - taking switch statements to a useful level.
