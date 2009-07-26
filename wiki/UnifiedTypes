@@ -1,5 +1,15 @@
+h1. The Gist
+
+"Unified Types":http://www.scala-lang.org/node/128 is an overview of Scala's types and classes at a *very* high level.
+
+h1. My Intepretation
+
 All Scala values are objects; there is no formal "primitive" type as there is in Java.  However, there is a distinction in the main object tree.
 
 gliffy. 1768557 | center | M
 
 Every object is a subtype of @Any@, however in practice, most objects will be a subtype of AnyRef.  AnyVal is a superclass for the types that, in Java, are considered "primitive" (that being things like @int@, @byte@, and @float@).  Further, all classes implicitly extend ScalaObject(scala.ScalaObject) (which is a trait) and AnyRef (yes, there is multiple inheritance).  Finally, classes you can access from the Java runtime do **not** extend ScalaObject(scala.ScalaObject), but just extend AnyRef.
+
+h1. My Thoughts on this Feature
+
+Thank *GOD* we don't need Java's stupid primitive types any more.  However, I find the concepts of @Null@, @Nothing@, and @null@ less than intuitive.  Stuff like "this":http://javaforyou.wordpress.com/2009/07/12/nothingness/ just makes me scratch my head.  Especially @Nil@ being the empty list.  What's so wrong with @List.EMPTY_LIST@?  And why isn't @Null@ an empty set?  Who knows?
