@@ -20,15 +20,15 @@ h1. The Tour
 h2. Basics
 
 * UnifiedTypes
-* ScalaBasics(Basics)
-* ScalaClasses(Classes)
-* ScalaTraits(Traits)
-* ScalaGenerics(Generics)
-* ScalaAnnotations(Annotations)
+* ScalaBasics
+* ScalaClasses
+* ScalaTraits
+* ScalaGenerics
+* ScalaAnnotations
 
 h2. Intermediate
 
-* Some ScalaFunctions and stuff
+* ScalaFunctions
 * PatternMatching
 * FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
 * CaseClasses - taking switch statements to a useful level.
