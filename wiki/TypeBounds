@@ -1,3 +1,9 @@
+h1. The Gist
+
+"Upper Bounds":http://www.scala-lang.org/node/136 and "Lower Bounds":http://www.scala-lang.org/node/137 describe Scala's support for restricting the types that can be used in a genericized class
+
+h1. My Interpretation
+
 Just as with Java, in Scala you can put bounds on the generic types allowed to a generic class or method.
 
 Suppose we have an object hierarchy of entities.  We have a root entity that all must extend, and then a special secondary entity for reference data (data that is a code and a description and only aggregated by other entities).
@@ -11,3 +17,9 @@ We *could* have created the sorter class to just take reference data entities, b
 This is essentially the same concept as @List<T extends Foo>@ that you have in java, though more concise (at the cost of clarity, IMO).
 
 You can also bound the other way, however I have yet to come up with a usable example of this.
+
+h1. My Thoughts on this Feature
+
+Here we are going down the rabbit hole of static typing.  I have found many uses for upper bounds, and almost no uses for lower bounds in Java, but I find the Scala syntax quite unpleasant.  Even though it's a few more characters, to me @<T extends Foo>@ is just much clearer and easier to remember than @[T <: Foo]@.  I instantly knew what the Java version meant, but still have to look up which syntax to use for Scala.
+
+Like ScalaGenerics, you really do have to have this feature, but this is where the static types start to get confusing and muddle intent, IMO.
