@@ -17,28 +17,33 @@ I'm also a Java programmer by trade, so a lot of the "justification" aspects tha
 
 h1. The Tour
 
-* Basics
-** UnifiedTypes
-** ScalaBasics
-** ScalaClasses
-** ScalaTraits
-** ScalaGenerics
-* Intermediate
-** ScalaFunctions
-** PatternMatching
-** FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
-** CaseClasses - taking switch statements to a useful level.
-** XmlLiterals
-** ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
-** TypeBounds
-** InnerClasses - you only thought they were basic.
-** ImplicitConversions
-* Advanced
-** TypeVariance
-** AbstractTypes - *not* abstract classes
-** ExplcitlyTypedSelfReferences
+h2. Basics
 
-h2. TODO
+* UnifiedTypes
+* ScalaBasics
+* ScalaClasses
+* ScalaTraits
+* ScalaGenerics
+
+h2. Intermediate
+
+* ScalaFunctions
+* PatternMatching
+* FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
+* CaseClasses - taking switch statements to a useful level.
+* XmlLiterals
+* ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
+* TypeBounds
+* InnerClasses - you only thought they were basic.
+* ImplicitConversions
+
+h2. Advanced
+
+* TypeVariance
+* AbstractTypes - *not* abstract classes
+* ExplcitlyTypedSelfReferences
+
+h1. TODO
 
 I haven't looked at this and they are not all covered by the above (though some may be)
 
