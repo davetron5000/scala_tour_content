@@ -1,3 +1,9 @@
+h1. The Gist
+
+"Sequence Comprehensions":http://www.scala-lang.org/node/131 describes Scala's for "loop"
+
+h1. My Interpretation
+
 You can read the "wikipedia entry on list comprehensions":http://en.wikipedia.org/wiki/List_comprehension if you like, but what we're talking about here is the many ways in which Scala allows you to traverse and process a list.
 
 We've seen some of this in ScalaFunctions and XmlLiterals, but these deal with more specific means of traversing a list (e.g. to @find@ a specific element or @map@ elements to other elements).  These are all specialized versions of the so-called "for-comprehension", which is a fancy name for a @for@ loop.
@@ -27,4 +33,6 @@ h2. What about @map@, @filter@, etc.?
 
 In reality, the @for@ comprehensions are translated by the compiler into calls to @map@, @filter@, and @flatMap@.  Section 10.3 of Scala By Example details this.
 
-It is up to you if the @for@ syntax is more readable and more useful than simply using @map@ and @filter@.
+h1. My Thoughts on this Feature
+
+I *rarely* use an old-school @for@ loop in Java.  I usually use @foreach@ and, in Ruby, almost always use @each@.  As such, I find this construct a lot more verbose and counter-intuitive than, say @map@ or @filter@ or Ruby's @each@.  The nested loops here are also pretty confusing.  I see nothing wrong or laborious with nesting loops.  
