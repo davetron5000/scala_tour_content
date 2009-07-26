@@ -1,3 +1,9 @@
+h1. The Gist
+
+"Variances":http://www.scala-lang.org/node/129 talks about making generics even more -baffling- flexible.
+
+h1. My Interpretation
+
 As mentioned in ScalaGenerics, if we have a generic type @Stack[T]@, and two classes, @Child@ which extends @Parent@, the class @Stack[Child]@ *is not* a subclass of @Stack[Parent]@.  Scala provides a way to make this happen, however:
 
 <script src="http://gist.github.com/154891.js"></script>
@@ -6,3 +12,8 @@ In the definition of class @Configuration@, we use the @+T@ to indicate that tha
 
 *contravariance* is also possible, via @-T@, however I find the concept hard to understand and hard to justify.  If that changes, I'll update this page.
 
+h1. My Thoughts on this Feature
+
+Not only is the syntax confusing, but the feature itself seems to add huge amounts of complexity.  This is where I realize that all most people ever want out of generics is the ability to have casting done automatically.  The compiler errors I got while trying out this feature were baffling and unhelpful.  If the goal of static typing is to help us understand our programs at compile-time and to have the compiler catch programming errors, I think features like this take it all the way past that.  
+
+Unlike type bounds and generics, I'm not convinced contra and co-variant typing is really needed.  When you couple this with type inference, I think that the programmer is just as hidden from what's going on as he would be in Ruby.
