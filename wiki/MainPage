@@ -2,9 +2,9 @@ h1. Why
 
 I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but very difficult to follow for a few reasons:
 
-* The level skips from extremely basic to beyond advanced without a good guide
+* The level of the tour elements skips from extremely basic to beyond advanced without a good guide through.  This has left me scratching my head at some of the more advanced concepts.
 * Many of the features are demonstrated via mathematical conecpts or completely arbitrary calculations (how often do I need to take a list and arbitrarily modulo its contents into a new list?)
-* Some features are demonstrated by setting up a convoluted problem that the feature magically solves, leaving me wondering why the feature even exists, when a simpler design would obviate the need for it.
+* Some features are demonstrated by setting up a convoluted problem that the feature magically solves, leaving me wondering why the feature even exists, when a simpler design for the problem at hand would have obviated the need for it.
 * The more advanced topics are described in very terse format and difficult to understand without what I assume is a deep understanding of Scala already or some other functional programming language.
 
 So, I'm going through each thing and trying to:
