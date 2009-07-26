@@ -20,10 +20,11 @@ h1. The Tour
 h2. Basics
 
 * UnifiedTypes
-* ScalaBasics
-* ScalaClasses
-* ScalaTraits
-* ScalaGenerics
+* ScalaBasics(Basics)
+* ScalaClasses(Classes)
+* ScalaTraits(Traits)
+* ScalaGenerics(Generics)
+* ScalaAnnotations(Annotations)
 
 h2. Intermediate
 
