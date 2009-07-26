@@ -1,3 +1,9 @@
+h1. The Gist
+
+"Case Classes":http://www.scala-lang.org/node/107 delves deeper into the @match@ and @switch@ power in Scala, and also describes some seemingly disparate ways of saving you a lot of lines of code
+
+h1. My Interpretation
+
 Suppose you are creating a logging system like log4j that can log a @String@, an @Exception@, or both.   Suppose further that you wish to keep stack traces to a minimum and only output them for @Error@ exceptions that are logged, or for any exception logged at the @error@ level.
 
 There are several possible means of implementing this in Java.  Here is one such implementation:
@@ -35,3 +41,9 @@ We've simplified some complex logic by reducing line count and repetition, and w
 Now look back at the Java code.  We certainly *could* have implemented our Java logger using a similar log message class hierarchy to reduce those nine methods to three, but the required classes would require several lines of code each (compared to Scala's *one*) and would not have the ability to extract their arguments so concisely.
 
 Like ScalaFunctions, case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
+
+h1. My Thoughts on this Feature
+
+It's certainly not remotely intuitive that putting @case@ before a class definition would give you the automatic stuff it gives you.  I want this stuff outside of ever needing to use a class in a case statement, and so it just seems weird to call it "case classes". 
+
+That being said, it's pretty darn useful and anything that saves me from typing *the same code over and over* is a win.  The "deconstruction" bit is also pretty cool, even if the underpinnings of how it works (not discussed here) are hard to follow.
