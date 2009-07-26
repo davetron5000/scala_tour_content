@@ -1,3 +1,9 @@
+h1. The Gist
+
+"Inner Classes":http://www.scala-lang.org/node/115 describes Scala's support for defining a class within another class.
+
+h1. My Interpretation
+
 Scala allows inner classes to be defined, which is to say, classes that are declared inside another class.  Unlike Java, these classes are not scoped to the containing class, but to the containing *object*.
 
 Suppose you are modeling a focus group type study.  You will have a "study" which describes the thing under observation (e.g. "Do Programmers Like Scala?") and you will divide your participants into control groups (e.g. Java programmers, Ruby programmers, etc.).
@@ -16,3 +22,8 @@ You *can* make Scala behave like Java in this way, by qualifying the class with 
 
 <script src="http://gist.github.com/154980.js"></script>
 
+h1. My Thoughts on this Feature
+
+I really can't say I care much for this.  I would really like to know *who* thought that binding inner classes to the containing class was a problem and *who* thought it was *so* much of a problem that Scala does the opposite by default.
+
+I don't use inner classes a whole lot, but this just seems counter-intuitive to me.  I really wonder who asked for this feature.
