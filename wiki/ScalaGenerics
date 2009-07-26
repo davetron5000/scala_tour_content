@@ -1,6 +1,6 @@
 h1. The Gist
 
-"Generic Classes":http://www.scala-lang.org/node/113 gives an overview of one (unfortunately small) aspect of Scala's support for generics.
+"Generic Classes":http://www.scala-lang.org/node/113 and "Compound Classes":http://www.scala-lang.org/node/110 give an overview of one (unfortunately small) aspect of Scala's support for generics.
 
 h1. My Interpretation
 
