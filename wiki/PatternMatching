@@ -1,3 +1,9 @@
+h1. The Gist
+
+"Pattern Matching":http://www.scala-lang.org/node/120 gives a very gentle introduction to Scala's @match@ and @case@ keywords
+
+h1. My Interpretation
+
 Scala's @match@ keyword is akin to Java's @switch@ statement, however it is *far* more powerful.
 
 To get the flavor of the syntax, here's how you might translate the only true values in computer programming into English:
@@ -18,5 +24,6 @@ Scala's @match@ and @case@ statements take care of all the casting.  Yes, this i
 
 This construct is quite powerful.  CaseClasses shows another way to use it to keep your code clean and clear.
 
+h1. My Thoughts on this Feature
 
-
+I almost *never* use @switch@ statements in Java, because they are essentially useless.  Even if all it did here is get rid of annoying @if-then-else@ blocks, I'd call it a win.  As it stands, this is one of the coolest features of Scala and a *really* cool thing to have that takes advantage of the type information we get via static typing.
