@@ -22,7 +22,6 @@ h2. Basics
 * UnifiedTypes
 * ScalaBasics
 * ScalaClasses
-* PredefinedFunctionClassOf
 * ScalaPackages
 * ScalaTraits
 * ScalaGenerics
@@ -53,7 +52,6 @@ h1. TODO
 
 I haven't looked at this and they are not all covered by the above (though some may be)
 
-* LocalTypeInference
 * ImplicitParameters
 * HigherOrderFunctions
 * ExtractorObjects
