@@ -26,6 +26,7 @@ h2. Basics
 * ScalaTraits
 * ScalaGenerics
 * ScalaAnnotations
+* ScalaOperators
 
 h2. Intermediate
 
@@ -51,7 +52,6 @@ h1. TODO
 
 I haven't looked at this and they are not all covered by the above (though some may be)
 
-* ScalaOperators
 * PredefinedFunctionClassOf
 * LocalTypeInference
 * ImplicitParameters
