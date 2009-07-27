@@ -1,7 +1,23 @@
 h1. The Gist
 
-"Scala Packages":http://www.scala-lang.org/node/119
+"Scala Packages":http://www.scala-lang.org/node/119 gives an overview of what packages in Scala are.  
 
 h1. My Interpretation
 
+On the surface, they are a slightly more flexible version of Java's imports:
+
+<script src="http://gist.github.com/155980.js"></script>
+
+However, this doesn't really touch on some of the subtleties of how Scala treats packages.
+
+"Read This":http://www.drmaciver.com/2009/07/how-packages-work-in-scala/ for a detailed overview of some very subtle behavior.
+
 h1. My Thoughts on this Feature
+
+I think it's a shame that packages in Scala are essentially packages in Java.  Importing individual classes is insane, pedantic, and unhelpful to all involved.  Importing in general is just a compiler hint, and, in this day and age, seems ridiculous.  It's another example of Java's love of repeating information already given (I have to tell the JVM not just which jars I need on my classpath, but also which classes from those jars I need at compile time?!?!? Why!??!)
+
+I think the ability to rename a class is nice, although ripe for abuse.
+
+Scala really missed an opportunity to import *packages* and not just a set of classes into the namespace.  Or, more precisely, to use the package mechanism to declare *dependencies*.
+
+Further, the behavior described in the linked article is INSANE.  Why would anyone *want* that behavior?
