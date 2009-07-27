@@ -1,5 +1,7 @@
-* -What is the Scala equivalent of @array.sort {|a,b| a<=> b}@?  Why is there no sort on @Array@?- @List.sort@ does this exactly. 
 * In general, the collections operations seem odd in their omissions; why does @indexOf@ not take a function?
 * The scaladoc *really* sucks; very hard to navigate and the explanations are terse, to say the least.
 * method names are throwbacks to C-style, e.g. @mkString@.  Lame
 * With all the symbol-soup...no ternary operator?!?!
+* Why isn't comparison done with @<=>@?
+* Why do I need parens around @if@ statements *except* when used as guard conditions?!
+* What's up with the right-associative colon nonsense?
