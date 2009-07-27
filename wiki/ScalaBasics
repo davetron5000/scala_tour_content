@@ -1,6 +1,6 @@
 h1. The Gist
 
-There is no tour element to cover some of this stuff, but I think it's pretty handy to go over before looking at too much code.
+There is no tour element to cover all of this stuff, however "Local Type Inference":http://www.scala-lang.org/node/127 and "Predefined function classOf":http://www.scala-lang.org/node/109 cover some of this.  At any rate, I think it's pretty handy to go over before looking at too much code.
 
 h1. My Interpretation
 
