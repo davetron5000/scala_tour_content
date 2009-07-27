@@ -1,7 +1,11 @@
 h1. The Gist
 
-"Predefined Function classOf":http://www.scala-lang.org/node/109
+"Predefined Function classOf":http://www.scala-lang.org/node/109 explains a very simple concept for some reason.
 
 h1. My Interpretation
 
+pre. classOf[Foo] // same as Foo.class in Java
+
 h1. My Thoughts on this Feature
+
+Great?  Not sure why this is in the "tour"
