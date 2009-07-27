@@ -1,7 +1,17 @@
 h1. The Gist
 
-"Scala Operators":http://www.scala-lang.org/node/118
+"Scala Operators":http://www.scala-lang.org/node/118 shows a very short example of creating "operator-like" method calls.
 
 h1. My Interpretation
+
+A method that takes one parameter can be used as if it were an operator, which is to say, without a dot or parenthesis.
+
+Suppose you want to use Ruby's @<=>@ operator as a sorting mechanism.
+
+<script src="http://gist.github.com/155984.js"></script>
+
+Since Scala has very liberal rules about what can be in an identifier, you can make a method called @<=>@ and it works just fine.  The sort function could also be written like so:
+
+pre. (a,b) => a.<=>(b)
 
 h1. My Thoughts on this Feature
