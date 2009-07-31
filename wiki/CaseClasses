@@ -1,6 +1,6 @@
 h1. The Gist
 
-"Case Classes":http://www.scala-lang.org/node/107 delves deeper into the @match@ and @switch@ power in Scala, and also describes some seemingly disparate ways of saving you a lot of lines of code
+"Case Classes":http://www.scala-lang.org/node/107 delves deeper into the @match@ and @switch@ power in Scala, and also describes some seemingly disparate ways of saving you a lot of lines of code.  "Extractor Objects":http://www.scala-lang.org/node/112 explains how the values are extracted.
 
 h1. My Interpretation
 
@@ -42,8 +42,15 @@ Now look back at the Java code.  We certainly *could* have implemented our Java 
 
 Like ScalaFunctions, case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
 
+h2. Extracting Values
+
+You'll notice in the various @case@ clauses that the values are extracted out of the class.  This is done via a method called @unapply@, which is a huge amount of syntactic sugar.  In the most comprehendable case (and the case here, with case-classes), @unapply@ takes the arguments of types given to the constructor and returns an @Option@.  @Option@ is a class that either has a value or has no value (@None@).  This is how Scala determines if a match is made.  If the return from @unapply@ is an @Option@ that *does not* have the value @None@, a match is considered to have been made and you can access the values from the option (Something like @Option[(Int,String,Int)]@ would be the type of @apply@'s return value for a class that took an Int, a String, and an Int in its constructor).  If @unapply@'s option returns @None@, a match is *not* considered to have been made and processing continues.
+
+
 h1. My Thoughts on this Feature
 
 It's certainly not remotely intuitive that putting @case@ before a class definition would give you the automatic stuff it gives you.  I want this stuff outside of ever needing to use a class in a case statement, and so it just seems weird to call it "case classes". 
 
 That being said, it's pretty darn useful and anything that saves me from typing *the same code over and over* is a win.  The "deconstruction" bit is also pretty cool, even if the underpinnings of how it works (not discussed here) are hard to follow.
+
+@unapply@ is highly subtle and a really huge bit of hand-waving, but is obviously the way in which the case class stuff has to be implemented.  It's hard to come up with a use for it outside of this, and I'm not clear on when you'd write your own instead of just relying on the @case@ modifier.
