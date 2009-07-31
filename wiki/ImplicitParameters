@@ -6,7 +6,7 @@ h1. My Interpretation
 
 Suppose you have a logging class and wish to provide a way to flexibly log lists of objects.  You could create an interface for turning lists into strings, giving it a type parameter.  Implementers would implement a simple method to make the transformation.  You would then need to provide objects of these classes to your log statements, making sure to use the correct instance, depending on the type of objects in the list.
 
-In Scala, you can declare the "map a list to a string" parameter is @implicit@, which allows you to omit this object when making the call.  Scala will search for a object in scope that can be used automatically.
+In Scala, you can declare the "map a list to a string" parameter as @implicit@, which allows you to omit this object when making the call.  Scala will search for an object in scope that can be used automatically.
 
 <script src="http://gist.github.com/159374.js"></script>
 
