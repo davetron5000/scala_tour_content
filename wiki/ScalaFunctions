@@ -1,6 +1,6 @@
 h1. The Gist
 
-"Anonymous Functions":http://www.scala-lang.org/node/133 gives an overview of Scala's support for functions as actual parts of the programming language.
+"Anonymous Functions":http://www.scala-lang.org/node/133 gives an overview of Scala's support for functions as actual parts of the programming language. "Higher-Order Functions":http://www.scala-lang.org/node/134 explains how functions can take functions as arguments and also return functions.
 
 h1. My Interpretation
 
