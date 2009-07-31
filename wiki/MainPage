@@ -50,9 +50,3 @@ h2. Advanced
 # TypeVariance
 # AbstractTypes - *not* abstract classes
 # ExplcitlyTypedSelfReferences
-
-h1. TODO
-
-I haven't looked at this and they are not all covered by the above (though some may be)
-
-* ExtractorObjects
