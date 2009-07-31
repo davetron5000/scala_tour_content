@@ -8,20 +8,21 @@ h2. Syntax
 
 Some basics about Scala syntax that aren't obvious (especially if you are coming from Java)
 
-* The type of an object or value comes *after* the value, using a colon:  @name:String@ means "name has the type String"
-* If Scala can figure out the type of something from the context, you don't need to declare the type (this is called *type inference*).  @val name = "Dave"@ results in @name@ having the type String.  This is statically assigned, and not dynamic is it would be in Ruby (e.g.)
-* You don't need semicolons unless Scala can't figure out where statements end
-* Methods are defined via the "=" sign after the method signature, and don't require braces if they are one-liners.  @def toString = first + "," + last@ is perfectly valid.
-* Type parameters are found inside square braces.  @Array[String]@ is an array of type string (the same as @List<String>@ in Java)
-* declaring something as a @val@ means it cannot be changed; @val age = 30@ is identical to the Java construct @final int age = 30;@
+* *Type Declaration* - The type of an object or value comes *after* the value, using a colon:  @name:String@ means "name has the type String"
+* *Type Inference* - If Scala can figure out the type of something from the context, you don't need to declare the type (this is called *type inference*).  @val name = "Dave"@ results in @name@ having the type String.  This is statically assigned, and not dynamic is it would be in Ruby (e.g.)
+* *Adios, semicolons* - You don't need semicolons unless Scala can't figure out where statements end
+* *Method definitions* - Methods are defined via the "=" sign after the method signature, and don't require braces if they are one-liners.  @def toString = first + "," + last@ is perfectly valid.
+* *Generics* - Type parameters are found inside square braces.  @Array[String]@ is an array of type string (the same as @List<String>@ in Java)
+* *Goodbye final, hello val* - declaring something as a @val@ means it cannot be changed; @val age = 30@ is identical to the Java construct @final int age = 30;@
 * declaring something as a @var@ means it *can* be changed
-* Operators can be overloaded (more precisely, the characters you are allowed in a method or function name are much more varied than in Java)
-* The dot between an object and a method call is optional.  @person.toString()@ is identical to @person toString()@
-* Parens are optional for zero argument calls.  @person toString@ is identical to the two expressions above
+* *Operators* Operators can be overloaded (more precisely, the characters you are allowed in a method or function name are much more varied than in Java and you can omit dots and parens in certain situations)
+* *Loose method calling* - The dot between an object and a method call is optional.  @person.toString()@ is identical to @person toString()@
+* *Loose method calling* - Parens are optional for zero argument calls.  @person toString@ is identical to the two expressions above
+* *No more checked exceptions* - Scala has no checked exceptions.  This makes your code a *lot* cleaner.
 
 h2. Structure
 
-You do need a one-to-one mapping of file to class, as you would in Java.  Your @.scala@ files don't even need to be named like the class they define, or mimic the package structure.
+You do not need a one-to-one mapping of file to class, as you would in Java.  Your @.scala@ files don't even need to be named like the class they define, or mimic the package structure.
 
 h2. Compiling/Running
 
@@ -63,4 +64,6 @@ scala>^D
  
 h1. My Thoughts on this Feature
 
-The REPL is really, really nice, especially when experimenting to see what bits of code will do.  I have to say I'm disappointed that we still have packages and the ability to import classes by package instead of a more advanced import system.  That said, the type inference (at least at the superficial level described here) is pretty awesome.  I'm *so* tired of typing @List<String> list = new Array List<String>()@
+The REPL is really, really nice, especially when experimenting to see what bits of code will do.  I'm also glad to see semi-colon go, and am *most* ecstatic about the death of checked exceptions.  
+
+I'm a bit disappointed that we still need parens around @if@ blocks and I was hoping that @import@ could've become a bit more useful and high-level (instead of a compiler hint).  That said, the type inference (at least at the superficial level described here) is pretty awesome.  I'm *so* tired of typing @List<String> list = new Array List<String>()@
