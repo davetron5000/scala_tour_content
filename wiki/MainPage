@@ -32,23 +32,23 @@ h2. Basics
 
 h2. Intermediate
 
-* ScalaFunctions
-* PatternMatching
-* FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
-* CaseClasses - taking switch statements to a useful level.
-* SealedClasses - tightening up CaseClasses.
-* XmlLiterals
-* ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
-* TypeBounds
-* InnerClasses - you only thought they were basic.
-* ImplicitConversions
-* TypeDependentClosures - Closures in general discussed here, too.
+# ScalaFunctions
+# PatternMatching
+# FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
+# CaseClasses - taking switch statements to a useful level.
+# SealedClasses - tightening up CaseClasses.
+# XmlLiterals
+# ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
+# TypeBounds
+# InnerClasses - you only thought they were basic.
+# ImplicitConversions
+# TypeDependentClosures - Closures in general discussed here, too.
 
 h2. Advanced
 
-* TypeVariance
-* AbstractTypes - *not* abstract classes
-* ExplcitlyTypedSelfReferences
+# TypeVariance
+# AbstractTypes - *not* abstract classes
+# ExplcitlyTypedSelfReferences
 
 h1. TODO
 
