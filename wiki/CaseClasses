@@ -24,9 +24,13 @@ The simple addition of the @case@ keyword before the three extenders of the log 
 * instances can be created without the @new@ operator, just the classname is needed
 * the constructor arguments can be extracted in one statement, as we do in the @match@ block
 
-The @match@ block itself also packs quite a bit of functionality.  Think of it as a @switch@ statement on steroids.  In this case, we are "switching" on, among other things, the type of @l@, the log message.  Each @case@ expression allows us to implement a function that uses the extracted constructor arguments.
+The @match@ block itself also packs quite a bit of functionality.  Think of it as a @switch@ statement on steroids.  In this case, we are "switching" on, among other things, the type of @l@, the log message.  Each @case@ expression allows us to implement a function that uses the extracted constructor arguments.  The match is determined more or less as follows:
 
-The first case statement executes if @l@ is of type StringMessage, and, if so, "pulls out" the message that was passed to its constructor.
+
+gliffy. 1779774 | center | L
+
+
+In the code here, the first case statement executes if @l@ is of type StringMessage, and, if so, "pulls out" the message that was passed to its constructor.
 
 We can also match a case statement with conditions beyond just the type of @l@.  The second @case@ statement is executed if @l@ is an ExceptionMessage *and* if the extracted argument from @l@ is of type @Error@.  If @l@ *is* an ExceptionMessage, but was *not* created with an exception that is a subclass of @Error@, we *don't* match and proceed to the next @case@ to check for a match.
 
