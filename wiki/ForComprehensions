@@ -14,6 +14,9 @@ Suppose we have a list of U.S. States that have been tagged with their general l
 
 The expression @state <- states@ is a *generator*, which assigns a value from @states@ to the value @state@ in succession.  Each time this happens, the "guard condition" that starts with @if@ is evaluated.  If it evaluates to true (or if there is no guard condition), the body of the for-comprehension is evaluated (this is the part that comes after the final paren).  In this case, we use the @yield@ keyword, which essentially means "yield this value back to the list we are creating".  Yes, we are creating a list, here.  The end result of this is a list of states that matched our guard condition.
 
+On bit of subtlety is that, unlike Java, Scala determines which items are to be iterated over *before* executing the code in question.  So, the @for@ statement actually goes through the list and picks out those matching the guard condition.  It then iterates over *that* list, executing the body of our loop (in this case, a simple yield).  This means that changing conditions inside the loop will have no effect on the guard condition, as it has already been used.  (See "this mind-blowing article":http://creativekarma.com/ee.php/weblog/comments/the_scala_for_comprehension_from_a_java_perspective/ on the crazy subtleties of the @for@ loop)
+
+
 If we didn't want to actually yield a list, we can omit the @yield@ keyword alltogether:
 
 pre.   for( state <- states if state.location != 'east || state.code == "DC") println(state)
