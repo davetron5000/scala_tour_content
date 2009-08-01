@@ -24,6 +24,7 @@ h2. Literals and Syntactic Sugar
 
 * @4@, @4.0@, @4L@, and @4.0F@ are literals for an @Int@, a @Double@, a @Long@, and a @Float@, respectively; just like in Java
 * "foo" is a string, just as in Java
+* @Unit@ is Scala for @void@ in Java.
 * @'foo@ creates a symbol (A @Symbol@ instance), which like Ruby's symbols and creates a string that is always equal to itself, essentially.
 * @("foo","bar",45)@ is a @Tuple[String,String,Int]@, which is to say, a grouping of three values, the first two of which is a @String@ and the third of which is an @Int@.  This is a quick and dirty way to group things, return multiple values, or otherwise pass around related data that you don't need/want to make a class for.
 * @List("this","is","a","list")@ creates a @List@ of those four strings; no @new@ required
