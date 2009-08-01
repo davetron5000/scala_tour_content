@@ -14,10 +14,8 @@ However, this doesn't really touch on some of the subtleties of how Scala treats
 
 h1. My Thoughts on this Feature
 
-I think it's a shame that packages in Scala are essentially packages in Java.  Importing individual classes is insane, pedantic, and unhelpful to all involved.  Importing in general is just a compiler hint, and, in this day and age, seems ridiculous.  It's another example of Java's love of repeating information already given (I have to tell the JVM not just which jars I need on my classpath, but also which classes from those jars I need at compile time?!?!? Why!??!)
+I think it's a shame that packages in Scala are essentially packages in Java.  Importing always seems like a compiler hint, that, in this day and age, seems ridiculous.  It's another example of Java's love of repeating information already given (I have to tell the JVM not just which jars I need on my classpath, but also which classes from those jars I need at compile time?!?!? Why!??!).  It would be *so great* if Scala had integrated "real high-level package importing":http://www.naildrivin5.com/daveblog5000/?p=29 and not just made Java's version slightly better.
 
-I think the ability to rename a class is nice, although ripe for abuse.
-
-Scala really missed an opportunity to import *packages* and not just a set of classes into the namespace.  Or, more precisely, to use the package mechanism to declare *dependencies*.
+I think the ability to rename a class is nice, but I can't say I've ever wanted this feature, and feel it could lead to some really hard to follow code.
 
 Further, the behavior described in the linked article is INSANE.  Why would anyone *want* that behavior?
