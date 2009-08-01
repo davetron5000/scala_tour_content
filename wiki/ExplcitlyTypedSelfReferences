@@ -10,4 +10,4 @@ h1. My Thoughts on this Feature
 
 So, we start with a convoluted description of a Graph, and then glop on loads of other Scala features until...what?  Something breaks and we require arbitrary syntax to fix it?  I honestly can't figure this out at all.  
 
-However, the fact that we are required to indicate the type of something makes me think that this is one of those dark, nasty corners of static typing that its proponents don't want you to know about until it's too late.  I'm not judging static typing, but it's clear that's what this is in aid of.  It's also clear that this feature is *not* in aid of productivity or clarity.  
+However, the fact that we are required to indicate the type of something makes me think that this is one of those dark, nasty corners of static typing that its proponents don't want you to know about until it's too late.  I'm not judging static typing, but it's clear that this is in aid of giving info to the compiler, *not* the programmer.
