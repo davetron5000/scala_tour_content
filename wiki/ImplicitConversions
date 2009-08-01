@@ -6,7 +6,7 @@ h1. My Interpretation
 
 In Scala, one can convert between types implicitly by providing the conversion code.  The simplest example of this is converting from strings to actual types.  Suppose you are processing configuration data and wish to treat the strings as their actual types; numbers become numbers and "true" or "false" becomes a boolean.
 
-In Java, you would need a complex system of type analysis and conversion logic to figureout a) what the type to conver to is, and b) how to do the conversion.
+In Java, you would need a complex system of type analysis and conversion logic to figure out a) what the type to convert to is, and b) how to do the conversion.
 
 In Scala, you can define a function as @implicit@ and it will be used to attempt a conversion:
 
