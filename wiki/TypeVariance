@@ -8,12 +8,12 @@ As mentioned in ScalaGenerics, if we have a generic type @Stack[T]@, and two cla
 
 <script src="http://gist.github.com/154891.js"></script>
 
-In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant@ type.  This means that, in our example, @Configuration[Advanced String Value]@ *is a proper subclass* of @Configuration[String Value]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
+In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant* type.  This means that, in our example, @Configuration[Advanced String Value]@ *is a proper subclass* of @Configuration[String Value]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
 
 *contravariance* is also possible, via @-T@, however I find the concept hard to understand and hard to justify.  If that changes, I'll update this page.
 
 h1. My Thoughts on this Feature
 
-Not only is the syntax confusing, but the feature itself seems to add huge amounts of complexity.  This is where I realize that all most people ever want out of generics is the ability to have casting done automatically.  The compiler errors I got while trying out this feature were baffling and unhelpful.  If the goal of static typing is to help us understand our programs at compile-time and to have the compiler catch programming errors, I think features like this take it all the way past that.  
+Not only is the syntax confusing, but the feature itself seems to add huge amounts of complexity.  This is where I realize that all most people ever want out of generics is the ability to have casting done automatically.  The compiler errors I got while trying out this feature were baffling and unhelpful.  To me, the goal of static typing is to help us understand our programs at compile-time and have the compiler catch programming errors.  This feature doesn't seem to be in direct support of that, but rather to satisfy some needed completeness in the generics and static typing of Scala.
 
-Unlike type bounds and generics, I'm not convinced contra and co-variant typing is really needed.  When you couple this with type inference, I think that the programmer is just as hidden from what's going on as he would be in Ruby.
+Unlike type bounds and generics, I'm not convinced contra and co-variant typing is really needed; at best this if for framework programmers.  When you couple this with type inference, I think that the programmer is just as hidden from what's going on as he would be in Ruby.
