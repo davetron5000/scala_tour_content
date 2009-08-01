@@ -90,4 +90,5 @@ The bad:
 * Would've been nice to have parens optional for all method calls
 * Would've been nice to allow @someObj.doit('foo -> "bar", 'blah -> "quux")@ to automatically create a @Map@ and send it to @doit@, as Ruby does.
 
+It's a win by a long shot (though more advanced topics will deal with some syntax quirks that I just don't get).
 
