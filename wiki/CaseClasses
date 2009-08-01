@@ -48,8 +48,9 @@ Like ScalaFunctions, case classes are *far* more powerful than what is shown her
 
 h2. Extracting Values
 
-You'll notice in the various @case@ clauses that the values are extracted out of the class.  This is done via a method called @unapply@, which is a huge amount of syntactic sugar.  In the most comprehendable case (and the case here, with case-classes), @unapply@ takes the arguments of types given to the constructor and returns an @Option@.  @Option@ is a class that either has a value or has no value (@None@).  This is how Scala determines if a match is made.  If the return from @unapply@ is an @Option@ that *does not* have the value @None@, a match is considered to have been made and you can access the values from the option (Something like @Option[(Int,String,Int)]@ would be the type of @apply@'s return value for a class that took an Int, a String, and an Int in its constructor).  If @unapply@'s option returns @None@, a match is *not* considered to have been made and processing continues.
+You'll notice in the various @case@ clauses that the values are extracted out of the class.  This is done via a method called @unapply@, and a huge amount of syntactic sugar.  The the stand way of using this (and, as used here with case classes), @unapply@ takes arguments of the types given to the constructor and returns an @Option@ (@Option@ is a class used to return either a valid value or no value; a more formal way of possibly returning null; you can test if a value was returned and get it, if it was).  This is how Scala determines if a match is made.  If @unapply@ returned a value (based on the @Option@ instance returned), there is a match and the code executes.  If a value isn't returned (i.e. the @Option@ is a wrapper for @None@), there is no match and the next case is checked.
 
+For example, the @unapply@ for BothMessage would return a @Option[(String,Throwable)]@, which is to say a tuple of size 2 with a @String@ in the "0" position and a @Throwable@ in the "1" position.
 
 h1. My Thoughts on this Feature
 
