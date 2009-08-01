@@ -12,10 +12,14 @@ Suppose we have a list of U.S. States that have been tagged with their general l
 
 <script src="http://gist.github.com/154856.js"></script>
 
-The expression @state <- states@ is a *generator*, which assigns a value from @states@ to the value @state@ in succession.  Each time this happens, the "guard condition" that starts with @if@ is evaluated.  If it evaluates to true (or if there is no guard condition), the body of the for-comprehension is evaluated (this is the part that comes after the final paren).  In this case, we use the @yield@ keyword, which essentially means "yield this value back to the list we are creating".  Yes, we are creating a list, here.  The end result of this is a list of states that matched our guard condition.
+The expression @state <- states@ is a *generator*, which assigns a value from @states@ to the value @state@ in succession.  Each time this happens, the "guard condition" that starts with @if@ is evaluated.  If it evaluates to true (or if there is no guard condition), we "mark" this item for iteration.  Once the collection has been processed, we iterate over each "marked" item executing the body of the for-comprehension (this is the part that comes after the final paren).  In this case, we use the @yield@ keyword, which essentially means "yield this value back to the list we are creating".  Yes, we are creating a list, here.  The end result of this is a list of states that matched our guard condition.
 
-On bit of subtlety is that, unlike Java, Scala determines which items are to be iterated over *before* executing the code in question.  So, the @for@ statement actually goes through the list and picks out those matching the guard condition.  It then iterates over *that* list, executing the body of our loop (in this case, a simple yield).  This means that changing conditions inside the loop will have no effect on the guard condition, as it has already been used.  (See "this mind-blowing article":http://creativekarma.com/ee.php/weblog/comments/the_scala_for_comprehension_from_a_java_perspective/ on the crazy subtleties of the @for@ loop)
+Note the subtle difference here; in Java we would iterate over the entire collection; in Scala we are building up a collection over which to iterate via the guard condition and *then* executing the body of the for-comprehension.  This means that, in general, conditions inside the for-comprehension body cannot affect conditions in the guard condition:
 
+pre. var done = false
+for (state <- states if !done) if state.code == 'DC' done = true
+
+When we hit DC, we will *not* stop; this is because the guard condition has already been evaluated for every item in the list before we got to the body.  Yikes!  (See "this mind-blowing article":http://creativekarma.com/ee.php/weblog/comments/the_scala_for_comprehension_from_a_java_perspective/ on the crazy subtleties of the @for@ loop)
 
 If we didn't want to actually yield a list, we can omit the @yield@ keyword alltogether:
 
