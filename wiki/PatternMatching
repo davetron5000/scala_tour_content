@@ -12,7 +12,7 @@ To get the flavor of the syntax, here's how you might translate the only true va
 
 Note that @case _@ is the "default" case.  In Scala, the underscore (_) is frequently used as a wildcard/placeholder.
 
-Java could do this pretty easily, however Java is limited to primitive types and enumerations.  In Scala, you can use pretty much anything.  Suppose you wish to translate English words lie "some", "one" and "none" int UML-type quantifiers.  In Java, you would need either an enumeration or a large @if-then-else@ statement.  In Scala, we can use @match@:
+Java could do this pretty easily, however Java is limited to primitive types and enumerations.  In Scala, you can use pretty much anything.  Suppose you wish to translate English words like "some", "one" and "none" into UML-type quantifiers.  In Java, you would need either an enumeration or a large @if-then-else@ statement.  In Scala, we can use @match@:
 
 <script src="http://gist.github.com/154842.js"></script>
 
