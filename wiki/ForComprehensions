@@ -38,4 +38,4 @@ In reality, the @for@ comprehensions are translated by the compiler into calls t
 
 h1. My Thoughts on this Feature
 
-I *rarely* use an old-school @for@ loop in Java.  I usually use @foreach@ and, in Ruby, almost always use @each@.  As such, I find this construct a lot more verbose and counter-intuitive than, say @map@ or @filter@ or Ruby's @each@.  The nested loops here are also pretty confusing.  I see nothing wrong or laborious with nesting loops.  
+I thought I understood this feature until I read the article linked above.  Now, I'm a bit lost, mostly as to *why* it works this way.  Perhaps the name @for@ is misleading; in most programming languages, @for@ means "do something for everything in the list".  I guess the definition of the "list" is what's unclear.  I find it hard to know what a particular @for@ statement in Scala will actually *do*.  That doesn't seem good.
