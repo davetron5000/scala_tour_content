@@ -21,7 +21,7 @@ These are in a reasonable order to allow subsequent tour elements to build on pr
 
 h2. Basics
 
-# ScalaBasics
+# ScalaBasics - this covers some syntactic things that might surprise you, as well as some very basic things about working with Scala (not in the tour)
 # UnifiedTypes
 # ScalaClasses
 # ScalaPackages
