@@ -75,6 +75,19 @@ scala>^D
  
 h1. My Thoughts on this Feature
 
-The REPL is really, really nice, especially when experimenting to see what bits of code will do.  I'm also glad to see semi-colon go, and am *most* ecstatic about the death of checked exceptions.  
+The good:
 
-I'm a bit disappointed that we still need parens around @if@ blocks and I was hoping that @import@ could've become a bit more useful and high-level (instead of a compiler hint).  That said, the type inference (at least at the superficial level described here) is pretty awesome.  I'm *so* tired of typing @List<String> list = new Array List<String>()@
+* REPL - awesome, crucial, and very helpful when learning/prototyping
+* semi-colon - I will not miss you
+* @List@, @Map@ and @Tuple@ literals - really, really great.
+* No more checked exceptions - my prayers are answered
+* Type inference - clarity without sacrificing type safety.
+
+The bad:
+
+* if @4@ is an @Int@, @4.0@ should be a @Float@.  Of course, why is there @Int@ vs. @Long@?  It makes no sense.
+* parens around @if@ statements should've been thrown out with the semi-colon
+* Would've been nice to have parens optional for all method calls
+* Would've been nice to allow @someObj.doit('foo -> "bar", 'blah -> "quux")@ to automatically create a @Map@ and send it to @doit@, as Ruby does.
+
+
