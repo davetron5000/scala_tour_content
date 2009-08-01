@@ -8,6 +8,8 @@ On the surface, they are a slightly more flexible version of Java's imports:
 
 <script src="http://gist.github.com/155980.js"></script>
 
+You can also import packages anywhere you want, and those imports will be applied to the given scope.  This lets you keep code a bit cleaner by reducing the scope of available symbols and classes to only the most minimal.
+
 However, this doesn't really touch on some of the subtleties of how Scala treats packages.
 
 "Read This":http://www.drmaciver.com/2009/07/how-packages-work-in-scala/ for a detailed overview of some very subtle behavior.
