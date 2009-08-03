@@ -32,6 +32,6 @@ The colon and underscore stuff is seemingly random.  I guess there's some math m
 
 pre. element :: list # puts element onto the front of list
 
-and so that's why that's there.  Subtle.  As for the @_=@ stuff, I'm at a lost; Ruby seems to be able to handle this more clearly, so it's anyone's guess.
+and so that's why that's there.  Subtle.  As for the @_=@ stuff, I'm at a loss; Ruby seems to be able to handle this more clearly, so it's anyone's guess.
 
 Overall though, I guess this is all handy for creating DSLs.  Seems odd, though, that we still need parens around expressions in @if@ statements.
