@@ -18,6 +18,7 @@ The problem is that the three new methods would have the exact same implementati
 
 gliffy. 1768603 | center | L
 
+
 <script src="http://gist.github.com/151017.js"></script>
 
 There is a lot more that can be done with traits (and several no-doubt better implementations of the "super comparable" concept), but this should demonstrate what Traits can do and why they are useful.
