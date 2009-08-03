@@ -16,11 +16,11 @@ Now, further suppose that we want our comparison interface to be a bit richer th
 
 The problem is that the three new methods would have the exact same implementation in every case -- they'd use the @compareTo@ method.  If our class already extends another class, we're SOL.  Traits let us combine the concepts:
 
+gliffy. 1768603 | center | L
+
 <script src="http://gist.github.com/151017.js"></script>
 
 There is a lot more that can be done with traits (and several no-doubt better implementations of the "super comparable" concept), but this should demonstrate what Traits can do and why they are useful.
-
-gliffy. 1768603 | center | L
 
 h1. My Thoughts on this Feature
 
