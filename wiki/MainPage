@@ -53,6 +53,6 @@ h2. Not Covered
 There's a few things that aren't really covered by the tour (other than [w:ScalaBasics(some basics)], that are, at first glance, key to understanding what Scala can do for you.
 
 # [w:ScalaObject]
-# [w:Concurrency]
+# [w:ActorsAndConcurrency]
 # [w:JavaIntegration]
 # [w:DuckTyping]
