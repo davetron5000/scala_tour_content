@@ -18,32 +18,32 @@ You should be able to go through these in the order listed, with each building o
 
 h2. Basics
 
-# ScalaBasics - this covers some syntactic things that might surprise you, as well as some very basic things about working with Scala (not in the tour)
-# UnifiedTypes
-# ScalaClasses
-# ScalaPackages
-# ScalaTraits
-# ScalaGenerics
-# ScalaAnnotations
-# ScalaOperators
+# [w:ScalaBasics] - this covers some syntactic things that might surprise you, as well as some very basic things about working with Scala (not in the tour)
+# [w:UnifiedTypes]
+# [w:ScalaClasses]
+# [w:ScalaPackages]
+# [w:ScalaTraits]
+# [w:ScalaGenerics]
+# [w:ScalaAnnotations]
+# [w:ScalaOperators]
 
 h2. Intermediate
 
-# ScalaFunctions
-# PatternMatching
-# FunctionCurrying - define a function that has received some of its parameters now, and will get the remainder later.
-# CaseClasses - taking switch statements to a useful level.
-# SealedClasses - tightening up CaseClasses.
-# XmlLiterals
-# ForComprehensions - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
-# TypeBounds
-# InnerClasses - you only thought they were basic.
-# ImplicitConversions
-# TypeDependentClosures - Closures in general discussed here, too.
+# [w:ScalaFunctions]
+# [w:PatternMatching]
+# [w:FunctionCurrying] - define a function that has received some of its parameters now, and will get the remainder later.
+# [w:CaseClasses] - taking switch statements to a useful level.
+# [w:SealedClasses] - tightening up [w:CaseClasses].
+# [w:XmlLiterals]
+# [w:ForComprehensions] - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
+# [w:TypeBounds]
+# [w:InnerClasses] - you only thought they were basic.
+# [w:ImplicitConversions]
+# [w:TypeDependentClosures] - Closures in general discussed here, too.
 
 h2. Advanced
 
-# ImplicitParameters
-# TypeVariance
-# AbstractTypes - *not* abstract classes
-# ExplcitlyTypedSelfReferences
+# [w:ImplicitParameters]
+# [w:TypeVariance]
+# [w:AbstractTypes] - *not* abstract classes
+# [w:ExplcitlyTypedSelfReferences]

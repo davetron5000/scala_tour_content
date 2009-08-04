@@ -16,7 +16,7 @@ You can also extend classes much as with Java.  Note that when we indicate the c
 
 This isn't a comprehensive overview of **everything** you can do, but gives you some of the flavor of classes in Scala.
 
-The @main@ method is tucked inside a ScalaObject, which is a sort of static singleton class.
+The @main@ method is tucked inside a [w:ScalaObject], which is a sort of static singleton class.
 
 h1. My Thoughts on this Feature
 

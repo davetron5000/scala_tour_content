@@ -14,7 +14,7 @@ Here we have a generic notification interface, with two implementations.  One ta
 
 <script src="http://gist.github.com/153760.js"></script>
 
-This isn't bad, but we already know that some ScalaFunctions can reduce the line count a lot:
+This isn't bad, but we already know that some [w:ScalaFunctions] can reduce the line count a lot:
 
 <script src="http://gist.github.com/153765.js"></script>
 

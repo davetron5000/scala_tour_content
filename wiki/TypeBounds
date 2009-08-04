@@ -22,4 +22,4 @@ h1. My Thoughts on this Feature
 
 Here we are going down the rabbit hole of static typing.  I have found many uses for upper bounds, and almost no uses for lower bounds in Java, but I find the Scala syntax quite unpleasant.  Even though it's a few more characters, to me @<T extends Foo>@ is just much clearer and easier to remember than @[T <: Foo]@.  I instantly knew what the Java version meant, but still have to look up which syntax to use for Scala.
 
-Like ScalaGenerics, you really do have to have this feature, but this is where the static types start to get confusing and muddle intent, IMO.
+Like [w:ScalaGenerics], you really do have to have this feature, but this is where the static types start to get confusing and muddle intent, IMO.

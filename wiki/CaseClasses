@@ -44,7 +44,7 @@ We've simplified some complex logic by reducing line count and repetition, and w
 
 Now look back at the Java code.  We certainly *could* have implemented our Java logger using a similar log message class hierarchy to reduce those nine methods to three, but the required classes would require several lines of code each (compared to Scala's *one*) and would not have the ability to extract their arguments so concisely.
 
-Like ScalaFunctions, case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
+Like [w:ScalaFunctions], case classes are *far* more powerful than what is shown here, but this shows you another means of simplifying your codebase.
 
 h2. Extracting Values
 

@@ -31,7 +31,7 @@ Notice how the value of "complex" changes between the calls, and the closures us
 
 h2. Another Level
 
-We can take this to the next level by applying FunctionCurrying.  Suppose we wanted to bring back the ternary operator that Scala doesn't seem to include.
+We can take this to the next level by applying [w:FunctionCurrying].  Suppose we wanted to bring back the ternary operator that Scala doesn't seem to include.
 
 <script src="http://gist.github.com/155936.js"></script>
 

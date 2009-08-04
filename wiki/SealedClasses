@@ -4,7 +4,7 @@ h1. The Gist
 
 h1. My Interpretation
 
-Suppose we implemented our CaseClasses(case-classes-based) logger as such:
+Suppose we implemented our [w:CaseClasses(case-classes-based)] logger as such:
 
 <script src="http://gist.github.com/155942.js"></script>
 

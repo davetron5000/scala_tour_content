@@ -20,7 +20,7 @@ This, alone, is pretty useful.  However, we can make this even more dynamic.  Su
 
 Scala's @match@ and @case@ statements take care of all the casting.  Yes, this is type safe code!
 
-This construct is quite powerful.  CaseClasses shows another way to use it to keep your code clean and clear.
+This construct is quite powerful.  [w:CaseClasses] shows another way to use it to keep your code clean and clear.
 
 h1. My Thoughts on this Feature
 

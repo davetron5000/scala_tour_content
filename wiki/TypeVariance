@@ -4,7 +4,7 @@ h1. The Gist
 
 h1. My Interpretation
 
-As mentioned in ScalaGenerics, if we have a generic type @Stack[T]@, and two classes, @Child@ which extends @Parent@, the class @Stack[Child]@ *is not* a subclass of @Stack[Parent]@.  Scala provides a way to make this happen, however:
+As mentioned in [w:ScalaGenerics], if we have a generic type @Stack[T]@, and two classes, @Child@ which extends @Parent@, the class @Stack[Child]@ *is not* a subclass of @Stack[Parent]@.  Scala provides a way to make this happen, however:
 
 <script src="http://gist.github.com/154891.js"></script>
 
