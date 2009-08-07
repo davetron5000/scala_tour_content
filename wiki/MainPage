@@ -21,6 +21,7 @@ h2. Basics
 # [w:ScalaBasics] - this covers some syntactic things that might surprise you, as well as some very basic things about working with Scala (not in the tour)
 # [w:UnifiedTypes]
 # [w:ScalaClasses]
+# [w:ScalaProperties] - *not in the official tour*
 # [w:ScalaPackages]
 # [w:ScalaTraits]
 # [w:ScalaGenerics]
