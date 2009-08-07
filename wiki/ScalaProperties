@@ -2,5 +2,12 @@ h1. The Gist
 
 The tour isn't explicit about the line-savings you get via formal properties in Scala classes.  Gone are the silly getters and setters. 
 
-h1. My Interpretation of the Feature
+h1. My Interpretation
 
+Instead of writing @getName()@ and @setName(String)@, Scala not only allows you to use @name=@, but it will also generate your accessors for you, based on your class constructor definition:
+
+<script src="http://gist.github.com/163965.js"></script>
+
+h1. My Thoughts on this Feature
+
+Solid gold money.  Why they have yet to add this to Java is beyond me, and this is just extremely helpful. I don't quite understand why I need @_=@ instead of just @=@, but, whatever.  This is a great feature.  It's even more compact than Ruby's @:attr_reader@ and @:attr_accessor@ syntax.
