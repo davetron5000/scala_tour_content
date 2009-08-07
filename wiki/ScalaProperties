@@ -1,0 +1,6 @@
+h1. The Gist
+
+The tour isn't explicit about the line-savings you get via formal properties in Scala classes.  Gone are the silly getters and setters. 
+
+h1. My Interpretation of the Feature
+
