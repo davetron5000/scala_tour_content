@@ -16,8 +16,6 @@ You can also extend classes much as with Java.  Note that when we indicate the c
 
 This isn't a comprehensive overview of **everything** you can do, but gives you some of the flavor of classes in Scala.
 
-The @main@ method is tucked inside a [w:ScalaObject], which is a sort of static singleton class.
-
 h1. My Thoughts on this Feature
 
 Pretty simple.  The constructor stuff is great, and the variable/property thing is really nice, too.  At this point, I'm not sure on how I could refactor those into method calls without breaking the interface, but this is just an introduction.  @override@ seems pretty pointless to me; smacks of safety wheels that I thought we were getting rid of in more advanced languages.
