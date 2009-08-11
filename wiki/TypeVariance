@@ -42,11 +42,11 @@ This took me a while to fully grok.
 
 Scala needs this (for example) with functions.  The function
 
-.pre (String) => Boolean
+pre. (String) => Boolean
 
 is really of type
 
-.pre Function2[-P,+R]
+pre. Function2[-P,+R]
 
 which means that @(AnyRef) => Boolean@ is a subtype of @(String) => Boolean@, but @(String) => AnyRef@ is not.
 
