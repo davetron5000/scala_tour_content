@@ -8,12 +8,56 @@ As mentioned in [w:ScalaGenerics], if we have a generic type @Stack[T]@, and two
 
 <script src="http://gist.github.com/154891.js"></script>
 
-In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant* type.  This means that, in our example, @Configuration[Advanced String Value]@ *is a proper subclass* of @Configuration[String Value]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
+In the definition of class @Configuration@, we use the @+T@ to indicate that that @T@ is a *covariant* type.  This means that, in our example, @Configuration[AdvancedStringValue]@ *is a proper subclass* of @Configuration[StringValue]@.  If the @+T@ were changed to a simple @T@, this code would not compile.
 
-*contravariance* is also possible, via @-T@, however I find the concept hard to understand and hard to justify.  If that changes, I'll update this page.
+h2. Contravariance
+
+Bear with me.  If we were to change our @+T@ to a @-T@, that would mean the *opposite*: @Configuration[StringValue]@ is a subclass of @Configuration[AdvancedStringValue]@.  
+
+This initially made me scratch my head, but I now understand it, agree that it's needed, and can explain it.  Let's change our domain.
+
+Suppose you have a trait that outputs objects as a string.  You parameterize the type, so that implementors of the trait can have type safety, be more precise, etc.  You create two classes that implement this trait: @AnyPrinter@, which takes an @AnyRef@ (e.g. @java.lang.Object@) and @StringPrinter@, which takes a @String@.
+
+<script src="http://gist.github.com/166132.js"></script>
+
+It might make sense to you that a @StringPrinter@ should be a subclass of @AnyPrinter@, since @String@ is a subclass of @AnyRef@.
+
+<script src="http://gist.github.com/166137.js"></script>
+
+This will not compile (giving a strange error).  You may just be happy with the original implementation.  But suppose we add a class that prints lines of strings and uses our @Printer@ trait.
+
+<script src="http://gist.github.com/166140.js"></script>
+
+This compiles and seems innocuous enough.  But, suppose in using these classes, we have a reference to an @AnyPrinter@, and a list of strings to print.  You would not be able to use your @AnyPrinter@ to create a @LineProcessor@, even though you know, for a fact, that it would work.  Since you have strings, and @AnyPrinter@ only requires an @AnyRef@, it will accept a @String@.
+
+In Java (and in the code above), there is no way to be aware of this fact, so you simply can't do it.
+
+In Scala, however, you can use contravariance to indicate that @AnyPrinter@ *is a subtype* of @StringPrinter@.  This means that anywhere you require a @StringPrinter@, you can safely use an @AnyPrinter@ in its place.
+
+<script src="http://gist.github.com/166146.js"></script>
+
+The @[-T]@ is the key to making this happen.
+
+This took me a while to fully grok.
+
+Scala needs this (for example) with functions.  The function
+
+.pre (String) => Boolean
+
+is really of type
+
+.pre Function2[-P,+R]
+
+which means that @(AnyRef) => Boolean@ is a subtype of @(String) => Boolean@, but @(String) => AnyRef@ is not.
+
+If you think about it, it make sense.  If your code accepts a function of type @Function2[String,Boolean]@ that means *you plan to pass a @String@ to this function*.  This means that if that function happens to accept an @AnyRef@, everything is OK.  
+
+Consider the opposite.  If your code accepts a function of type @Function2[AnyRef,Boolean]@, that means you can pass anything to it.  A function that is expecting a string will have a problem when you pass in, say, an @Int@.
+
+Now consider the return value.  If your code accepts a function of type @Function2[String,Boolean]@ that means you are *expecting* a @Boolean@.  If you get an @AnyRef@, your code won't work right.
 
 h1. My Thoughts on this Feature
 
-Not only is the syntax confusing, but the feature itself seems to add huge amounts of complexity.  This is where I realize that all most people ever want out of generics is the ability to have casting done automatically.  The compiler errors I got while trying out this feature were baffling and unhelpful.  To me, the goal of static typing is to help us understand our programs at compile-time and have the compiler catch programming errors.  This feature doesn't seem to be in direct support of that, but rather to satisfy some needed completeness in the generics and static typing of Scala.
+This took me a while to grok, and I hope the example above helps demonstrate *why* its needed and what it means.  This is where static typing starts to get *really* confusing.  The Ruby way of dealing with this is, well, to not deal with it; you are on your own to pass the right thing in.  If you don't, hopefully your unit tests cover it.
 
-Unlike type bounds and generics, I'm not convinced contra and co-variant typing is really needed; at best this if for framework programmers.  When you couple this with type inference, I think that the programmer is just as hidden from what's going on as he would be in Ruby.
+Scala lets you document your intent and have the compiler complain when the code violates it.  It's tricky, however, to read scaladoc and/or compiler output and know what's wrong.
