@@ -1,6 +1,6 @@
 h1. The Gist
 
-"Variances":http://www.scala-lang.org/node/129 talks about making generics even more -baffling- flexible.
+"Variances":http://www.scala-lang.org/node/129 gives a very high-level overview of implementing contravariance and covariance with respect to Generics.  Examples and definitions below.
 
 h1. My Interpretation
 
