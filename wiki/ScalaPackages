@@ -16,10 +16,12 @@ However, this doesn't really touch on some of the subtleties of how Scala treats
 
 h1. My Thoughts on this Feature
 
-I'm not a fan of imports and I, while Scala breaks the "packages are just directories on the filesystem" concept, I think a higher level abstract should've been created.
+I'm not a fan of imports and, while Scala breaks the "packages are just directories on the filesystem" concept, I think a higher level abstract should've been created.  I'd love to say something like
 
-That being said, Scala 2.8 *should* provide something like this.
+pre. import hibernate[3.2,)
 
-Scala also relies much more heavily on so-called "static imports" to make the syntax more compact (specifically with [w:ImplicitMethods]).
+That being said, Scala 2.8 *should* provide something a bit closer (or a way to make packaging more like, you know, packaging stuff together and not just group classes).
+
+Scala also relies much more heavily on so-called "static imports" to make the syntax more compact (specifically with [w:ImplicitMethods]).  I do not like this in Java, since it can make it hard to know the source of code, but can be very powerful for API designers (and isn't much more egregious than some of the Rubyisms that go into creating DSLs).
 
 I *do* think the behavior outlined in the linked blog article is a bit crazy.
