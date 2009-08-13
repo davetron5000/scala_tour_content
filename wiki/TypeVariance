@@ -24,7 +24,7 @@ It might make sense to you that a @StringPrinter@ should be a subclass of @AnyPr
 
 <script src="http://gist.github.com/166137.js"></script>
 
-This will not compile (giving a strange error).  You may just be happy with the original implementation.  But suppose we add a class that prints lines of strings and uses our @Printer@ trait.
+This will not compile (giving a strange error).  You may just be happy with the original implementation, where neither class is a subclass of the other, but suppose we add a class that prints lines of strings and uses our @Printer@ trait.
 
 <script src="http://gist.github.com/166140.js"></script>
 
