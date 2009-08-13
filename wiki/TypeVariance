@@ -14,7 +14,7 @@ h2. Contravariance
 
 Bear with me.  If we were to change our @+T@ to a @-T@, that would mean the *opposite*: @Configuration[StringValue]@ is a subclass of @Configuration[AdvancedStringValue]@.  
 
-This initially made me scratch my head, but I now understand it, agree that it's needed, and can explain it.  Let's change our domain.
+This initially made me scratch my head, but I now understand it and why it's needed.  I believe I can explain if we switch to a slightly more abstract domain for the discussion.
 
 Suppose you have a trait that outputs objects as a string.  You parameterize the type, so that implementors of the trait can have type safety, be more precise, etc.  You create two classes that implement this trait: @AnyPrinter@, which takes an @AnyRef@ (e.g. @java.lang.Object@) and @StringPrinter@, which takes a @String@.
 
