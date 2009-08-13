@@ -16,8 +16,10 @@ However, this doesn't really touch on some of the subtleties of how Scala treats
 
 h1. My Thoughts on this Feature
 
-I think it's a shame that packages in Scala are essentially packages in Java.  Importing always seems like a compiler hint, that, in this day and age, seems ridiculous.  It's another example of Java's love of repeating information already given (I have to tell the JVM not just which jars I need on my classpath, but also which classes from those jars I need at compile time?!?!? Why!??!).  It would be *so great* if Scala had integrated "real high-level package importing":http://www.naildrivin5.com/daveblog5000/?p=29 and not just made Java's version slightly better.
+I'm not a fan of imports and I, while Scala breaks the "packages are just directories on the filesystem" concept, I think a higher level abstract should've been created.
 
-I think the ability to rename a class is nice, but I can't say I've ever wanted this feature, and feel it could lead to some really hard to follow code.
+That being said, Scala 2.8 *should* provide something like this.
 
-Further, the behavior described in the linked article is INSANE.  Why would anyone *want* that behavior?
+Scala also relies much more heavily on so-called "static imports" to make the syntax more compact (specifically with [w:ImplicitMethods]).
+
+I *do* think the behavior outlined in the linked blog article is a bit crazy.
