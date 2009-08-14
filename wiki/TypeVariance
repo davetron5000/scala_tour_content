@@ -4,6 +4,10 @@ h1. The Gist
 
 h1. My Interpretation
 
+Scala allows more flexible use of generics than Java.  Specifically, you can decide that if @Child@ extends @Parent@, then @Foo[Child]@ is a subtype of @Foo[Parent]@ (called *covariance*).  You can also decide that @Foo[Child]@ is, instead, a *supertype* of @Foo[Parent]@ (called *contravariance).
+
+h2. Covariance
+
 As mentioned in [w:ScalaGenerics], if we have a generic type @Stack[T]@, and two classes, @Child@ which extends @Parent@, the class @Stack[Child]@ *is not* a subclass of @Stack[Parent]@.  Scala provides a way to make this happen, however:
 
 <script src="http://gist.github.com/154891.js"></script>
@@ -12,52 +16,34 @@ In the definition of class @Configuration@, we use the @+T@ to indicate that tha
 
 h2. Contravariance
 
-Bear with me.  If we were to change our @+T@ to a @-T@, that would mean the *opposite*: @Configuration[StringValue]@ is a subclass of @Configuration[AdvancedStringValue]@.  
+Given that we have covariance, Contravariance exists to solve some problems that can arise when designing certain classes.  Scala's function aspects rely heavily on this.
 
-This initially made me scratch my head, but I now understand it and why it's needed.  I believe I can explain if we switch to a slightly more abstract domain for the discussion.
+Suppose we have a class @Foo[T]@.  If we change it to @Foo[+T]@, now @Foo[Child]@ is a subtype of @Foo[Parent]@.  If, instead, we were to declare @Foo@ as @Foo[-T]@, that would mean the opposte: @Foo[Child]@ is a supertype of @Foo[Parent]@.
 
-Suppose you have a trait that outputs objects as a string.  You parameterize the type, so that implementors of the trait can have type safety, be more precise, etc.  You create two classes that implement this trait: @AnyPrinter@, which takes an @AnyRef@ (e.g. @java.lang.Object@) and @StringPrinter@, which takes a @String@.
+Why would we need or want to do this?  Suppose we have a set of classes for dealing with lookup data, such as a list of U.S. States (defined by a code, a description, and an 'area of the country') and a list of Countries (defined by a code, a description, and an official postal abbreviate).  Both expose a code and a description, so we factor that into a superclass called Lookup.  Further we also have a class that creates HTML @<SELECT>@ controls based upon a list of @Lookup@ and *it* exposes a @render@ method that allows us to pass in a function to control the human-readable value for any given @Lookup@ instance.
 
-<script src="http://gist.github.com/166132.js"></script>
+<script src="http://gist.github.com/167851.js"></script>
 
-It might make sense to you that a @StringPrinter@ should be a subclass of @AnyPrinter@, since @String@ is a subclass of @AnyRef@.
+This code doesn't compile, even though you might thing it should.  
 
-<script src="http://gist.github.com/166137.js"></script>
+You might think that since @Country@ is a subclass of @Lookup@, then the function @countryValue@ should be a subtype of the function @lookupValue@ and that you should, therefore, be able to pass it in to @render@.  Especially since @selector@ was created around a list of @Country@ objects!@ So, why can't you? Consider if line 21 had been @def selector = new HtmlLookupSelect(states)@ where @states@ is a @List[USState]@.  The code still won't compile, but it makes more sense now why it shouldn't.  You wouldn't want to use @countrySelector@ on a @USState@, because @USState@ has no @postCode@ attribute.
 
-This will not compile (giving a strange error).  You may just be happy with the original implementation, where neither class is a subclass of the other, but suppose we add a class that prints lines of strings and uses our @Printer@ trait.
+So, what's going on here?  Let's look at the definition of the function type.  Our function @valueMaker:(Lookup) => String@ could be written as @valueMaker:Function1[Lookup,String]@.  @Function1@ is declared as @Function1[P-,R+]@, meaning that @Function1[Lookup,String]@ is actually a subtype of @Function1[Country,String]@.
 
-<script src="http://gist.github.com/166140.js"></script>
+Now, consider this code:
 
-This compiles and seems innocuous enough.  But, suppose in using these classes, we have a reference to an @AnyPrinter@, and a list of strings to print.  You would not be able to use your @AnyPrinter@ to create a @LineProcessor@, even though you know, for a fact, that it would work.  Since you have strings, and @AnyPrinter@ only requires an @AnyRef@, it will accept a @String@.
+<script src="http://gist.github.com/167854.js"></script>
 
-In Java (and in the code above), there is no way to be aware of this fact, so you simply can't do it.
+This code compiles.
 
-In Scala, however, you can use contravariance to indicate that @AnyPrinter@ *is a subtype* of @StringPrinter@.  This means that anywhere you require a @StringPrinter@, you can safely use an @AnyPrinter@ in its place.
+Here, we've created a special @CountrySelect@ that operates just on @Country@ objects.  Of course, @countryValue@ works, but notice how @lookupValue@ *also* can be passed.  Since @lookupValue@ is a subtype of @countryValue@, we can safely pass it in.
 
-<script src="http://gist.github.com/166146.js"></script>
+This is because the code using the function @valueMaker@ is *definitely going to send it a @Country@ object*.  Since @lookupValue@ accepts any @Lookup@, and since @Country@ is a subtype of @Lookup@, we know *for a fact* that @lookupValue@ can safely operate on a @Country@ object.  Therefore, it it safe to pass in to @render@.
 
-The @[-T]@ is the key to making this happen.
-
-This took me a while to fully grok.
-
-Scala needs this (for example) with functions.  The function
-
-pre. (String) => Boolean
-
-is really of type
-
-pre. Function2[-P,+R]
-
-which means that @(AnyRef) => Boolean@ is a subtype of @(String) => Boolean@, but @(String) => AnyRef@ is not.
-
-If you think about it, it make sense.  If your code accepts a function of type @Function2[String,Boolean]@ that means *you plan to pass a @String@ to this function*.  This means that if that function happens to accept an @AnyRef@, everything is OK.  
-
-Consider the opposite.  If your code accepts a function of type @Function2[AnyRef,Boolean]@, that means you can pass anything to it.  A function that is expecting a string will have a problem when you pass in, say, an @Int@.
-
-Now consider the return value.  If your code accepts a function of type @Function2[String,Boolean]@ that means you are *expecting* a @Boolean@.  If you get an @AnyRef@, your code won't work right.
+This took me quite a while to totally get.  But, it's all in aid of maintaining static types, but providing flexible syntax and features...exactly what Scala is all about.  The cool thing about that, as compared to a similar implementation in a dynamic language (like Ruby) is that the compiler can catch the screwup we made by changing line 21 to use @USState@ instead of @Country@.
 
 h1. My Thoughts on this Feature
 
-This took me a while to grok, and I hope the example above helps demonstrate *why* its needed and what it means.  This is where static typing starts to get *really* confusing.  The Ruby way of dealing with this is, well, to not deal with it; you are on your own to pass the right thing in.  If you don't, hopefully your unit tests cover it.
+This took me a while to grok, and I hope the example above helps demonstrate *why* its needed and what it means.  This is where static typing starts to get *really* confusing, although things tend to work out right.  The Ruby way of dealing with this is, well, to not deal with it; you are on your own to pass the right thing in.  If you don't, hopefully your unit tests cover it.
 
 Scala lets you document your intent and have the compiler complain when the code violates it.  It's tricky, however, to read scaladoc and/or compiler output and know what's wrong.
