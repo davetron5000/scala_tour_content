@@ -8,7 +8,7 @@ Scala allows more flexible use of generics than Java.  Specifically, you can dec
 
 h2. Covariance
 
-As mentioned in [w:ScalaGenerics], if we have a generic type @Stack[T]@, and two classes, @Child@ which extends @Parent@, the class @Stack[Child]@ *is not* a subclass of @Stack[Parent]@.  Scala provides a way to make this happen, however:
+As mentioned in [w:ScalaGenerics], if we have a generic type @ConfigurationOption[T]@, and two classes, @Child@ which extends @Parent@, the class @ConfigurationOption[Child]@ *is not* a subclass of @ConfigurationOption[Parent]@.  Scala provides a way to make this happen, however:
 
 <script src="http://gist.github.com/154891.js"></script>
 
