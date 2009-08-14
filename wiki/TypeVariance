@@ -4,7 +4,7 @@ h1. The Gist
 
 h1. My Interpretation
 
-Scala allows more flexible use of generics than Java.  Specifically, you can decide that if @Child@ extends @Parent@, then @Foo[Child]@ is a subtype of @Foo[Parent]@ (called *covariance*).  You can also decide that @Foo[Child]@ is, instead, a *supertype* of @Foo[Parent]@ (called *contravariance).
+Scala allows more flexible use of generics than Java.  Specifically, you can decide that if @Child@ extends @Parent@, then @Foo[Child]@ is a subtype of @Foo[Parent]@ (called *covariance*).  You can also decide that @Foo[Child]@ is, instead, a *supertype* of @Foo[Parent]@ (called *contravariance*).
 
 h2. Covariance
 
