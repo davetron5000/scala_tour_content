@@ -6,6 +6,8 @@ h1. My Interpretation
 
 Scala allows more flexible use of generics than Java.  Specifically, you can decide that if @Child@ extends @Parent@, then @Foo[Child]@ is a subtype of @Foo[Parent]@ (called *covariance*).  You can also decide that @Foo[Child]@ is, instead, a *supertype* of @Foo[Parent]@ (called *contravariance*).
 
+gliffy. 1792969 | center | L
+
 h2. Covariance
 
 As mentioned in [w:ScalaGenerics], if we have a generic type @ConfigurationOption[T]@, and two classes, @Child@ which extends @Parent@, the class @ConfigurationOption[Child]@ *is not* a subclass of @ConfigurationOption[Parent]@.  Scala provides a way to make this happen, however:
