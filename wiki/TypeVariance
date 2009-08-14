@@ -38,7 +38,15 @@ So, why can't you?
 
 Consider if line 21 had been @def selector = new HtmlLookupSelect(states)@ where @states@ is a @List[USState]@.  The code still won't compile, but it makes more sense now why it shouldn't: you wouldn't want to use @countrySelector@ on a @USState@, because @USState@ has no @postCode@ attribute.
 
-So, what's going on here?  Let's look at the definition of the function type.  Our function @valueMaker:(Lookup) => String@ could be written as @valueMaker:Function1[Lookup,String]@.  @Function1@ is declared as @Function1[P-,R+]@, meaning that @Function1[Lookup,String]@ is actually a subtype of @Function1[Country,String]@.
+So, what's going on here?  Let's look at the definition of the function type.  Our function 
+
+pre. valueMaker:(Lookup) => String
+
+could be written as 
+
+pre. valueMaker:Function1[Lookup,String]
+
+@Function1@ is declared as @Function1[-P,+R]@, meaning that @Function1[Lookup,String]@ is actually a subtype of @Function1[Country,String]@.
 
 Now, consider this code:
 
