@@ -20,7 +20,13 @@ Given that we have covariance, Contravariance exists to solve some problems that
 
 Suppose we have a class @Foo[T]@.  If we change it to @Foo[+T]@, now @Foo[Child]@ is a subtype of @Foo[Parent]@.  If, instead, we were to declare @Foo@ as @Foo[-T]@, that would mean the opposte: @Foo[Child]@ is a supertype of @Foo[Parent]@.
 
-Why would we need or want to do this?  Suppose we have a set of classes for dealing with lookup data, such as a list of U.S. States (defined by a code, a description, and an 'area of the country') and a list of Countries (defined by a code, a description, and an official postal abbreviate).  Both expose a code and a description, so we factor that into a superclass called Lookup.  Further we also have a class that creates HTML @<SELECT>@ controls based upon a list of @Lookup@ and *it* exposes a @render@ method that allows us to pass in a function to control the human-readable value for any given @Lookup@ instance.
+Why would we need or want to do this?  
+
+An example should illuminate why.  It's a bit long, so bear with me (this is a more complicated concept than some of the others being discussed).
+
+Suppose we have a set of classes for dealing with lookup data, such as a list of U.S. States (defined by a code, a description, and an 'area of the country') and a list of Countries (defined by a code, a description, and an official postal abbreviation).  
+
+Since both expose a code and a description, we pull these up into a superclass called @Lookup@.  Further we also have a class that creates HTML @<SELECT>@ controls based upon a list of @Lookup@ and *it* exposes a @render@ method that allows us to pass in a function to control the human-readable value for any given @Lookup@ instance.
 
 <script src="http://gist.github.com/167851.js"></script>
 
