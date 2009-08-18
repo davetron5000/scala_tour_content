@@ -8,30 +8,59 @@ There are two uses for this construct.  The first, which is more commonly used, 
 
 h2. Type Aliasing
 
-TBD 
+Suppose you are creating a hierarchy of domain objects you will persist in a database.  These objects will typically provide modification times as @java.sql.Date@, as that is what one is usually given from a database abstraction layer.  This class has two fundamental problems: 1) it clashes with @java.util.Date@ and 2) it doesn't make clear if you are storing a "day of the year" or a full-on timestamp.
 
+pre. abstract class AbstractEntity {
+  type TimeStamp = java.sql.Date
+  type DateStamp = java.sql.Date
+  var modified:TimeStamp = _
+  var created:TimeStamp = _
+}
+class Person extends AbstractEntity {
+  var birthday:DateStamp
+}
+
+Yes, this is @typedef@.  But, notice how clear it can make your code?  Also notice how you could decide that you want to use @java.util.Date@ *everywhere* and have minimal impact on your code:
+
+pre. abstract class AbstractEntity {
+  type TimeStamp = java.util.Date
+  type DateStamp = java.util.Date
+  var modified:TimeStamp = _
+  var created:TimeStamp = _
+}
+ 
 h2. Type Parameterization
 
-The concept is that instead of
+Along the lines of our database entity domain, a common pattern in Java enterprise applications is:
 
-pre. class BaseClass[T]
+pre. /** something that holds only data and gets persisted
+    in a database using a primary key of unknown type.
+    T is the type of primary key */
+abstract class DatabaseEntity[T] {
+  var id:T = _
+}
+class Person extends DatabaseEntity[Int]
+class Website extends DatabaseEntity[String]
 
-you can do 
+Here, we have a root type that is parameterized based upon the type of the database primary key.  This plays well with systems like Hibernate, which take a @Object@ (or @AnyRef@) as an id type, but also allows us typed-access.
 
-pre. class BaseClass {
-  type T
+The problem here is in the design of these classes.  The only reason we know what the type parameter is for is due to the comment.  Further, the definition of @Person@ is quite puzzling if you haven't familiarized yourself with the base class @DatabaseEntity@.
+
+So, we can use abstract types:
+
+h1. abstract class DatabaseEntity {
+  type ID_TYPE
+  var id:ID_TYPE = _
+}
+class Person extends DatabaseEntity {
+  type ID_TYPE = Int
+}
+class Website extends DatabaseEntity {
+  type ID_TYPE = String
 }
 
-and override it thusly:
-
-pre. class SubClass extends BaseClass {
-  type T = String // or any other class specifier
-}
-
-So, this is useful when you are designing a class that should have a parameterized type, but where you do not want that type necessarily exposed to callers of the class.
-
-I have yet to come up with a straightforward example of this.
+Now, it is *very* clear what is actually going on.  The parameterized type is very obviously allowing us to declare the type of the entity's identifier.
 
 h1. My Thoughts on this Feature
 
-This may require a lot more depth into Scala before I can come up with a comprehensible example that *also* makes it clear how a generics-based implementation doesn't work.  I could certainly demonstrate it, as others have, but the first question is "why not use generics?"
+While there are some "it won't compile" type problems that this feature may solve, this feature to me seems one clearly aimed at designing more readable code.  I don't know if this would be commonly used in most applications, but it's certainly handy to have.
