@@ -1,13 +1,29 @@
 h1. 
 
-"Abstract Types":http://www.scala-lang.org/node/105 attempts to explain the feature of the same name.  This is not about abstract classes.  That much, I know.
+"Abstract Types":http://www.scala-lang.org/node/105 attempts to explain the feature of the same name.  This is not about abstract classes.
 
 h1. My Interpretation
 
-I'm at a complete loss as to explain why you would ever want to do this.  I'm also unable to get anything working sensibly using this feature that isn't some esoteric data structure implementation.
+The concept is that instead of
+
+pre. class BaseClass[T]
+
+you can do 
+
+pre. class BaseClass {
+  type T
+}
+
+and override it thusly:
+
+pre. class SubClass extends BaseClass {
+  type T = String // or any other class specifier
+}
+
+So, this is useful when you are designing a class that should have a parameterized type, but where you do not want that type necessarily exposed to callers of the class.
+
+I have yet to come up with a straightforward example of this.
 
 h1. My Thoughts on this Feature
 
-From the tour: "Please note that it is often possible to turn abstract type members into type parameters of classes and vice versa."
-
-I cannot figure out how this feature makes *anything* more clear or even a way to describe it.  This isn't helped by the fact that the tour example defines a @Buffer@ as a wrapper for an object reference.   I *don't* think that's what a buffer is.  Any help?
+This may require a lot more depth into Scala before I can come up with a comprehensible example that *also* makes it clear how a generics-based implementation doesn't work.  I could certainly demonstrate it, as others have, but the first question is "why not use generics?"
