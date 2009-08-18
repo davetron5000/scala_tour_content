@@ -10,7 +10,7 @@ h2. Type Aliasing
 
 Suppose you are creating a hierarchy of domain objects you will persist in a database.  These objects will typically provide modification times as @java.sql.Date@, as that is what one is usually given from a database abstraction layer.  This class has two fundamental problems: 1) it clashes with @java.util.Date@ and 2) it doesn't make clear if you are storing a "day of the year" or a full-on timestamp.
 
-pre. abstract class AbstractEntity {
+pre.   abstract class AbstractEntity {
   type TimeStamp = java.sql.Date
   type DateStamp = java.sql.Date
   var modified:TimeStamp = _
