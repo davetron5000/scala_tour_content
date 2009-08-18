@@ -22,7 +22,7 @@ class Person extends AbstractEntity {
 
 Yes, this is @typedef@.  But, notice how clear it can make your code?  Also notice how you could decide that you want to use @java.util.Date@ *everywhere* and have minimal impact on your code:
 
-pre. abstract class AbstractEntity {
+pre.   abstract class AbstractEntity {
   type TimeStamp = java.util.Date
   type DateStamp = java.util.Date
   var modified:TimeStamp = _
@@ -48,7 +48,7 @@ The problem here is in the design of these classes.  The only reason we know wha
 
 So, we can use abstract types:
 
-h1. abstract class DatabaseEntity {
+pre. abstract class DatabaseEntity {
   type ID_TYPE
   var id:ID_TYPE = _
 }
