@@ -4,6 +4,14 @@ h1.
 
 h1. My Interpretation
 
+There are two uses for this construct.  The first, which is more commonly used, is to alias types.  The second is to provide an alternative way of parameterizing some of the types of your class
+
+h2. Type Aliasing
+
+TBD 
+
+h2. Type Parameterization
+
 The concept is that instead of
 
 pre. class BaseClass[T]
