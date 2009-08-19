@@ -33,9 +33,9 @@ h2. Type Parameterization
 
 Along the lines of our database entity domain, a common pattern in Java enterprise applications is:
 
-pre. /** something that holds only data and gets persisted
-  * in a database using a primary key of unknown type.
-  * T is the type of primary key */
+pre.  /** something that holds only data and gets persisted
+ * in a database using a primary key of unknown type.
+ * T is the type of primary key */
 abstract class DatabaseEntity[T] {
   var id:T = _
 }
