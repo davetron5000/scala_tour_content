@@ -20,7 +20,7 @@ class Person extends AbstractEntity {
   var birthday:DateStamp
 }
 
-Yes, this is @typedef@.  But, notice how clear it can make your code?  Also notice how you could decide that you want to use @java.util.Date@ *everywhere* and have minimal impact on your code:
+Yes, this is @typedef@.  But, notice how clear it can make your code?  Also notice how you could decide that you want to use @java.util.Date@ *everywhere* instead of @java.sql.Date@ and have minimal impact on your code:
 
 pre.   abstract class AbstractEntity {
   type TimeStamp = java.util.Date
