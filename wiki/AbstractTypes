@@ -48,7 +48,7 @@ The problem here is in the design of these classes.  The only reason we know wha
 
 So, we can use abstract types:
 
-pre. abstract class DatabaseEntity {
+pre.  abstract class DatabaseEntity {
   type ID_TYPE
   var id:ID_TYPE = _
 }
