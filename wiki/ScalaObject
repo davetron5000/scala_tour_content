@@ -9,3 +9,33 @@ In Scala, classes have no static members (as they can in Java and Ruby).  Instea
 Also recall that creating a [w:CaseClasses(case class)] automatically creates a singleton object of the same name that can be used to create and "de-create" (in a @case@ statement) instances of that class.
 
 This ties together the two main purposes of a singleton object: as a factory and as an extractor.
+
+h2. Factory
+
+Suppose we want to be able to create a @Person@ object from either a known first name and last name, or a "friendly" string that takes a full name.  In Java, you might create multiple constructors.  While you can also do so in Scala, multiple constructors are a bit cumbersome, syntax-wise, so a factory is a bit easier (as an aside, Ruby does not allow multiple constructors, so you would need this pattern there as well).
+
+<script src="http://gist.github.com/170340.js"></script>
+
+Note that this is almost entirely convention.  The only real compiler "magic" that happens is in Scala's special treatment of the @apply()@ method.  Given a reference @xxx@, Scala treats @xxx(yyy)@ the same as @xxx.apply(yyy)@.  In this case, the object @Person@ has two @apply@ methods, each returning an instance of @Person@.
+
+That the object called @Person@ has the same name as the class called @Person@ is coincidental and purely for our own benefit.  We could define a class @Cat@ that extends @Person@ (since all cats seem to think they are people), who gets his last name from his owner's last name, and modify our @Person@ object to render @Cat@ objects sometimes:
+
+<script src="http://gist.github.com/170796.js"></script>
+
+h2. Extractor
+
+The more powerful use of objects is via a companion method to @apply@, called @unapply@, which Scala treats specially in a @case@ statement.  We saw in [w:CaseClasses] that you can "extract" the elements of an object as part of a case statement.  In those examples, we created case classes using the @case@ keyword.  This tells Scala to automatically create some canonical structures for us.  We could create those ourselves, however.
+
+Suppose we extends our @Person@ class to have an optional middle name:
+
+pre. class Person(val last:String, val first:String, val middle:String)
+
+Now, suppose we wanted to match on people without a middle name:
+
+pre. person match {
+   case Person(last,first,middle) => println("has middle name")
+   case Person(last,first) => println("no middle name")
+ }
+
+With ordinary @case@ classes, we cannot do this.  But it *is* possible by understanding how @case@ classes work.  The expression between @case@ and @=>@ in the code above is telling Scala to call the @unapply@ method of the @Person@ object.
+
