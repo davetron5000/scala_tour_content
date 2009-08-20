@@ -34,7 +34,7 @@ Now, suppose we wanted to match on people without a middle name:
 
 pre. person match {
    case Person(last,first,middle) => println("has middle name")
-   case Person(last,first) => println("no middle name")
+   case PersonNoMiddle(last,first) => println("no middle name")
  }
 
 With ordinary @case@ classes, we cannot do this.  But it *is* possible by understanding how @case@ classes work.  The expression between @case@ and @=>@ in the code above is telling Scala to call the @unapply@ method of the @Person@ object.
