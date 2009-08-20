@@ -4,5 +4,8 @@ The Scala Tour doesn't officially call out this feature.
 
 h1. My Interpretation
 
-In Scala, classes have no static members (as they can in Java and Ruby).  Instead, Scala provides a means to create singleton objects.  These are, essentially, global variables.  However, by judicious use of naming, these objects can make your code more readable, especially with respect to [w:PatternMatching].
+In Scala, classes have no static members (as they can in Java and Ruby).  Instead, Scala provides a means to create singleton objects.  These are, essentially, global variables (although it is only global to the scope in which it is included via @import@).  However, by judicious use of naming, these objects can make your code more readable, especially with respect to [w:PatternMatching].
 
+Also recall that creating a [w:CaseClasses(case class)] automatically creates a singleton object of the same name that can be used to create and "de-create" (in a @case@ statement) instances of that class.
+
+This ties together the two main purposes of a singleton object: as a factory and as an extractor.
