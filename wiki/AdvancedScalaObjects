@@ -50,3 +50,6 @@ h1. My Interpretation of This Feature
 While this is a pretty advance concept that might smack of a bit too much "magic", it is actually quite logical and, more importantly, highly useful and in aid of readable code.
 
 It was hard to come up with succinct example that wasn't artificial, but this is more of a "how does this work" type of concept than a "you need to know how to do this regularly".
+
+All that being said, I'm not sure why this feature couldn't have been more formally tied to the concept (and definition) of a class.
+I *really* like how in languages like Ruby or Objective-C, a symbol like @Person@ is a constant that refers to the *object* representing the @Person@ class.  It just feels more OO to me.  Here, we would have an object called @Person@ that just happens to be related to the class @Person@ through convention only.  Perhaps this is fallout from the JVM's internals?
