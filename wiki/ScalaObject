@@ -13,8 +13,12 @@ In the most basic case, you can use objects as a means to "statically import" me
 This is pretty much static imports from Java.  Note a few things:
 
 * We can import pretty much anywhere in our code; we don't need to import for the entire file -- this is handy for keeping code comprehensible and reducing data flow
-* This is *not* canoncial Scala code; you don't frequently throw exceptions or deal with the [w:ScalaOption(option class)] in this way.
+* This is *not* canonical Scala code; you don't frequently throw exceptions or deal with the [w:ScalaOption(option class)] in this way.
 
 Objects in Scala serve a more complex and important purpose than as an alternate syntax for static imports, however.  [w:AdvancedScalaObjects] explains this in more detail.
 
+h1. My Thoughts on This Feature
 
+I never cared for static imports in Java; outside of test code it seemed to make code *less* readable, because it increased the size of the global symbol space.  This is still an issue for Scala, however the ability to import these symbols at any scope virtually eliminates the negative aspects.
+
+That being said, I'm not sure why these couldn't just be formally defined as class methods; I'm not clear on what is gained by having these be part of another object.  See [w:AdvancedScalaObjects] for more detail on this (which will make more sense after reading that entry).
