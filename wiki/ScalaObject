@@ -41,7 +41,7 @@ With ordinary @case@ classes, we cannot do this.  But it *is* possible by unders
 
 <script src="http://gist.github.com/170800.js"></script>
 
-When Scala encounters the first @case@ statement, it reads it as "if there is a method of @Person@ that takes a @Person@ and returns a @Tuple3[String,String,String], call that method and *if* the @Option@ it returns *is not* @None@, set the tuple's values to @last@, @first@, and @middle@ and execute the code to the right of the @=>@.  Otherwise, proceed to the next @case@ statement and start over".
+When Scala encounters the first @case@ statement, it reads it as "if there is a method of @Person@ that takes a @Person@ and returns a @Tuple3[String,String,String]@, call that method and *if* the @Option@ it returns *is not* @None@, set the tuple's values to @last@, @first@, and @middle@ and execute the code to the right of the @=>@.  Otherwise, proceed to the next @case@ statement and start over".
 
 That's quite a handful.  And it may take a second to sink in, but this is what's going on under the covers of Scala's powerful @case@ classes and [w:PatternMatching].
 
