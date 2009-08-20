@@ -1,18 +1,4 @@
-h1. Why
-
-I find the "tour of scala":http://www.scala-lang.org/node/104 a nice idea, but wanted some more depth and real-world scenarios.  I also thought that some comparisons to Java, as a means of justifying the Scala feature, would really demonstrate things more clearly.  For introductory material, I really need an answer to the question "how does this make my life easier?", in addition to a clear explanation and example.
-
-I also thought it would be a bit more helpful to order the tour elements so that things flowed back better, as well as some introductory material that clears up some syntax that I found counter-intuitive the first time.
-
-So, I'm going through each thing and trying to:
-
-* Order them sensibly, so previous topics support future ones
-* Create more real-world situations where a feature might be useful and not so many mathematical constructs.
-* Comment on my own thoughts as to the utility of the feature.
-
-I'm also a Java programmer by trade, so a lot of the "justification" aspects that come to me are in comparison to Java.  
-
-h1. The Tour
+This is my own "re-telling" of the "tour of Scala":http://www.scala-lang.org/node/104 from the official Scala website.  If you are WhyAnotherTour, feel free, but mostly it was fun and informative.  I hope you feel the same way.
 
 You should be able to go through these in the order listed, with each building on previous topics.  I've also linked to the original tour topics.
 
