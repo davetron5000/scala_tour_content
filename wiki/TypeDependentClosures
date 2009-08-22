@@ -37,9 +37,7 @@ We can take this to the next level by applying [w:FunctionCurrying].  Suppose we
 
 So, we define a method named @?@ that takes three expressions.  The first must evaluate to a boolean, and the second two must evaluate to the same type (that we don't know).  When the method is called, we evaluate the first expression.  If it returns true, we evaluate the second expression, otherwise we evaluate the third.
 
-With Scala's type inference, the first call returns a @String@ and the second an @Int@.  These types are known at compile-time and are statically checked.
-
-Further, only one of the second two expressions ever gets evaluated.
+Note that since these are closures, only *one* of the second two expressions will get evaluated.
 
 h1. My Thoughts on this Feature
 
