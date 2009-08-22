@@ -6,7 +6,7 @@ h1. My Interpretation
 
 Scala's @match@ keyword is akin to Java's @switch@ statement, however it is *far* more powerful.
 
-To get the flavor of the syntax, here's how you might translate the only true values in computer programming into English:
+To get the flavor of the syntax, here's how you might translate the only real values in computer programming into English:
 
 <script src="http://gist.github.com/154841.js"></script>
 
