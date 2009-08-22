@@ -1,0 +1,15 @@
+h1. The Gist
+
+The Scala tour doesn't directly cover the fact that you can access Java code from Scala.
+
+h1. My Interpretation 
+
+In Scala, you have access to any Java library code, from the main libraries in @java.*@ and @javax.*@ to any Java code in your classpath.
+
+Here is a Servlet implemented in Scala that outputs a simple "hello world" in HTML (using [w:XmlLiterals]).
+
+<script src="http://gist.github.com/172967.js"></script>
+
+h1. My Thoughts on This Feature
+
+This will be crucial for the adoption of Scala, especially in large enterprises that are slow to change their technical architecture.
