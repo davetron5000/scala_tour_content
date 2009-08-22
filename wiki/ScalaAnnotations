@@ -6,7 +6,7 @@ h1. My Interpretations
 
 Annotations in Scala are conceptually the same as they are in Java.  Many of the Java keyword modifiers are annotations in Scala (as opposed to language constructs).  For example, @native@ in Java is the annotation @scala.native@.
 
-For the purposes of interacting with Java, Scala classes may annotate methods with the @throws@ annotations.  This is the equivalent of the the @throw@ keyword in Java.  This lets the Java compiler know what exceptions must be caught.
+For the purposes of interacting with Java, Scala classes may annotate methods with the @throws@ annotation.  This is the equivalent of the the @throws@ keyword in Java and lets the Java compiler know what exceptions must be caught.
 
 Java Annotations, when used in Scala, are specified using one of two types of syntax:
 
