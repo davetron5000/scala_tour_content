@@ -28,7 +28,7 @@ An example should illuminate why.  It's a bit long, so bear with me (this is a m
 
 Suppose we have a set of classes for dealing with lookup data, such as a list of U.S. States (defined by a code, a description, and an 'area of the country') and a list of Countries (defined by a code, a description, and an official postal abbreviation).  
 
-Since both expose a code and a description, we pull these up into a superclass called @Lookup@.  Further we also have a class that creates HTML @<SELECT>@ controls based upon a list of @Lookup@ and *it* exposes a @render@ method that allows us to pass in a function to control the human-readable value for any given @Lookup@ instance.
+Since both expose a code and a description, we pull these up into a superclass called @Lookup@.  Further, we also have a class that creates HTML @<SELECT>@ controls based upon a list of @Lookup@ objects and *it* exposes a @render@ method that allows us to pass in a function to control the human-readable value for any given @Lookup@ instance.
 
 <script src="http://gist.github.com/167851.js"></script>
 
