@@ -24,7 +24,7 @@ h2. Extractor
 
 The more powerful use of objects is via a companion method to @apply@, called @unapply@, which Scala treats specially in a @case@ statement.  We saw in [w:CaseClasses] that you can "extract" the elements of an object as part of a case statement.  In those examples, we created case classes using the @case@ keyword.  This tells Scala to automatically create some canonical structures for us.  We could create those ourselves, however.
 
-Suppose we extends our @Person@ class to have an optional middle name:
+Suppose we extend our @Person@ class to have an optional middle name:
 
 pre. class Person(val last:String, val first:String, val middle:String)
 
