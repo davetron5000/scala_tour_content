@@ -9,7 +9,7 @@ h2. Syntax
 Some basics about Scala syntax that aren't obvious (especially if you are coming from Java)
 
 * *Type Declaration* - The type of an object or value comes *after* the value, using a colon:  @name:String@ means "name has the type String"
-* *Type Inference* - If Scala can figure out the type of something from the context, you don't need to declare the type (this is called *type inference*).  @val name = "Dave"@ results in @name@ having the type String.  This is statically assigned, and not dynamic is it would be in Ruby (e.g.)
+* *Type Inference* - If Scala can figure out the type of something from the context, you don't need to declare the type (this is called *type inference*).  @val name = "Dave"@ results in @name@ having the type String.  This is statically assigned, and not dynamic as it would be in Ruby (e.g.)
 * *Adios, semicolons* - You don't need semicolons unless Scala can't figure out where statements end
 * *Method definitions* - Methods are defined via the "=" sign after the method signature, and don't require braces if they are one-liners.  @def toString = first + "," + last@ is perfectly valid.
 * *Generics* - Type parameters are found inside square braces.  @Array[String]@ is an array of type string (the same as @List<String>@ in Java)
