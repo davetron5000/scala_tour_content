@@ -4,7 +4,7 @@ h1. The Gist
 
 h1. My Interpretation
 
-Suppose you wish to create a logging framework that encourages detailed log messages.  In Java, you would wrap messages like this in an @if@ statement that checks to see if the runtime logging level is sufficient to generate the message before you actually construct it.
+Suppose you wish to create a logging framework that encourages detailed and dynamic log messages (e.g. @"You tried to access port " + port + " of url " + url + "and got the error " + error@).  In Java, you would wrap messages like this in an @if@ statement that checks to see if the runtime logging level is sufficient to generate the message before you actually construct it.
 
 In Scala, we can use closures to achieve this without any complicated conditionals around our logging statements.
 
