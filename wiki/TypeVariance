@@ -64,7 +64,7 @@ Here, we've created a special @CountrySelect@ that operates just on @Country@ ob
 
 This is because the code using the function @valueMaker@ is *definitely going to send it a @Country@ object*.  Since @lookupValue@ accepts any @Lookup@, and since @Country@ is a subtype of @Lookup@, we know *for a fact* that @lookupValue@ can safely operate on a @Country@ object.  Therefore, it it safe to pass in to @render@.
 
-This took me quite a while to totally get.  But, it's all in aid of maintaining static types, but providing flexible syntax and features...exactly what Scala is all about.  The cool thing about that, as compared to a similar implementation in a dynamic language (like Ruby) is that the compiler can catch the screwup we made by changing line 21 to use @USState@ instead of @Country@.
+This took me quite a while to totally get.  But, it's all in aid of maintaining static types while providing flexible syntax and features...exactly what Scala is all about.  The cool thing about that, as compared to a similar implementation in a dynamic language (like Ruby) is that the compiler can catch the screwup we made by changing line 21 to use @USState@ instead of @Country@.
 
 h1. My Thoughts on this Feature
 
