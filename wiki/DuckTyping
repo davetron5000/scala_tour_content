@@ -1,0 +1,34 @@
+h1. The Gist
+
+This isn't covered by the tour, but is too cool to not mention.
+
+h1. My Interpretation
+
+In many enterprise Java systems based on Java 1.5 or higher, it is common to see a top-level abstract DAO implemented as follows:
+
+<script src="http://gist.github.com/172969.js"></script>
+
+Suppose your application must integrate with a new database, and that the database is currently accessible by some Java code created in a similar manner:
+
+<script src="http://gist.github.com/172971.js"></script>
+
+It's great that you have your database access code already done, and it's even better that both class hierarchies have the same interface.
+
+The problem is that they do not actually implement the same interface. This means that any code you already have that works with @GenericDAO@ will not work with your new database access DAOs without formally extracting a common interface.  This could be a painful refactoring.
+
+With Ruby, you can ignore this fact and just call methods you know are there; that's dynamic typing.  Scala, being statically typed, doesn't provide an obvious means of doing this.  But you *can* actually do it.
+
+<script src="http://gist.github.com/172974.js"></script>
+
+Note the type of the @dao@ argument to @showName@.  It's type is @{ def getById(id:Int):{var name:String} }@, which is to say "a class that has a public method called @getById@ that takes an @Int@ as its one argument and returns an object that has a publicly accessible @var@ called @name@".
+
+In my haste, I actually forgot to put a dummy implementation of @save@ in @EmployeeJDBCDAO@.  It doesn't matter; this code is statically checked and compiles fine.
+
+h1. My Thoughts on This Feature
+
+I love duck typing in Ruby.  It is one of the main features in Ruby that allows clean and concise code.  The major drawback is that you can quickly find yourself with *very* difficult-to-understand interactions if you don't document the type of objects you expect to receive (or which methods those objects must support).
+
+While Scala certainly allows you to declare interfaces the Java way (by creating [w:ScalaTraits(traits)]), you can also use this syntax and declare, right in your method, what interface you expect objects to provide.
+
+You certainly wouldn't design your code this way, as a general rule, but if you need (or want) to support different implementations of the same interface, and are not able to pull out one explicitly, this sure beats creating a bunch of proxy and adapter classes.
+
