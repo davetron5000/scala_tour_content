@@ -35,4 +35,4 @@ Functions, their definitions, and their behavior are a very deep subject, but th
 
 h1. My Thoughts on this Feature
 
-I dig this quite a bit.  I could use this at work *right now* if it were available in Java.  While many (many) examples of Scala use functions in a way that *really* confuses things, I still think this feature has the power to simplify and clarify a lot of code.  It is the logic continuation of the "inversion of control", whereby a class can ask for code and not structure, if it makes more sense to do it that way.
+I dig this quite a bit.  I could use this at work *right now* if it were available in Java.  While many examples of Scala use functions in a way that *really* confuses things, I still think this feature has the power to simplify and clarify a lot of code.  It is the logical continuation of the "inversion of control" concept; here, a class can ask for code it needs, instead of exporting its data.
