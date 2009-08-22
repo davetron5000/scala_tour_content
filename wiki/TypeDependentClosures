@@ -10,7 +10,7 @@ In Scala, we can use closures to achieve this without any complicated conditiona
 
 <script src="http://gist.github.com/155931.js"></script>
 
-Note that the log level is not sufficient to generate debug messages.  When this program runs, we see, via our @breadcrumb@ method that the "RED ALERT" message was created, but also that the message created in the @javaDebug@ method is created, but *not* the messages in the other two @debug@ methods.
+Note that the log level is not sufficient to generate debug messages.  When this program runs, we see, via our @breadcrumb@ method that the "RED ALERT" message was created (and printed), but also that the message passed to the @javaDebug@ method was created (and not printed), but *not* the messages in the other two @debug@ methods.
 
 This is because we pass in a closure to the log message.  This is a block of code that evaluates to some value (or not, if it's type is @Unit@).  For the debug messages, these blocks don't get called. (and thus, our complicated string concatenations don't execute).
 
