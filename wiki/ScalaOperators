@@ -10,7 +10,7 @@ Suppose you want to use Ruby's @<=>@ operator as a sorting mechanism.
 
 <script src="http://gist.github.com/155984.js"></script>
 
-Since Scala has very liberal rules about what can be in an identifier, you can make a method called @<=>@ and it works just fine.  The sort function could also be written like so:
+Since Scala has very liberal rules about what can be in an identifier, you can make a method called @<=>@ and it works just fine.  The function we pass to @sort@ function could also be written like so:
 
 pre. (a,b) => a.<=>(b)
 
