@@ -17,24 +17,25 @@ The expression @state <- states@ is a *generator*, which assigns a value from @s
 Note the subtle difference here; in Java we would iterate over the entire collection; in Scala we are building up a collection over which to iterate via the guard condition and *then* executing the body of the for-comprehension.  This means that, in general, conditions inside the for-comprehension body cannot affect conditions in the guard condition:
 
 pre. var done = false
-for (state <- states if !done) if state.code == 'DC' done = true
+ for (state <- states if !done) if state.code == 'DC' done = true
 
 When we hit DC, we will *not* stop; this is because the guard condition has already been evaluated for every item in the list before we got to the body.  Yikes!  (See "this mind-blowing article":http://creativekarma.com/ee.php/weblog/comments/the_scala_for_comprehension_from_a_java_perspective/ on the crazy subtleties of the @for@ loop)
 
 If we didn't want to actually yield a list, we can omit the @yield@ keyword alltogether:
 
-pre.   for( state <- states if state.location != 'east || state.code == "DC") println(state)
+pre. for( state <- states if state.location != 'east || state.code == "DC") 
+   println(state)
 
 h2. Nested Loops
 
 Instead of nesting @for@ loops, we can simply add expressions to the comprehension.  Suppose we wish to find pairs of states that could be "sister" states; states that aren't in the same geographic area.
 
 pre. val possibleSisters = for( state1 <- states; 
-state2 <- states 
-if state1.location != state2.location) 
-  yield (state1,state2)
+ state2 <- states 
+ if state1.location != state2.location) 
+   yield (state1,state2)
 
-Here, we loop through each pair of states, yield a tuple of states that don't have the same @location@ (a tuple is pretty much what it sounds like, and is created in Scala via parens and commas, as we have done here in the @yield@ clause).
+Here, we loop through each pair of states, yield a tuple of states that don't have the same @location@.
 
 h2. What about @map@, @filter@, etc.?
 
