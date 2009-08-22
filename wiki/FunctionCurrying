@@ -18,9 +18,9 @@ This isn't bad, but we already know that some [w:ScalaFunctions] can reduce the 
 
 <script src="http://gist.github.com/153765.js"></script>
 
-Howerver, we still have some repetition with the two prefix notifiers (repetition we *don't* have with the Java implementation, even though the overall implementation is longer)
+However, we still have some repetition with the two prefix notifiers (repetition we *don't* have with the Java implementation, even though the overall implementation is longer)
 
-It turns we can further parameterize functions via *function currying*.  We can create a function that has received some of its parameters already and send it off to someone expecting a function that takes the requisite number of parameters:
+It turns we can further parameterize functions via *function currying*.  We can create a function that has received some of its parameters already and send it off to someone expecting a function that takes the remaining number of parameters:
 
 <script src="http://gist.github.com/153762.js"></script>
 
