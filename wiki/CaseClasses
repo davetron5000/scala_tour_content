@@ -56,6 +56,6 @@ h1. My Thoughts on this Feature
 
 It's certainly not remotely intuitive that putting @case@ before a class definition would give you the automatic stuff it gives you.  I want this stuff outside of ever needing to use a class in a case statement, and so it just seems weird to call it "case classes". 
 
-That being said, it's pretty darn useful and anything that saves me from typing *the same code over and over* is a win.  The "deconstruction" bit is also pretty cool, even if the underpinnings of how it works (not discussed here) are hard to follow.
+That being said, it's pretty darn useful and anything that saves me from typing *the same code over and over* is a win.  The "deconstruction" bit is also pretty cool, even if the underpinnings of how it works are hard to follow.
 
 @unapply@ is highly subtle and a really huge bit of hand-waving, but is obviously the way in which the case class stuff has to be implemented.  It's hard to come up with a use for it outside of this, and I'm not clear on when you'd write your own instead of just relying on the @case@ modifier.
