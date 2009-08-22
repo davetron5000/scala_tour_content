@@ -36,11 +36,9 @@ h2. Advanced
 # [w:TypeVariance]
 # [w:AbstractTypes] - *not* abstract classes
 # [w:AdvancedScalaObjects]
+# [w:DuckTyping]
+# [w:ActorsAndConcurrency]
 # [w:ExplcitlyTypedSelfReferences]
 
-h2. Not Covered
 
-There's a few things that aren't really covered by the tour (other than [w:ScalaBasics(some basics)], that are, at first glance, key to understanding what Scala can do for you.
 
-# [w:ActorsAndConcurrency]
-# [w:DuckTyping]
