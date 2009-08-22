@@ -24,6 +24,4 @@ You *can* make Scala behave like Java in this way, by qualifying the class with 
 
 h1. My Thoughts on this Feature
 
-I really can't say I care much for this.  I would really like to know *who* thought that binding inner classes to the containing class was a problem and *who* thought it was *so* much of a problem that Scala does the opposite by default.
-
-I don't use inner classes a whole lot, but this just seems counter-intuitive to me.  I really wonder who asked for this feature.
+I can see having the option to scope an inner class to an object, but it seems like an odd default.  The use of @#@ to delineate the "class scoped" behavior also seems odd.
