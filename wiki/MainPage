@@ -7,8 +7,9 @@ h2. Basics
 # [w:ScalaBasics] - this covers some syntactic things that might surprise you, as well as some very basic things about working with Scala (not in the tour)
 # [w:UnifiedTypes]
 # [w:ScalaClasses]
-# [w:ScalaProperties] - *not in the official tour*
+# [w:ScalaProperties]
 # [w:ScalaPackages]
+# [w:ScalaObject]
 # [w:ScalaTraits]
 # [w:ScalaGenerics]
 # [w:ScalaAnnotations]
@@ -33,13 +34,13 @@ h2. Advanced
 # [w:ImplicitParameters]
 # [w:TypeVariance]
 # [w:AbstractTypes] - *not* abstract classes
+# [w:AdvancedScalaObjects]
 # [w:ExplcitlyTypedSelfReferences]
 
 h2. Not Covered
 
 There's a few things that aren't really covered by the tour (other than [w:ScalaBasics(some basics)], that are, at first glance, key to understanding what Scala can do for you.
 
-# [w:ScalaObject]
 # [w:ActorsAndConcurrency]
 # [w:JavaIntegration]
 # [w:DuckTyping]
