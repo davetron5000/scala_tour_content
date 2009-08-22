@@ -39,17 +39,17 @@ With ordinary @case@ classes, we cannot do this.  But it *is* possible by unders
 
 <script src="http://gist.github.com/170800.js"></script>
 
-When Scala encounters the first @case@ statement, it reads it as "if there is a method of @Person@ that takes a @Person@ and returns a @Tuple3[String,String,String]@, call that method and *if* the @Option@ it returns *is not* @None@, set the tuple's values to @last@, @first@, and @middle@ and execute the code to the right of the @=>@.  Otherwise, proceed to the next @case@ statement and start over".
+When Scala encounters the first @case@ statement, it reads it as "if there is a method @apply@ of object @Person@ that takes a object *of type* @Person@ and returns an @Option[Tuple3[String,String,String]]@, call that method and *if* the @Option@ it returns *is not* @None@, set @last@, @first@, and @middle@ to the tuple's values and execute the code to the right of the @=>@.  Otherwise, proceed to the next @case@ statement and start over".
 
-That's quite a handful.  And it may take a second to sink in, but this is what's going on under the covers of Scala's powerful @case@ classes and [w:PatternMatching].
+That's quite a mouthful.  And it may take a second to sink in, but this is what's going on under the covers of Scala's powerful @case@ classes and [w:PatternMatching].
 
 Fortunately, you don't need to implement a lot of @unapply@ methods; rather you take advantage of the @case@ keyword creating them for you.
 
 h1. My Interpretation of This Feature
 
-While this is a pretty advance concept that might smack of a bit too much "magic", it is actually quite logical and, more importantly, highly useful and in aid of readable code.
+While this is a pretty advanced concept that might smack of a bit too much "magic", it is actually quite logical and, more importantly, highly useful in aid of readable code.
 
 It was hard to come up with succinct example that wasn't artificial, but this is more of a "how does this work" type of concept than a "you need to know how to do this regularly".
 
 All that being said, I'm not sure why this feature couldn't have been more formally tied to the concept (and definition) of a class.
-I *really* like how in languages like Ruby or Objective-C, a symbol like @Person@ is a constant that refers to the *object* representing the @Person@ class.  It just feels more OO to me.  Here, we would have an object called @Person@ that just happens to be related to the class @Person@ through convention only.  Perhaps this is fallout from the JVM's internals?
+I *really* like how in languages like Ruby or Objective-C, a symbol like @Person@ is a constant that refers to the *object* representing the @Person@ class.  It just feels more OO to me.  Here, we  have an object called @Person@ that just happens to be related to the class @Person@ through convention only.  Perhaps this is fallout from the JVM's internals?
