@@ -14,7 +14,7 @@ Java could do this pretty easily, however Java is limited to primitive types and
 
 <script src="http://gist.github.com/154842.js"></script>
 
-This, alone, is pretty useful.  However, we can make this even more dynamic.  Suppose we want our function to also translate numbers into exact amounts (e.g. @approximate(34)@ yields @34@) and we want to handle booleans, where a @true@ is @1@ and a @false@ is @0..1@.  This would be some ugly Java code.
+This, alone, is pretty useful.  However, we can make this even more dynamic in Scala, because the @match@/@case@ construct can work on any types it gets:
 
 <script src="http://gist.github.com/154843.js"></script>
 
