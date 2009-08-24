@@ -4,38 +4,38 @@ You should be able to go through these in the order listed, with each building o
 
 h2. Basics
 
-# [w:ScalaBasics] - this covers some syntactic things that might surprise you, as well as some very basic things about working with Scala (not in the tour)
-# [w:UnifiedTypes] - everything is an object
-# [w:ScalaClasses] - Scala is object-oriented
-# [w:ScalaProperties] - Scala intelligently handles so-called "getters" and "setters"
-# [w:ScalaPackages] - Scala allows code to be packaged for visibility and organization
-# [w:ScalaObject] - Scala has direct support for singletons
+# [w:ScalaBasics] - Scala has some surprising syntax for both Javaists and Rubyists.  This is a crash course.
+# [w:UnifiedTypes] - everything is an object.  Even @Int@.  Finally.
+# [w:ScalaClasses] - Scala is object-oriented.
+# [w:ScalaProperties] - Scala intelligently handles so-called "getters" and "setters"...by not having them
+# [w:ScalaPackages] - Scala allows code to be packaged for visibility and organization.
+# [w:ScalaObject] - Scala has direct support for singleton objects.
 # [w:ScalaTraits] - Scala allows multiple inheritance via mixins.
-# [w:ScalaGenerics] - Scala allows parameterized types
-# [w:ScalaAnnotations] - Scala can use Java annotations
+# [w:ScalaGenerics] - Scala allows parametrized types.
+# [w:ScalaAnnotations] - Scala can use Java annotations.
 # [w:ScalaOperators] - Scala's flexible syntax lets you create your own operators.
 # [w:JavaIntegration] - Scala can call anything that Java can.
 
 h2. Intermediate
 
-# [w:ScalaFunctions] - Scala has strong support for functional programming
-# [w:PatternMatching] - Scala has an advanced @switch@/@case@ system
+# [w:ScalaFunctions] - Scala has strong support for functional programming.
+# [w:PatternMatching] - Scala has an advanced @switch@/@case@ system.
 # [w:FunctionCurrying] - define a function that has received some of its parameters now, and will get the remainder later.
 # [w:CaseClasses] - taking switch statements to a useful level.
 # [w:SealedClasses] - tightening up [w:CaseClasses].
 # [w:XmlLiterals] - Scala allows XML literals that are smarter than strings.
-# [w:ForComprehensions] - don't let the name confuse you; this is about Scala's powerful @for@ loop construct
-# [w:TypeBounds] - Scala's generic types can be restricted and bound (just as in Java)
+# [w:ForComprehensions] - don't let the name confuse you; this is about Scala's powerful @for@ loop construct.
+# [w:TypeBounds] - Scala's generic types can be restricted and bound for (alleged) understandability.
 # [w:InnerClasses] - Scala supports nesting classes within objects and other classes.
 # [w:ImplicitConversions] - Scala can implicitly convert objects to other types.
-# [w:TypeDependentClosures] - Closures in general discussed here, too.
+# [w:TypeDependentClosures] - Scala has proper support for closures.  Take that, Java!
 
 h2. Advanced
 
 # [w:ImplicitParameters] - Scala can automatically pass parameters to methods that need them!
-# [w:TypeVariance] - Scala supports more advanced generics/type parameterization via covariance and contra-variance.
-# [w:AbstractTypes] - Scala supports type aliasing and abstract types as an alternative to generics/type parameterization.
+# [w:TypeVariance] - Scala supports more advanced generics/type parametrization via covariance and contra-variance.  Your instinct is to run far away, but I think I've found a way to explain it.
+# [w:AbstractTypes] - Scala supports type aliasing and abstract types as an alternative to generics/type parametrization.
 # [w:AdvancedScalaObjects] - Scala's singleton objects are quite powerful.
 # [w:DuckTyping] - Scala supports duck typing.  Take that, Ruby!
-# [w:ActorsAndConcurrency] - Scala uses an actor/message-passing style of concurrency
+# [w:ActorsAndConcurrency] - Scala uses an actor/message-passing style of concurrency.
 # [w:ExplcitlyTypedSelfReferences] - This is like the final boss in Super Mario 3.  Good luck.
