@@ -5,3 +5,4 @@
 * Why isn't comparison done with @<=>@?
 * Why do I need parens around @if@ statements *except* when used as guard conditions?!
 * What's up with the right-associative colon nonsense?
+* Have to use @_=@ is LAME.  Not being able to make methods like @active?@ is LAME.  If we're gonna have wild-west operator überload, let's just f'ing do it all the way.
