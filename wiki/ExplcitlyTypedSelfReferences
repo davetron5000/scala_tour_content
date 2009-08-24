@@ -10,7 +10,17 @@ I apologize for the long example, but this is not the easiest topic to understan
 
 One use of [w:ScalaTraits] is to better organize your code; you can logically group code that has separate concerns in different traits.  At times, however, you will always use certain traits together.  Consider a very simple web application framework design:
 
+gliffy. 1800756 | center | L
 
+Here we have a @Page@ that represents a web page we'll render, and we have a trait called @HtmlHelpers@ which contains some useful helper methods.
+
+Suppose that our web framework wants to take advantage of some popular CSS layout frameworks, like Blueprint.  There's a couple of obvious ways to do this.  We could subclass @HtmlHelpers@ to add Blueprint-specific helpers (and create additional subclasses for other CSS frameworks we wished to support).  Or, we could create another trait for the Blueprint-specific helpers only.
+
+Both of these choices are less than optimal; in the first case (subclassing), we end up with a somewhat strange design; @BlueprintHelpers@ doesn't *sound* like a subclass of @HtmlHelpers@ and this creates a class hierarchy where one doesn't naturally exist.
+
+In the second case, we have our concerns nicely separated, but there's a problem: @BlueprintHelpers@ cannot access the @HtmlHelpers@ methods.
+
+Faced with these choices, we could just go with the subclassing method, but Scala allows a third alternative.  We can tell Scala that whenever @BlueprintHelpers@ is mixed-in, the programmer must also mix-in @HtmlHelpers@.
 
 h1. My Thoughts on this Feature
 
