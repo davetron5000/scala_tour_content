@@ -4,7 +4,7 @@ h1. The Gist
 
 h1. My Interpretation
 
-I'm not sure I fully understand *when* this is needed, but I have identified *one instance* of using it.  This is essentially a way around inheritance to compose classes.
+I'm not sure I fully understand all instances *when* you should (or must) use this, but I have identified *at least one* way of using it.  This is essentially a way around inheritance to compose classes.
 
 I apologize for the long example, but this is not the easiest topic to understand.
 
