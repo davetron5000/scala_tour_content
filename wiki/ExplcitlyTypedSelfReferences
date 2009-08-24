@@ -22,8 +22,14 @@ In the second case, we have our concerns nicely separated, but there's a problem
 
 Faced with these choices, we could just go with the subclassing method, but Scala allows a third alternative.  We can tell Scala that whenever @BlueprintHelpers@ is mixed-in, the programmer must also mix-in @HtmlHelpers@.
 
+<script src="http://gist.github.com/173568.js"></script>
+
+@this: HtmlHelpers =>@ is what makes this connection.  This means that the code inside @BlueprintHelpers@ can behave as if it were an instance of @HtmlHelpers@.  If you were to mix in @BlueprintHelpers@ and *not* @HtmlHelpers@, you would get a compile error.
+
 h1. My Thoughts on this Feature
 
-So, we start with a convoluted description of a Graph, and then glop on loads of other Scala features until...what?  Something breaks and we require arbitrary syntax to fix it?  I honestly can't figure this out at all.  
+This is a very weird feature.  The tour entry for this is *horrendous*, and only after some real toying around could I come up with anything resembling a real example that didn't require a delicate balance of knowledge of the entire Scala programming language to understand.
 
-However, the fact that we are required to indicate the type of something makes me think that this is one of those dark, nasty corners of static typing that its proponents don't want you to know about until it's too late.  I'm not judging static typing, but it's clear that this is in aid of giving info to the compiler, *not* the programmer.
+You might even think that this feature is not a good solution to the proposed problem.  I'm not 100% convinced that it is, but I *do* think that the class hierarchy is a bit stronger than if we had simply subclassed @HtmlHelpers@.  It results in classes like @class AboutPage extends Page with HtmlHelpers with BlueprintHelpers@ which, while a bit verbose, is very clear and readable.
+
+So, by having your classes designed in this fashion (and taking advantage of self-typing when you need to, instead of subclassing), you end up with many fine-grained classes and class definitions that are very readable.  This seems more elegant to me than the Ruby way of using "macros".
