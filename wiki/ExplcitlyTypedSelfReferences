@@ -1,10 +1,16 @@
 h1. The Gist
 
-"Explicitly Typed Self References":http://www.scala-lang.org/node/124 is, in my opinion, a psychological test to see who's reading the Scala Tour.
+"Explicitly Typed Self References":http://www.scala-lang.org/node/124 is, no offense, incomprehensible.  However, with some help from the Scala Book, and some coding, I think I might get what to use it for.
 
 h1. My Interpretation
 
-A free beer to whoever can explain this concept and why it matters.
+I'm not sure I fully understand *when* this is needed, but I have identified *one instance* of using it.  This is essentially a way around inheritance to compose classes.
+
+I apologize for the long example, but this is not the easiest topic to understand.
+
+One use of [w:ScalaTraits] is to better organize your code; you can logically group code that has separate concerns in different traits.  At times, however, you will always use certain traits together.  Consider a very simple web application framework design:
+
+
 
 h1. My Thoughts on this Feature
 
