@@ -26,13 +26,13 @@ The second class, @UserInterface@, receives command strings from the caller (in 
 
 The output of this program might look like so:
 
-pre. Starting ls
- Starting rm -rf
- Starting scp
- ls done
- rm -rf done
- exiting...
- scp foo ssh://www.naildrivin5.com/home/davec/bar done
+pre.  Starting ls
+Starting rm -rf
+Starting scp
+ls done
+rm -rf done
+exiting...
+scp foo ssh://www.naildrivin5.com/home/davec/bar done
 
 This is a contrived example, however anyone who has done Swing programming will appreciate the ease with which the work is divided and the communication is organized.  This also could be very beneficial in a highly interactive web application; you might send all requests to worker actors, returning a busy indicator immediately to the user.  When the worker actor completes, you can update the web application via AJAX, providing for a nice user experience.  All without rolling your own message queue infrastructure.
 
