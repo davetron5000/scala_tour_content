@@ -26,7 +26,7 @@ The second class, @UserInterface@, receives command strings from the caller (in 
 
 The output of this program might look like so:
 
-pre.  Starting ls
+pre.   Starting ls
 Starting rm -rf
 Starting scp
 ls done
