@@ -26,22 +26,11 @@ Finally, note that the expression @case _@ is akin to @default@ in a Java @switc
 
 This just touches the surface of Scala's pattern matching.
 
-----
-
-To get the flavor of the syntax, here's how you might translate the only real values in computer programming into English:
-
-
-Java could do this pretty easily, however Java is limited to primitive types and enumerations.  In Scala, you can use pretty much anything.  Suppose you wish to translate English words like "some", "one" and "none" into UML-type quantifiers.  In Java, you would need either an enumeration or a large @if-then-else@ statement.  In Scala, we can use @match@:
-
-<script src="http://gist.github.com/154842.js"></script>
-
-This, alone, is pretty useful.  However, we can make this even more dynamic in Scala, because the @match@/@case@ construct can work on any types it gets:
+Suppose you wish to add rendering of your object's encoding after the @handleOutput@ call.  Suppose that you wish to handle anything, not just instances of @Entity@, and you also wish to hide the names of any @Person@ (a subclass of @Entity@) who is under 18 years old.
 
 <script src="http://gist.github.com/154843.js"></script>
 
-Scala's @match@ and @case@ statements take care of all the casting.  Yes, this is type safe code!
-
-This construct is quite powerful.  [w:CaseClasses] shows another way to use it to keep your code clean and clear.
+Note that we aren't just switching based on the value of @obj@, but also on it's type, and it's contents; the guard condition in the first @case@ statement allows us to refine our match.  Anyone under 18 will match this; anyone else who is a @Person@ will match the second @case@, with any *other* @Entity@ instance matching the third.  Finally, we just @toString@ non-@Entity@ objects that we receive.
 
 h1. My Thoughts on this Feature
 
