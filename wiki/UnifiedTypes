@@ -12,4 +12,4 @@ Every object is a subtype of @Any@, however in practice, most objects will be a 
 
 h1. My Thoughts on this Feature
 
-Thank *GOD* we don't need Java's stupid primitive types any more.  However, I find the concepts of @Null@, @Nothing@, and @null@ less than intuitive.  Stuff like "this":http://javaforyou.wordpress.com/2009/07/12/nothingness/ just makes me scratch my head.  Especially @Nil@ being the empty list.  What's so wrong with @List.EMPTY_LIST@?  And why isn't @Null@ an empty set?  Who knows?
+Thank *GOD* we don't need Java's stupid primitive types any more.  However, I find the concepts of @Null@, @Nothing@, and @null@ less than intuitive.  Stuff like "this":http://javaforyou.wordpress.com/2009/07/12/nothingness/ just makes me scratch my head.  Especially @Nil@ being the empty list.  What's so wrong with @EmptyList@? 
