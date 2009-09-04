@@ -6,7 +6,7 @@ So, I went through every element of the tour and worked out the feature myself, 
 
 I want new languages and tools to make my life easier in some way, and I feel that many of Scala's features do that.  However this was not obvious to me from the tour.
 
-I also thought it would be a bit more helpful to order the tour elements so that things flowed back better, as well as some introductory material that clears up some syntax that I found counter-intuitive the first time.
+I also thought it would be a bit more helpful to order the tour elements so that things flowed better, as well as some introductory material that clears up some syntax that I found counter-intuitive the first time.  I also added a few of my own stops on the tour that I thought would've been nice to have the first time through.
 
 Finally, I can't pass up the opportunity to comment on these features, so each one contains my thoughts at the bottom, which you can skip if you aren't interested.
 
