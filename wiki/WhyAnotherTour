@@ -1,6 +1,6 @@
 I find the "tour of Scala":http://www.scala-lang.org/node/104 a nice idea, but found many of the examples wanting; sometimes for general clarity, but mostly because I kept asking myself "why should I care about this feature?"
 
-As an application developer, mathematical examples aren't particularly satisfying or exciting.  As a Java developer, I was also interested in how Scala improves on Java, with respect to a particular feature.
+As an application developer, mathematical examples aren't particularly satisfying or exciting.  As a Java developer, I was also interested in how Scala improves on Java, with respect to a particular language feature.
 
 So, I went through every element of the tour and worked out the feature myself, trying to map it to real-world scenarios I (and, presumably many others) have faced.  I find a real (if simplified) context makes not only comprehending a language feature simpler, but also leaves me with a feeling of *why* the feature exists and *what good* it does.
 
