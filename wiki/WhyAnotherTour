@@ -1,4 +1,4 @@
-I find the "tour of Scala":http://www.scala-lang.org/node/104 a nice idea, but found many of the examples wanting; sometimes for general clarity, but mostly because I kept asking myself "why should I care?"
+I find the "tour of Scala":http://www.scala-lang.org/node/104 a nice idea, but found many of the examples wanting; sometimes for general clarity, but mostly because I kept asking myself "why should I care about this feature?"
 
 As an application developer, mathematical examples aren't particularly satisfying or exciting.  As a Java developer, I was also interested in how Scala improves on Java, with respect to a particular feature.
 
