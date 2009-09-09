@@ -16,7 +16,7 @@ Suppose we want to be able to create a @Person@ object from either a known first
 
 Note that this is almost entirely convention.  The only real compiler "magic" that happens is in Scala's special treatment of the @apply()@ method.  Given a reference @xxx@, Scala treats @xxx(yyy)@ the same as @xxx.apply(yyy)@.  In this case, the object @Person@ has two @apply@ methods, each returning an instance of @Person@.
 
-That the object called @Person@ has the same name as the class called @Person@ is coincidental and purely for our own benefit.  We could define a class @Cat@ that extends @Person@ (since all cats seem to think they are people), who gets his last name from his owner's last name, and modify our @Person@ object to render @Cat@ objects sometimes:
+We could define a class @Cat@ that extends @Person@ (since all cats seem to think they are people), who gets his last name from his owner's last name, and modify our @Person@ object to render @Cat@ objects sometimes:
 
 <script src="http://gist.github.com/170796.js"></script>
 
@@ -52,4 +52,4 @@ While this is a pretty advanced concept that might smack of a bit too much "magi
 It was hard to come up with succinct example that wasn't artificial, but this is more of a "how does this work" type of concept than a "you need to know how to do this regularly".
 
 All that being said, I'm not sure why this feature couldn't have been more formally tied to the concept (and definition) of a class.
-I *really* like how in languages like Ruby or Objective-C, a symbol like @Person@ is a constant that refers to the *object* representing the @Person@ class.  It just feels more OO to me.  Here, we  have an object called @Person@ that just happens to be related to the class @Person@ through convention only.  Perhaps this is fallout from the JVM's internals?
+I *really* like how in languages like Ruby or Objective-C, a symbol like @Person@ is a constant that refers to the *object* representing the @Person@ class.  It just feels more OO to me.  ~Here, we  have an object called @Person@ that just happens to be related to the class @Person@ through convention only.  Perhaps this is fallout from the JVM's internals?~ In fact, an object named @Person@ has the same access and privs to the @Person@ class as objects of that class would.
