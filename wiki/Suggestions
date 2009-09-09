@@ -3,6 +3,7 @@ h1. Suggestions to keep track of for possible improvements
 h2. From a guy on the scala mailing list
 
 h3. Basics
+
  - Methods - you go over too quickly in my opinion, it is also not
 true that they are always defined using an equals sign, if the method
 does not return a value you can(should) leave it out.
