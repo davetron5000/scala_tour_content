@@ -1,5 +1,9 @@
 h1. Suggestions to keep track of for possible improvements
 
+h2. The closures stuff
+
+The entry on [w:ScalaClosures] is really about passing by name.  Need to differentiate the two (wasn't intitially clear to me why that was)
+
 h2. From a guy on the scala mailing list
 
 h3. Basics
