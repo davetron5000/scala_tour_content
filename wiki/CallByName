@@ -40,4 +40,5 @@ So, we define a method named @?@ that takes three expressions.  The first must e
 Note that since these are closures, only *one* of the second two expressions will get evaluated.
 
 h1. My Thoughts on this Feature
+
 This is a great feature and one of my top reasons to use Scala.  While the second example of adding in generics and currying certainly stretches some bounds, it demonstrates how Scala's (often weird) syntax can be used to extend the language and make it appear to have new control structures and keywords.
