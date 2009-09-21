@@ -8,8 +8,8 @@ All Scala values are objects; there is no formal "primitive" type as there is in
 
 gliffy. 1768557 | center | M
 
-Every object is a subtype of @Any@, however in practice, most objects will be a subtype of AnyRef.  AnyVal is a superclass for the types that, in Java, are considered "primitive" (that being things like @int@, @byte@, and @float@).  Further, all classes implicitly extend [w:ScalaObject(scala.ScalaObject)] (which is a trait) and AnyRef (yes, there is multiple inheritance).  Finally, classes you can access from the Java runtime do **not** extend [w:ScalaObject(scala.ScalaObject)], but just extend AnyRef.
+Every object is a subtype of @Any@, however in practice, most objects will be a direct subtype of @AnyRef@.  @AnyVal@ is a superclass for the types that, in Java, are considered "primitive" (that being things like @int@, @byte@, and @float@).  Further, all classes implicitly extend [w:ScalaObject(scala.ScalaObject)] (which is a trait) and AnyRef (yes, there is multiple inheritance).  Finally, classes you can access from the Java runtime do **not** extend [w:ScalaObject(scala.ScalaObject)], but just extend AnyRef.
 
 h1. My Thoughts on this Feature
 
-Thank *GOD* we don't need Java's stupid primitive types any more.  However, I find the concepts of @Null@, @Nothing@, and @null@ less than intuitive.  Stuff like "this":http://javaforyou.wordpress.com/2009/07/12/nothingness/ just makes me scratch my head.  Especially @Nil@ being the empty list.  What's so wrong with @EmptyList@? 
+Thank *GOD* we don't need Java's stupid primitive types any more (even though they are actually still there, since this is the JVM and all).  However, I find the concepts of @Null@, @Nothing@, and @null@ less than intuitive.  Stuff like "this":http://javaforyou.wordpress.com/2009/07/12/nothingness/ just makes me scratch my head.  Especially @Nil@ being the empty list.  What's so wrong with @EmptyList@? 
