@@ -28,6 +28,7 @@ h2. Intermediate
 # [w:TypeBounds] - Scala's generic types can be restricted and bound for (alleged) understandability.
 # [w:InnerClasses] - Scala supports nesting classes within objects and other classes.
 # [w:ImplicitConversions] - Scala can implicitly convert objects to other types.
+# [w:CallByName] - You can defer the evaluation of parameters until they are used.
 # [w:TypeDependentClosures] - Scala has proper support for closures.  Take that, Java!
 
 h2. Advanced
