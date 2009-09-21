@@ -18,7 +18,7 @@ pre.   new Connector(desc.value,attempts.value,url.value,failonerror.value)
 
 you would get a compile error.
 
-Also note that, like in Java, if a class @Child@ extends a class @Parent@, @Configuration[Child]@ *is not* a subclass of @Configuration[Parent]@ (although you can [w:TypeVariance(change this behavior)].
+Also note that, like in Java, if a class @Child@ extends a class @Parent@, @Configuration[Child]@ *is not* a subclass of @Configuration[Parent]@ (although you can [w:TypeVariance(change this behavior)]).
 
 h2. Generic Methods
 
