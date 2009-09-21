@@ -14,9 +14,9 @@ Note that the log level is not sufficient to generate debug messages.  When this
 
 This is because the log message's parameters are ''pass by name''.  This means that the parameters aren't evaluated until they are need (and not evaulated if they aren't).  For the debug messages, these blocks don't get called. (and thus, our complicated string concatenations don't execute).
 
-The syntax @=> String@ is different than @() => String@; the first form indicates a closure that evaluates to a @String@ is expected, while the second indicates a function taking no arguments and returning a @String@ is expected.
+The syntax @=> String@ is different than @() => String@; the first form indicates a pass-by-name parameter that evaluates to a @String@ is expected, while the second indicates a function taking no arguments and returning a @String@ is expected.  This is subtle on two levels.  First, we can pass in a closure (a block of code) and it won't be evaluated until it's called.  Secondly, a block code taking no parameters seems very similar to a function taking no parameters.
 
-Also note that the closures have access to the scope in which they were created.  If we were to set the log level to 10, the output would be:
+Note that the closures have access to the scope in which they were created.  If we were to set the log level to 10, the output would be:
 
 pre.   BREADCRUMB
 This is a simple debug message...
@@ -37,7 +37,7 @@ We can take this to the next level by applying [w:FunctionCurrying].  Suppose we
 
 So, we define a method named @?@ that takes three expressions.  The first must evaluate to a boolean, and the second two must evaluate to the same type (that we don't know).  When the method is called, we evaluate the first expression.  If it returns true, we evaluate the second expression, otherwise we evaluate the third.
 
-Note that since these are closures, only *one* of the second two expressions will get evaluated.
+Note that since these are pass-by-name closures, only *one* of the second two expressions will get evaluated.
 
 h1. My Thoughts on this Feature
 
