@@ -18,6 +18,8 @@ This syntax can do more than just save you a few quotes and backslashes, however
 
 Note how we don't quote the @title@ or @href@ attributes; Scala knows that we are assigning XML attributes to dynamic variables (i.e. this isn't just blind templating; it's XML-aware).  Also note how the quoted string we pass to the function gets escaped inside the attribute value.
 
+h3. Making it more dynamic
+
 Inside those curly braces, we can embed any Scala expression we want, so if we wanted to take a list and output it as a @ul@, this would work just fine:
 
 <script src="http://gist.github.com/154851.js"></script>
