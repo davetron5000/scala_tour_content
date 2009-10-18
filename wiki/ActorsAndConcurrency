@@ -4,9 +4,9 @@ The tour doesn't touch on this.
 
 h1. My Interpretation
 
-Scala's concurrency is ofted touted as a feature, although it isn't part of the language, but rather implemented as an API.
+Scala's concurrency is often touted as one of it's best/most distinctive features, although it isn't part of the language, but rather implemented as an API.
 
-While you can certainly use Java Threads in Scala, it is more customer to use the @scala.actors@ package.  This package defines classes that interact via message-passing.  If you ensure that your messages are immutable (for the most part), you will find it much easier to write concurrent code that works well.
+While you can certainly use Java Threads in Scala, it is more customary to use the @scala.actors@ package.  This package defines classes that interact via message-passing.  If you ensure that your messages are immutable (for the most part), you will find it much easier to write concurrent code that works well.
 
 Consider an application that takes user commands and acts on them.  Some commands might take a while to complete, but you don't necessarily want your user to have to wait until they enter the next command.  
 
