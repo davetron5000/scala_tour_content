@@ -27,6 +27,7 @@ h2. Literals and Syntactic Sugar
 * @Unit@ is Scala for @void@ in Java.
 * @'foo@ creates a symbol (A @Symbol@ instance), which, like Ruby's symbols, effectively creates a string that is always equal to itself.
 * @("foo","bar",45)@ is a @Tuple3[String,String,Int]@, which is to say, a grouping of three values, the first two of which is a @String@ and the third of which is an @Int@.  Yes, that @3@ is supposed to be there. There's also @Tuple2@ and @Tuple16@ :) This is a quick and dirty way to group things, return multiple values, or otherwise pass around related data that you don't need/want to make a class for.
+* @foo("bar")@ means @foo.apply("bar")@ (assuming that @foo@ is a reference to an object and not a method name).
 * @List("this","is","a","list")@ creates a @List@ of those four strings; no @new@ required
 * @Map("foo" -> 45, "bar" ->76)@ creates a @Map@ of @String@ to @Int@, no @new@ required and no clumsy helper class.
 
