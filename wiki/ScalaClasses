@@ -12,7 +12,9 @@ This is quite different from Java; it's much more compact, but it also gives you
 
 You can also extend classes much as with Java.  Note that when we indicate the class we're extending, we can pass up constructor values.  Also note that superclass methods are called with the @super@ keyword, just as in Java.  And yes, I realize this is a horrible example of Object-Oriented design.
 
+<div>
 <script src="http://gist.github.com/151029.js"></script>
+</div>
 
 This isn't a comprehensive overview of **everything** you can do, but gives you some of the flavor of classes in Scala.
 
