@@ -6,17 +6,13 @@ h1. My Interpretation
 
 Classes are defined much as they are in Java.  Here is a simple class that models a circle.
 
-<div>
 <script src="http://gist.github.com/151005.js"></script>
-</div>
 
 This is quite different from Java; it's much more compact, but it also gives you a tiny flavor of the functional side of Scala.  Notice how all the method definitions use the equals sign?  You are creating a sort-of expression for each one, but it's evaluated when you call the method.
 
 You can also extend classes much as with Java.  Note that when we indicate the class we're extending, we can pass up constructor values.  Also note that superclass methods are called with the @super@ keyword, just as in Java.  And yes, I realize this is a horrible example of Object-Oriented design.
 
-<div>
 <script src="http://gist.github.com/151029.js"></script>
-</div>
 
 This isn't a comprehensive overview of **everything** you can do, but gives you some of the flavor of classes in Scala.
 
