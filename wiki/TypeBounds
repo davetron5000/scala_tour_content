@@ -16,7 +16,7 @@ We *could* have created the sorter class to just take @ReferenceData@, but the @
 
 This is essentially the same concept as @List<T extends Foo>@ that you have in java, though more concise.
 
-You can also bound the other way, via @List[T :> Foo]@
+You can also bound the other way, via @List[T >: Foo]@
 
 h1. My Thoughts on this Feature
 
