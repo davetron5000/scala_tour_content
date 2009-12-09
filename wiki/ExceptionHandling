@@ -1,0 +1,13 @@
+h1. The Gist
+
+The tour doesn't deal with exception handling directly.
+
+h1. My Take
+
+In Scala, there are no checked exceptions, but you can still handle them if you like.  This is done via the case statement and pattern matching:
+
+<script src="http://gist.github.com/252529.js?file=Exceptions.scala"></script>
+
+h1. My Thoughts on This Feature
+
+Aside from the fact that you don't even have to handle exceptions explicitly, this syntax for doing so is much simpler and easier to deal with, IMO
