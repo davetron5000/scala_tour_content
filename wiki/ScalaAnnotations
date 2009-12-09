@@ -12,6 +12,12 @@ Java Annotations, when used in Scala, are specified using one of two types of sy
 
 <script src="http://gist.github.com/155925.js"></script>
 
+One way in which Scala uses annotations is to bridge Scala's way of dealing with properties and Java's way:
+
+<script src="http://gist.github.com/252522.js"></script>
+
+The @BeanProperty@ annotation basically creates these methods for us.  This lets Scala code work with systems like Spring (that expect the get/set style) without having duplicated code in our Scala source.
+
 h1. My Thoughts on this Feature
 
 I've never felt like annotations were a particularly good addition to Java; they always seemed like a hack to support poorly designed frameworks like J2EE and JAX-RS.  I don't know how endemic they are to Scala at this time, so lets hope they don't get used much.  Scala is a much more expressive language than Java and I think it can get by without annotations being used all over the place.
