@@ -22,6 +22,7 @@ h2. Intermediate
 # [w:PatternMatching] - Scala has an advanced @switch@/@case@ system.
 # [w:FunctionCurrying] - define a function that has received some of its parameters now, and will get the remainder later.
 # [w:CaseClasses] - taking switch statements to a useful level.
+# [w:Exceptions] - Scala *does* have exceptions, but they are handled more simply than Java
 # [w:SealedClasses] - tightening up [w:CaseClasses].
 # [w:XmlLiterals] - Scala allows XML literals that are smarter than strings.
 # [w:ForComprehensions] - don't let the name confuse you; this is about Scala's powerful @for@ loop construct.
