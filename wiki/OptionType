@@ -1,0 +1,25 @@
+h1. The Gist
+
+The Scala Tour doesn't officially call out this feature.
+
+h1. My Interpretation
+
+Often you have the need to perform an operation that returns a value, but that might need to _not_ return a value in some cases.  An example is getting the value from a map using a key.  If the key isn't in the map, you need to return "no value".  In Java, you would use null.  This tends to lead to a lot of null checking.
+
+Consider a method that saves some data about a person to a database.  The name and age of the person are required, but the ethnicity isn't.  In this case, you wish to store a "U" in the database, but want to allow the caller to indicate "no value".  In Java, this might look like this:
+
+<script src="http://gist.github.com/283068.js?file=NullChecking.java"></script>
+
+You would need to make sure you document which parameters allow null (and this doesn't always happen).
+
+In Scala, you can use the @Option[T]@ class, which has two subclasses: @Some[T]@, which means a value was provided (of type @T@) and @None@, which means no value was provided.  Our method in Scala might look like this:
+
+<script src="http://gist.github.com/283068.js?file=NullChecking.scala"></script>
+
+@Option[T]@ has a method, @getOrElse@ which means "get the value if we are a @Some@, otherwise, return the value provided".  This is similar in concept to the Java construct @x == null ? "U" : x@.
+
+Here, your types document that requirements; with this convention, you can know, without documentation, that @name@ and @age@ are required, but that @ethnicity@ is optional.
+
+h1. My Thoughts on This Feature
+
+Null is a huge pain.  The existence of the @Option@ class goes a long way toward dealing with it, although Scala must still allow for null, since it interacts with Java and Java uses nulls.  This is one of those areas where the boundary between Java and Scala is a bit crufty, but if you stick to the Scala world, you can write some clean interfaces.
