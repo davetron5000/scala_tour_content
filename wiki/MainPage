@@ -23,6 +23,7 @@ h2. Intermediate
 # [w:FunctionCurrying] - define a function that has received some of its parameters now, and will get the remainder later.
 # [w:CaseClasses] - taking switch statements to a useful level.
 # [w:ExceptionHandling] - Scala *does* have exceptions, but they are handled more simply than Java
+# [w:OptionType] - Scala prefers a different way of handling null, by using the null object pattern
 # [w:SealedClasses] - tightening up [w:CaseClasses].
 # [w:XmlLiterals] - Scala allows XML literals that are smarter than strings.
 # [w:ForComprehensions] - don't let the name confuse you; this is about Scala's powerful @for@ loop construct.
