@@ -20,6 +20,16 @@ In Scala, you can use the @Option[T]@ class, which has two subclasses: @Some[T]@
 
 Here, your types document that requirements; with this convention, you can know, without documentation, that @name@ and @age@ are required, but that @ethnicity@ is optional.
 
+Suppose further that you wish (or need) to update each field individually, and that you wish to allow the caller to pass in only the values to be updated, using "no value" to mean that no update is needed.  In Java:
+
+<script src="http://gist.github.com/283068.js?file=LotsOfChecking.java"></script>
+
+In Scala, you can treat @Option@ as a collection, and iterate over it.  If the @Option@ is a @None@, no iteration happens, and you avoid a lot of null checks:
+
+<script src="http://gist.github.com/283068.js?file=NotCaring.scala"></script>
+
+Granted, these are somewhat contrived, but an implementation of the NullObject pattern, coupled with some of Scala's other niceties can help clean up code and make intent clear
+
 h1. My Thoughts on This Feature
 
 Null is a huge pain.  The existence of the @Option@ class goes a long way toward dealing with it, although Scala must still allow for null, since it interacts with Java and Java uses nulls.  This is one of those areas where the boundary between Java and Scala is a bit crufty, but if you stick to the Scala world, you can write some clean interfaces.
