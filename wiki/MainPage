@@ -15,6 +15,7 @@ h2. Basics
 # [w:ScalaAnnotations] - Scala can use Java annotations.
 # [w:ScalaOperators] - Scala's flexible syntax lets you create your own operators.
 # [w:JavaIntegration] - Scala can call anything that Java can.
+# [w:Scala28Additions] - A TODO list right now
 
 h2. Intermediate
 
