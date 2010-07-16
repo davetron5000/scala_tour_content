@@ -4,10 +4,14 @@ This isn't covered by the tour, however it is discussed in "the taste of 2.8":ht
 
 h1. My Interpretation
 
-You can call methods or create classes using the name in the declaration.
+You can call methods or create classes using the name in the declaration.  You might do this to increase the readability of your code, especially when you may have many arguments to a method or constructor.  This also comes into play with [w:DefaultParameterValues].
 
-TBD
+<script src="http://gist.github.com/478718.js?file=NamedArguments.scala"></script>
+
+Note that once you are using parameter names in your calls, the order doesn't matter, so long as all parameters are named.
 
 h1. My Thoughts on This Feature
 
-TBD
+In general, I like this concept, although it's not as baked-in as Objective-C's way of doing it, and it's not as flexible as Ruby's (which amounts to allowing a map literal to be passed as the last argument to a method).
+
+
