@@ -1,8 +1,10 @@
 h1. The Gist
 
-This isn't covered by the tour.
+This isn't covered by the tour, however it is discussed in "the taste of 2.8":http://www.scala-lang.org/node/2075
 
 h1. My Interpretation
+
+You can call methods or create classes using the name in the declaration.
 
 TBD
 
