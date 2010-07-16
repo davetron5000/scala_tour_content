@@ -6,8 +6,26 @@ h1. My Interpretation
 
 In Scala pre-2.8, a package object could contain only classes and objects.  This is essentially how Scala treats Java's package concept.  In 2.8, a package object can contain type aliases and methods as well.  Why is this significant?
 
+This allows a much richer definition of what a "package" is than just a grouping of classes and objects; it also allows for some sophisticated code-sharing strategies as well as some innovative ways to reduce boilerplate.  
 
+Consider a well-organized web application; you might have a package for all of your controllers and will most likely have some conventions in place for how to implement them.  A project I've worked on uses Spring MVC's annotation-based configuration.  Every controller ends up looking like this:
+
+<script src="http://gist.github.com/478781.js?file=JavaController.java"></script>
+
+There is the same list of imports at the top if each controller.  While code-generation is one strategy to deal with this boilerplate, Scala package objects allow us to better describe what the controller package really means:
+
+<script src="http://gist.github.com/478781.js?file=controller.scala"></script>
+
+Here, we alias all of the common classnames to shorter names; this allows any class in this package to reference those names without an explicit import:
+
+<script src="http://gist.github.com/478781.js?file=PersonController.scala"></script>
+
+Further, we tend to use <code>BaseController</code> as a dumping ground for common functions that don't really have much to do with the controller classes.  This is somewhat common in Java, as is the creation of "Util" classes that have a bunch of static methods; there simply isn't a better place to put functions related to certain classes, but that don't belong in any particular class.  We can also include some implicits that are generally useful, but potentially dangerous to have in ever class of our application:
+
+<script src="http://gist.github.com/478781.js?file=richer_controller.scala"></script>
+
+Note that we've used an implicit conversion to turn our nullable java <code>Long</code> into a handy Scala [w:OptionType].
 
 h1. My Thoughts on This Feature
 
-TBD
+Hands down this is my favorite feature of Scala 2.8.  I could use this *today* to remove a significant amount of code and to hammer home the conventions littered throughout.
