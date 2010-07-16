@@ -8,7 +8,7 @@ Type Specialization is a feature that allows the Scala compiler to create type-s
 
 This is entirely transparent to the programmer, and essentially is useful for optimizing code that is being slowed down by autoboxing.
 
-For a great overview, watch [this talk|http://days2010.scala-lang.org/node/138/151] from ScalaDays 2010
+For a great overview, watch "this talk":http://days2010.scala-lang.org/node/138/151] from ScalaDays 2010
 
 
 h1. My Thoughts on This Feature
