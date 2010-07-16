@@ -20,11 +20,18 @@ Here, we alias all of the common classnames to shorter names; this allows any cl
 
 <script src="http://gist.github.com/478781.js?file=PersonController.scala"></script>
 
-Further, we tend to use <code>BaseController</code> as a dumping ground for common functions that don't really have much to do with the controller classes.  This is somewhat common in Java, as is the creation of "Util" classes that have a bunch of static methods; there simply isn't a better place to put functions related to certain classes, but that don't belong in any particular class.  We can also include some implicits that are generally useful, but potentially dangerous to have in ever class of our application:
+Further, we tend to use <code>BaseController</code> as a dumping ground for common functions that don't really have much to do with the controller classes.  This is somewhat common in Java, as is the creation of "Util" classes that have a bunch of static methods; there simply isn't a better place to put functions related to certain classes, but that don't belong in any particular class.  We can also include some implicits that are generally useful, but potentially dangerous to have in every class of our application:
 
 <script src="http://gist.github.com/478781.js?file=richer_controller.scala"></script>
 
 Note that we've used an implicit conversion to turn our nullable java <code>Long</code> into a handy Scala [w:OptionType].
+
+Now, our controller could look like this:
+
+<script src="http://gist.github.com/478781.js?file=RichController.scala"></script>
+
+Notice how we've used the package object's features to seamlessly bridge between the "Scala Way" of doing things and the "Java Way".  Before package objects, we've have had to import objects with these implicits and methods explicitly, leading to a lot of boilerplate code.
+
 
 h1. My Thoughts on This Feature
 
