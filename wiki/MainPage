@@ -15,7 +15,6 @@ h2. Basics
 # [w:ScalaAnnotations] - Scala can use Java annotations.
 # [w:ScalaOperators] - Scala's flexible syntax lets you create your own operators.
 # [w:JavaIntegration] - Scala can call anything that Java can.
-# [w:Scala28Additions] - A TODO list right now
 
 h2. Intermediate
 
@@ -32,6 +31,8 @@ h2. Intermediate
 # [w:InnerClasses] - Scala supports nesting classes within objects and other classes.
 # [w:ImplicitConversions] - Scala can implicitly convert objects to other types.
 # [w:TypeDependentClosures] - Scala has proper support for closures.  Take that, Java!
+# [w:DefaultParameterValues] - Scala 2.8 now supports default parameter values
+# [w:NamedParameters] - Scala 2.8 introduced named parameters.  Take that, Objective-C!
 
 h2. Advanced
 
@@ -41,4 +42,5 @@ h2. Advanced
 # [w:AdvancedScalaObjects] - Scala's singleton objects are quite powerful.
 # [w:DuckTyping] - Scala supports duck typing.  Take that, Ruby!
 # [w:ActorsAndConcurrency] - Scala uses an actor/message-passing style of concurrency.
+# [w:TypeSpecialization] - Scala 2.8 allows specialization of generics for primitive types.
 # [w:ExplcitlyTypedSelfReferences] - This is like the final boss in Super Mario 3.  Good luck.
