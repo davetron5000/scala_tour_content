@@ -1,11 +1,29 @@
 h1. The Gist
 
-This isn't covered by the tour.
+This isn't covered by the tour, however it is discussed in the "taste of 2.8":http://www.scala-lang.org/node/2075.
 
 h1. My Interpretation
 
-TBD
+In Java, one tends to see a lot of overloaded methods that only serve to provide default values for certain parameters of a large method.  This is especially true with constructors:
+
+<script src="http://gist.github.com/478734.js?file=HashMap.java"></script>
+
+There's really only two constructors here; one that takes another map, and one that takes a capacity and load factor.  The other two constructors are there to allow users of <code>HashMap</code> to create instances with the probably-good-for-most-cases defaults of both load factor and capacity.
+
+More problematic is that the values used for defaults are in both the Javadoc *and* the code.  Keeping this up to date is easily forgotten.  A typical pattern around this would be to add public constants whose values will show up in the Javadoc:
+
+<script src="http://gist.github.com/478734.js?file=HashMapWithDefaults.java"></script>
+
+While this keeps us from repeating ourselves, it's less than expressive.  
+
+Scala adds direct support for this:
+
+<script src="http://gist.github.com/478734.js?file=DefaultArguments.scala"></script>
+
+Note how we can take advantage of *any* default value by using [w:NamedParameters] (something C++ and Ruby do not support!)
 
 h1. My Thoughts on This Feature
 
-TBD
+I like default arguments.  It reduces the footprint of the code, makes things very clear, and only requires default values to exist in one place.  Coupling this with named arguments just makes a lot of sense, and will allow much richer APIs to be created.
+
+I think that combining this with method overloading could lead to confusing code, however; the compiler will catch these sorts of things, but I like how Ruby just doesn't allow it.
