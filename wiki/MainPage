@@ -43,4 +43,5 @@ h2. Advanced
 # [w:DuckTyping] - Scala supports duck typing.  Take that, Ruby!
 # [w:ActorsAndConcurrency] - Scala uses an actor/message-passing style of concurrency.
 # [w:TypeSpecialization] - Scala 2.8 allows specialization of generics for primitive types.
+# [w:PackageObjects] - Scala 2.8 provides a means for packages to include things other than just classes and objects.
 # [w:ExplcitlyTypedSelfReferences] - This is like the final boss in Super Mario 3.  Good luck.
