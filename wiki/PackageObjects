@@ -4,7 +4,9 @@ This isn't covered by the tour.
 
 h1. My Interpretation
 
-TBD
+In Scala pre-2.8, a package object could contain only classes and objects.  This is essentially how Scala treats Java's package concept.  In 2.8, a package object can contain type aliases and methods as well.  Why is this significant?
+
+
 
 h1. My Thoughts on This Feature
 
