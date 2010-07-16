@@ -8,9 +8,13 @@ Type Specialization is a feature that allows the Scala compiler to create type-s
 
 This is entirely transparent to the programmer, and essentially is useful for optimizing code that is being slowed down by autoboxing.
 
-For a great overview, watch "this talk":http://days2010.scala-lang.org/node/138/151] from ScalaDays 2010
+<script src="http://gist.github.com/478674.js?file=TypeSpecialization.scala"></script>
+
+Note that the more type parameters you specialize, the more specialized classes are created, because each combination of primitives must be created to full specialize.
+
+For a great overview, watch "this talk":http://days2010.scala-lang.org/node/138/151 from ScalaDays 2010
 
 
 h1. My Thoughts on This Feature
 
-TBD
+On one hand, this seems like a hyper-optimization that you should rarely really need.  On the other hand, I can't see a reason not to always do this, so why is it a feature at all?  I suspect this is only useful for API writers who need to squeeze every ounce of performance out of their code.
