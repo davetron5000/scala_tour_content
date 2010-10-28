@@ -8,7 +8,17 @@ There's two main use-cases for this feature, the first is to hold a reference to
 
 h2. Disambiguating @this.@
 
-*Coming Real Soon Now* 
+In Java, when an inner class needs to refer to its enclosing class, there are rules regarding how symbols are interpreted.  Scala has similar rules.  When an inner class and its enclosing class have the same symbol in scope, there is a question on how to refer to the enclosing class' symbol from the inner class.  Consider a dialog that contains a customer extension of another UI component:
+
+<script src="http://gist.github.com/651910.js?file=MaskingConfusion.java"></script>
+
+Here, @label@ inside @LoginButton@ refers to *its* @label@ and not the @label@ of the login dialog.  In Java, to explicitly reference the correct @label@, you would use @LoginDialog.this.label@.  This works in Scala as well, however it has some disadvantages.  
+
+Aside from being a lot of typing, it also requires duplicating the class name of the enclosing class, which affects the maintainability of this code.  Scala provides an alternative:
+
+<script src="http://gist.github.com/651910.js?file=ScalaSelfType.scala"></script>
+
+The line @self =>@ establishes the symbol @self@ as a reference to the instance of @LoginDialog@ that encloses the instance of @LoginButton@, thus providing a cleaner way of accessing it.  @self@ could be anything, though using "self" is considered idiomatic (despite, in my opinion, being extremely confusing).
 
 h2. Alternative to Inheritance
 
