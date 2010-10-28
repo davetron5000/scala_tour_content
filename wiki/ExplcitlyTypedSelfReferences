@@ -22,8 +22,6 @@ The line @self =>@ establishes the symbol @self@ as a reference to the instance 
 
 h2. Alternative to Inheritance
 
-I'm not sure I fully understand all instances *when* you should (or must) use this, but I have identified *at least one* way of using it.  This is essentially a way around inheritance to compose classes.
-
 One use of [w:ScalaTraits] is to better organize your code; you can logically group code that has separate concerns in different traits.  At times, however, you will always use certain traits together.  Consider a very simple web application framework design:
 
 gliffy. 1800756 | center | L
