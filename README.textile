@@ -1,3 +1,8 @@
 h1. Scala Tour Content
 
 This is the content for my "Scala Tour For Java Developers":http://www.naildrivin5.com/scalatour.  It's licensed under a "creative commons license":http://creativecommons.org/licenses/by-nc-sa/3.0/us/.  Feel free to fork it, download it, do whatever you like, as long as you abide by the license terms.
+
+The content is all in Textile, despite it lacking extensions.  There are two main additions to textile being used here:
+
+* {{[w:WikiName(nicer name)]}} or just {{[w:WikiName]}} is a link to another page in the wiki
+* {{gliffy. 1768557 | center | M}} is a link to a Gliffy diagram.
