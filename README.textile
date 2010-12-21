@@ -4,5 +4,5 @@ This is the content for my "Scala Tour For Java Developers":http://www.naildrivi
 
 The content is all in Textile, despite it lacking extensions.  There are two main additions to textile being used here:
 
-* {{[w:WikiName(nicer name)]}} or just {{[w:WikiName]}} is a link to another page in the wiki
-* {{gliffy. 1768557 | center | M}} is a link to a Gliffy diagram.
+* @[w:WikiName(nicer name)]@ or just @[w:WikiName]@ is a link to another page in the wiki
+* @gliffy. 1768557 | center | M@ is a link to a Gliffy diagram.
